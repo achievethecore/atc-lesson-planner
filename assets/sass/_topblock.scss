@@ -1,0 +1,356 @@
+.top-container{
+	.logo-block {
+		position: absolute;
+		width: 280px;
+		background-color: $darkGrey;
+		height: 330px;
+		top: 0px;
+		left: 0px;
+
+		img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -93px;
+			margin-top: -50px;
+		}
+	}
+
+	.top-content {
+		position: relative;
+		height: 330px;
+		margin-left: 280px;
+		background-color: $lighterGrey;
+	}
+}
+
+.col-container .col-middle .content .top-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: -15px;
+
+    li {
+        display: inline-block;
+        margin-right: 20px;
+
+        a {
+        	display: block;
+        	@include box;
+        	padding: 15px 15px;
+        	color: $darkGreen;
+        	text-decoration: none;
+        	font-size: 14px;
+        	letter-spacing: 1px;
+
+        	&:hover, &.active {
+                color: $rollGreen;
+            }
+
+            &.active {
+                color: $rollGreen;
+                background-color: $lighterGrey;
+            }
+        }
+
+        .btn1-ela span:after {
+            @include icon("t", 16pt);
+            margin-right: 2px;
+            position: relative;
+            top: 0px;
+        }
+
+        .btn1-math span:after {
+            @include icon("t", 16pt);
+            margin-right: 5px;
+            position: relative;
+            top: 2px;
+        }
+
+        .btn2 span:after {
+        	@include icon("{", 16pt);
+        	margin-right: 0px;
+            position: relative;
+            top: 2px;
+        }
+
+        .btn3 span:after {
+        	@include icon("s", 16pt);
+        	margin-right: 3px;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    .btn1-ela-li, .btn1-math-li {
+        display: none;
+    }
+}
+
+.top-container .notes, .top-container .attach-document, .top-container .my-big-picture, .top-container .learning-goal
+{
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: $darkGrey;
+
+        &:hover {
+            color: $rollGrey;
+            text-decoration: none;
+        }
+    }
+
+    .close-btn:after {
+        @include icon("X", 26pt);
+    }
+}
+
+.top-container .notes
+{
+    padding-top: 45px;
+    padding-left: 85px;
+    padding-right: 85px;
+
+    h1 {
+        font-family: 'museo_sans100';
+        font-size: 36pt;
+        color: $darkGrey;
+        margin-bottom: 5px;
+    }
+
+    textarea {
+        border: 0;
+        background-color: transparent;
+        color: $darkGrey;
+        width: 100%;
+        height: 170px;
+        outline: none;
+        font-size: 12pt;
+    }
+}
+
+.top-container .my-big-picture, .top-container .learning-goal {
+    padding-top: 45px;
+    padding-left: 85px;
+    padding-right: 85px;
+
+    h1 {
+        font-family: 'museo_sans100';
+        font-size: 36pt;
+        color: $darkGrey;
+        margin-bottom: 15px;
+    }
+
+    #mbp, #tlg {
+        color: $darkGrey;
+        font-size: 16pt;
+        word-wrap: break-word;
+        height: 192px;
+        overflow: auto;
+    }
+
+    p {
+        margin: 0;
+        line-height: 17pt;
+
+        ul {
+            margin-top: 5px;
+            list-style-type: disc !important;
+            list-style: disc !important;
+            padding-left: 30px;
+
+            li {
+                list-style-type: disc !important;
+                list-style: disc !important;
+            }
+        }
+    }
+
+    .edit-btn {
+        @include box;
+        font-size: 17px;
+        color: $darkGreen;
+        position: relative;
+        margin-left: 4px;
+        transition: 0.2s ease;
+        @include iconFont;
+        font-size: 37pt;
+
+        &:hover {
+            text-decoration: none;
+            color: $lightGreen;
+        }
+    }
+}
+
+.top-container .attach-document {
+    position: relative;
+    padding: 45px 85px;
+    height: 100%;
+
+    .filelist-wrapper {
+        display: none;
+        position: absolute;
+        left: 45px;
+        width: 260px;
+        height: 240px;
+
+        span {
+            font-weight: bold;
+            font-size: 13pt;
+        }
+
+        .file {
+            .icon {
+                color: $darkGrey;
+                @include iconFont;
+                font-size: 20pt;
+                top: 7px;
+                position: relative;
+            }
+
+            a {
+                color: $darkGrey;
+            }
+
+            .remove {
+                font-size: 9pt;
+                position: relative;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .dropzone {
+        position: relative;
+        display: table;
+        width: 100%;
+        height: 100%;
+        border: 2px dashed #cccac1;
+        
+		.lpt-error {
+		    font-size: 14px;
+		    color: #c32;
+		    margin-top: 20px;
+		}
+
+        .dz-message {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-family: 'museo_sans100';
+            font-size: 36pt;
+            color: $darkGrey;
+            padding-top: 62px;
+
+            .sub {
+                font-size: 20pt;
+            }
+            
+			@media screen and (max-width: 1500px) {
+			    font-size: 26pt;
+			    padding-top: 50px;
+			    padding-right: 8px;
+			    padding-left: 8px;
+			  }
+			@media screen and (max-width: 1180px) {
+			    font-size: 26pt;
+			    padding-top: 46px;
+			  }
+        }
+
+        .dz-previews, .dz-progress, .dz-filelist {
+            display: none;
+        }
+
+        .dz-progress {
+            position: absolute;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-family: 'museo_sans100';
+            font-size: 36pt;
+            color: $darkGrey;
+
+            .message {
+                position: relative;
+                text-align: center;
+                padding-top: 56px;
+
+                .icon {
+                    @include iconFont;
+                    font-size: 19pt;
+                    position: relative;
+                    top: 3px;
+                    margin-right: -5px;
+                }
+
+                .uploading {
+                    font-size: 16pt;
+                    font-weight: bold;
+                }
+
+                .file {
+                    font-size: 16pt;
+                    margin-left: -8px;
+                }
+            }
+
+            .progress-bar-wrapper {
+                position: absolute;
+                left: 50%;
+                margin-left: -250px;
+                top: 50%;
+                margin-top: 10px;
+                width: 500px;
+                height: 15px;
+                border-radius: 2px;
+            }
+
+            .progress-outer {
+                position: absolute;
+                width: 500px;
+                height: 15px;
+                background-color: #fff;
+                border: 2px solid $lightGrey;
+                left: 0px;
+                top: 0px;
+                border-radius: 2px;
+            }
+
+            .progress-bar {
+                position: absolute;
+                width: 0px;
+                height: 15px;
+                background-color: $lightGreen;
+                border: 2px solid $lightGreen;
+                left: 0px;
+                top: 0px;
+                border-radius: 2px;
+                transition: none;
+            }
+            
+        }
+
+        &.inprogress {
+            .dz-progress{
+                display: block;
+            }
+
+            .dz-message {
+                display: none;
+            }
+        }
+    }
+
+    &.files {
+        padding-left: 305px;
+
+        .filelist-wrapper {
+            display: block;
+        }
+    }
+}

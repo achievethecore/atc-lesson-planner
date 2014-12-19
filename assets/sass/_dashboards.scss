@@ -1,0 +1,604 @@
+.dashboard {
+	visibility: hidden;
+	opacity: 0;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    background: $lightestGrey;
+    width: 100%;
+    min-height: 100%;
+    padding-top: 90px;
+    text-align: center;
+    transition: 0.5s ease all;
+    
+    .tiles {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 60px;
+	}
+	
+	h1 {
+	    font-size: 48px;
+	}
+	h2 {
+	    font-size: 32px;
+	}
+	h1, h2 {
+	    font-family: museo_sans100;
+	    font-weight: normal;
+	}
+}
+
+.dashboard.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+.fixednav {
+    position: fixed;
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    z-index: 1;
+    border-bottom: 2px solid $lighterGrey;
+}
+
+.complete .vis-complete, .inprogress .vis-inprogress {
+	display: inline-block;
+	display: initial;
+}
+.vis-complete, .vis-inprogress {
+	display: none;
+	margin-left: 6px;
+}
+
+p.vis-inprogress {
+	display: inline-block;
+	display: initial;
+}
+.complete p.vis-inprogress {
+	display: none;
+}
+
+.tile-notice {
+    font-size: 16px;
+    /*background: white;
+    border: 2px solid $lighterGrey;*/
+    border-bottom: 0;
+    padding: 20px;
+    margin-left: 1px;
+}
+
+.tile {
+    display: inline-block;
+    background: white;
+    position: relative;
+    height: 440px;
+    margin: 0px;
+    margin-right: -2px;
+	margin-bottom: -2px;
+    padding: 10px 30px 30px 30px;
+    vertical-align: top;
+    width: 33.4%;
+    border: 2px solid $lighterGrey;
+    transition: 0.4s box-shadow ease;
+    cursor: pointer;
+    
+	&:first-child {
+		width: 100%;
+		width: calc(100% - 1px);
+		padding: 20px 180px;
+		margin-right: 0px;
+		margin-left: 1px;
+		
+		h3 {
+			font-size: 36px;
+			height: 98px;
+			line-height: 1.2;
+		}
+		p {
+			font-size: 16px;
+		}
+		.np {
+			left: 50%;
+			right: auto;
+			width: 120px;
+			margin-left: -60px;
+			&:after { content: " HERE"; }
+		}
+		
+		.tile-icon {
+			margin: 40px;
+			height: 100px;
+		}
+			
+	}
+  
+  .tile-icon {
+    margin: 50px;
+    height: 75px;
+	}
+	h3 {
+	    color: $darkGrey;
+	    margin: 0 auto;
+	    font-size: 22px;
+	    line-height: 1.4;
+	    height: 73px;
+	}
+	p {
+	    font-size: 14px;
+	}
+  
+    .np {
+        @include box;
+
+        background-color: #fff;
+        color: $darkGreen;
+
+        font-size: 12px;
+        transition: 0.4s ease;
+        text-align: center;
+        font-weight: bold;
+		border: 1px solid $darkGreen;
+	    position: absolute;
+	    bottom: 40px;
+	    left: 50%;
+	    margin-left: -50px;
+	    width: 100px;
+	    height: 40px;
+	    border-radius: 2px;
+	    padding-top: 11px;
+
+        span {
+            @include iconFont;
+            transition: 0.2s ease;
+            position: relative;
+        }
+
+        &.large {
+            width: 100%;
+
+        }
+
+        &.small {
+            width: 100px;
+        }
+    }
+    
+}
+
+.tile:hover {
+
+	    .np {
+        	background-color: $darkGreen;
+        	color: #fff;
+	    }
+	    h3 { color: $lightGreen; transition-delay: 0s; }
+}
+
+.tile-final {
+    background: transparent;
+     h3 {
+    margin-top: 70px;
+	}
+	.np {
+		background: transparent;
+	}
+}
+
+
+.bottom-actions {
+    margin-top: 40px;
+    max-width: 1350px;
+    padding: 0 60px;
+    margin: 40px auto;
+}
+
+.action-tile {
+    border: 2px solid $lighterGrey;
+    display: inline-block;
+    width: 48%;
+    box-sizing: border-box;
+    margin: 20px;
+    height: 115px;
+}
+
+.action-tile:last-child {
+    margin-right: 0;
+}
+
+.action-tile:first-child {
+    margin-left: 0;
+}
+
+.action-tile h3 {
+    color: #333;
+    padding-top: 29px;
+}
+
+
+.action-tile a {
+    text-transform: uppercase;
+    font-family: museo_sans500;
+    color: $darkGreen;
+padding-top: 20px;
+display: block;
+}
+
+.action-tile a span {
+    font-family: sapicons;
+    margin-left: 10px;
+}
+
+
+
+.dashboard footer {
+	display: block;
+	position: relative;
+	height: auto;
+	z-index: 100;
+	background: white;
+	border-top: 1px solid #dad8d3;
+
+
+	.container {
+max-width: 100%;
+padding-left: 100px;
+padding-right: 75px;
+	/*padding-right: 15px;
+	padding-left: 15px;*/
+	margin-right: auto;
+	margin-left: auto;
+	
+	.row {
+	margin-top: 20px;
+	}
+	.row {
+	margin-right: -15px;
+	margin-left: -15px;
+	}
+	.col-xs-4, .col-xs-8 { float: left; }
+	
+	.col-xs-4 { width: 33.3333333%; }
+	.col-xs-8 { width: 66.666666%; }
+	
+	#footerlogo {
+	height: 100px;
+	}
+	#footerlogo {
+	line-height: 84px;
+	padding: 0;
+	margin-left: 0 !important;
+	width: 300px;
+	overflow: hidden;
+	text-indent: -999px;
+	background: url(/img/footerlogo.png) 0 50% no-repeat;
+	background-size: 150px;
+	}
+	
+	nav {
+	text-transform: uppercase;
+	font-size: 12px;
+	
+		a {
+		font-size: 12px;
+		float: right;
+		margin: 35px 0 0 0;
+		}
+	}
+	
+	
+	}
+
+}
+
+
+
+.tile:hover {
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+.tile .check {
+	color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    transition: 0.2s ease color;
+}
+.tile:hover .check {
+	color: $lightGrey;
+}
+
+
+
+a.logo-atc {
+    position: absolute;
+    z-index: 3;
+    height: 28px;
+    width: 260px;
+}
+
+.btn-about, .profile-dropdown {
+    display: none;
+}
+.profile-dropdown {
+	position: static;
+	min-width: 160px !important;
+	padding-bottom: 34px;
+}
+
+
+.profile-dropdown .dropdown-menu {
+    display: block;
+    opacity: 0;
+    transition: 0.2s ease all;
+    transform: translate(0px, -5px);
+    pointer-events: none;
+}
+
+.profile-dropdown .dropdown-menu.in {
+    opacity: 1;
+    transform: translate(0, 0);
+    pointer-events: auto;
+}
+
+
+
+.dashboard .header .lr {
+    display: block;
+}
+.dashboard .header .lr #profilenamelink::before {
+font-size: 15pt;
+font-family: SAPIcons;
+-webkit-font-smoothing: antialiased;
+content: "R";
+position: absolute;
+top: -5px;
+left: -17px;
+}
+
+
+.dashboard .header .lr > * {
+    display: inline-block;
+    padding-left: 100px;
+    min-width: 60px;
+}
+
+.dashboard .header .lr a {
+	color: $darkGrey;
+    font-size: 12px;
+    font-family: museo_sans300;
+    font-weight: normal;
+    line-height: 20px;
+}
+#profilenamelink {
+	position: relative;
+    color: $lightGreen;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.dashboard {
+        .header {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            
+            .atc {
+                position: absolute;
+                left: 80px;
+                font-size: 15pt;
+                color: #fff;
+                font-weight: normal;
+                padding-right: 500px;
+                
+                img {
+					position: absolute;
+					&.logo-grey {
+						display: block;
+					}
+					&.logo-white {
+						display: none;
+					}
+				}
+            }
+/*
+            .atc:before {
+                @include icon("-", 14pt);
+                margin-right: 5px;
+            }
+*/
+
+            .lr {
+                position: absolute;
+                right: 100px;
+                font-size: 12pt;
+                color: #fff;
+                top: 5px;
+
+                a {
+                    color: $darkGreen;
+                    font-weight: normal;
+
+                    &:hover {
+                        color: $lightGreen;
+                    }
+                }
+
+                .btn-login:before {
+                    @include icon("R", 15pt);
+                    font-weight: bold;
+                    position: absolute;
+                    top: -5px;
+                    left: -17px;
+                }
+
+                .btn-saved, .btn-account {
+                    display: none;
+                }
+            }
+        }
+        
+	.actions {
+		@include actions;
+	}
+}
+        
+.dashboard .header .dropdown-menu {
+	&.in {
+		display: block;
+	}
+	
+    top: 55px;
+    margin-top: 0;
+    background-color: $lightGreen;
+    border-radius: 0;
+    box-shadow: none;
+    right: -100px;
+    left: 230px;
+    
+    &::after {
+	    content: "";
+	    border-bottom: 10px solid $lightGreen !important;
+	    position: absolute;
+	    top: -20px;
+	    left: 30px;
+	    border: 10px solid transparent;
+	}
+	
+	a {
+	    color: white;
+	    font-family: museo_sans100;
+	    font-weight: normal;
+	    letter-spacing: 0.4px;
+	    line-height: 1.9;
+	    font-size: 14px;
+	    
+	    &:hover {
+		    color: white;
+		    background: $darkGreen;
+		}
+	}
+}
+
+
+.tileanim {
+    position: absolute;
+    z-index: 1;
+    transition: 0.5s ease all;
+    background: white;
+}
+
+
+
+.tile:first-child .np {
+    display: block;
+}
+
+.tile.complete:first-child .np {
+    display: none;
+}
+
+.tile .np {
+    display: none;
+}
+
+
+
+
+.tile svg {
+    margin: 50px;
+    height: 60px;
+}
+
+.tile:first-child svg {
+    margin: 40px;
+    height: 80px;
+    width: 130px;
+}
+
+.tile:hover svg path {
+    fill: #25a56a;
+}
+
+.tile path {
+    transition: 0.2s ease fill;
+}
+
+
+/* new complete animation */
+.complete h3 {
+    transform: translate(0px, -10px);
+}
+
+.vis-complete span {
+    display: block;
+    font-family: museo_sans500;
+}
+
+.complete .vis-complete span {
+    transform: translate(0px, -10px);
+}
+
+.complete p.vis-complete {
+    transform: translate(0px, -10px);
+}
+
+.complete p.vis-complete, .complete .vis-complete span, .complete h3 {
+    transition: 1.0s cubic-bezier(.25,1,.5,1) all;
+    opacity: 1.0;
+    visibility: visible;
+    display: block;
+    transition-delay: 1.0s;
+}
+
+p.vis-complete, .vis-complete span {
+    opacity: 0.0;
+    display: block;
+    visibility: hidden;
+
+}
+
+/* /animation */
+
+/* newer complete animation */
+.tile .tile-icon {
+    margin: 50px auto;
+    width: 94px;
+    height: 78px;
+    background: url(../imgs/complete_sheet.png) 0 0 no-repeat;
+    margin-top: 35px;
+}
+.tile:first-child .tile-icon {
+	margin: 35px auto;
+}
+
+
+@media screen and (max-width: 1280px) {
+	.tile:first-child  {
+	    padding: 20px 75px;
+	}
+	.tile:first-child h3 {
+	    font-size: 30px;
+	    line-height: 1.1;
+	}
+	.tile:first-child p {
+	    font-size: 14px;
+	}
+		
+	.tile h3 {
+	    font-size: 18px;
+	    line-height: 1.2;
+	}
+	
+	.action-tile {
+	    width: 100%;
+	    margin: 0 0 20px;
+	}
+
+
+  }

@@ -1,0 +1,1196 @@
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+}
+
+button, a { outline: none !important; }
+
+html, body {
+    height: 100%;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $darkGreen;
+}
+
+html, body, a, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'museo_sans300';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+
+a {
+    color: #25a56a;
+}
+
+a:hover, a:focus {
+    color: #155C3A;
+    text-decoration: none;
+}
+
+b { font-family: museo_sans500; font-weight:500; }
+
+h2 {
+    font-family: museo_sans100;
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: #25a56a;
+    font-size: 18px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 14pt;
+}
+
+input::-ms-clear {
+    width : 0;
+    height: 0;
+}
+
+input::-ms-reveal {
+    width : 0;
+    height: 0;
+}
+
+blockquote { border-left-color: $lightGrey; }
+
+
+/* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------- */
+// Structure based Styling
+
+.top-container, .col-container, .landing {
+    display: none; // Hidden on start
+}
+
+.landing {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 25;
+    width: 100%;
+
+    .atf {
+        position: relative;
+        width: 100%;
+    }
+
+    .btf {
+        position: relative;
+        background-color: $lighterGrey;
+        min-height: 300px; // temp
+    }
+}
+
+.top-container {
+    position: relative;
+    width: 100%;
+    height: 0px;
+
+    .top-interior {
+        position: relative;
+        height: 330px;
+        top: -330px;
+    }
+}
+
+.col-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .col-left {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 280px;
+        height: 100%;
+        background-color: $lightestGrey;
+        transition: background-color 0.25s ease;
+        
+        .bottom { display: none; }
+    }
+
+    .col-middle {
+        position: relative;
+        background-color: white;
+        margin-left: 280px;
+        padding-left: 60px;
+
+        .content {
+            min-width: 500px;
+            max-width: 700px;
+            padding-right: 20px;
+        }
+    }
+
+    .col-right {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        height: 100%;
+        background-color: $lightestGrey;
+        z-index: 5;
+    }
+}
+
+
+
+/* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------- */
+// More Specific Global/General Element Styling 
+
+.col-middle .warnings {
+	.warning { display: none; 
+	
+	    background: $lighterGrey;
+
+	    height: auto;
+	    z-index: 2;
+	    position: relative;
+	    margin-top: 25px;
+	    color: $darkGrey;
+	    margin-top: 25px;
+	    margin-bottom: 0px;
+	    padding: 20px 40px;
+	    padding-right: 80px;
+	    font-size: 16px;
+			
+		.close {
+		    opacity: 0.6;
+		    color: black;
+		    text-shadow: none;
+		    font-family: saPIcons;
+			position: absolute;
+			top: 30px;
+			right: 30px;
+		}
+
+	}
+	
+	.warning.shown { display: block; }
+	
+	.warning.shown.dismissed { display: none; }
+	
+	
+}
+
+
+.col-middle .data {
+    position: relative;
+
+    p {
+        font-size: 12pt;
+    }
+
+	.connected-bucket blockquote {
+	    border: none;
+	    font-family: monospace;
+	}
+.connected-bucket {
+    border: 1px solid #eee;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.connected-bucket {
+	margin-top: 20px;
+}
+
+.connected-bucket + .connected-bucket {
+    margin-top: -20px;
+    border-top: 0px;
+    padding-top: 1px;
+}
+.connected-bucket a span {
+    font-family: SAPIcons;
+    color: $lightGreen;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 18px;
+}
+
+.connected-bucket a span::before {
+    content: "\2019";
+}
+
+
+.connected-bucket {
+    position: relative;
+}
+.connected-bucket .collapse {
+    overflow: hidden;
+}
+
+.connected-bucket a.collapsed span::before {
+    content: "\201c";
+}
+
+.connected-bucket a {
+    color: $darkGrey;
+}
+
+    .breadcrumb {
+        position: relative;
+        display: inline-block;
+        margin: 0px;
+        padding: 5px 30px 0px 36px;
+        background-color: #fff;
+        border: 0px;
+        color: $darkGrey;
+        font-size: 10pt;
+        margin-top: 30px;
+        margin-bottom: 0px;
+        transition: background-color 0.4s ease;
+        left: -25px;
+        padding-left: 61px;
+        border-radius: 2px;
+        visibility: hidden;
+        
+        > span {
+			display: none;
+		}
+
+        .pin {
+            position: absolute;
+            left: 25px;
+            top: -2px;
+            cursor: pointer;
+
+            .pintip {
+                position: absolute;
+                left: -62px;
+                top: -51px;
+                visibility: hidden;
+                opacity: 0;
+                @include bgwh("pin-this-section.png", 155px, 60px);
+                background-position: 0px 0px;
+            }
+        }
+
+        .pin:after {
+            @include icon("p", 24pt);
+        }
+
+        .main {
+            font-family: 'museo_sans700';
+        }
+
+        .group {
+            color: $lightGrey;
+            
+            &.active {
+                text-decoration: underline;
+                color: $darkGreen;
+            }
+        }
+
+        .div {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        &.pinned {
+            background-color: $yellow;
+
+            .pin {
+                .pintip {
+                    background-position: 0px -60px;
+                }
+            }
+        }
+    }
+
+    .standards-list {
+        position: relative;
+
+        li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        li:last-of-type {
+            margin-right: 0px;
+        }
+
+        .standards-btn {
+            display: block;
+            @include box;
+            padding: 5px 8px;
+            min-width: 85px;
+            text-align: center;
+            color: $lightGrey;
+            border: 1px solid $lightGrey;
+            border-radius: 3px;
+            transition: 0.4s ease;
+            font-family: 'museo_sans500';
+            cursor: pointer;
+
+            &:hover, &.active {
+                color: #fff;
+                background-color: $lightGreen;
+                border-color: $lightGreen;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .main-h1 {
+        font-size: 24pt;
+        color: $darkGrey;
+        margin-bottom: 20px;
+        font-family: 'museo_sans100';
+        line-height: 42px;
+        
+        p { margin-top: 0px !important;
+		font-size: 14pt;
+		font-family: museo_sans300; 
+		line-height: 26px;
+		}
+        .header-buttons { margin-top: 20px; height: 27px; }
+    }
+
+    .input-h1 {
+        font-size: 16pt;
+        color: $darkGrey;
+        margin-bottom: 20px;
+        font-family: 'museo_sans300';
+    }
+
+    .main-h1 .steps {
+        display: block;
+        font-size: 16pt;
+        margin-bottom: 10px;
+    }
+
+    .i-tooltip {
+    	display: none !important;
+        position: relative;
+        @include iconFont;
+        color: $lightGrey;
+        transition: color 0.4s ease;
+        font-size: 27pt;
+
+        &:before {
+            content: "|";
+        }
+
+        &:hover {
+            color: $lightGrey;
+
+            &:before {
+                content: "}";
+            }
+        }
+    }
+
+    .btn-strive {
+        position: relative;
+        
+
+        font-size: 11px;
+        border-radius: 3px;
+        top: -11px;
+        transition: 0.2s ease;
+        font-family: 'museo_sans500';
+        
+			span::before {
+		    content: "]";
+		    @include iconFont;
+			}
+
+
+    }
+
+    .input-h1 {
+        margin-bottom: 5px;
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
+    input[type=text], .view textarea
+    {
+        @include box;
+        position: relative;
+        width: 100%;
+        background-color: $lightestGrey;
+        color: #000;
+        border: 1px solid $lightGrey;
+        outline: none;
+        padding-left: 15px;
+        font-family: 'museo_sans300';
+        margin-bottom: 40px;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        font-size: 16pt;
+
+        &:focus {
+            border-color: $lightGreen;
+            color: $darkGrey;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+            background-color: $lighterGrey;
+        }
+
+        &.small {
+            height: 50px;
+            font-size: 16pt;
+        }
+
+        &.large {
+            height: 50px;
+            font-size: 16pt;
+        }
+    }
+
+    .view textarea {
+        height: 300px !important;
+    }
+
+    .np {
+        @include box;
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        color: $darkGreen;
+        border: 1px solid $darkGreen;
+        height: 48px;
+        font-size: 14px;
+        transition: 0.4s ease;
+        padding-top: 14px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 3px;
+
+        span {
+            @include iconFont;
+            transition: 0.2s ease;
+            position: relative;
+        }
+
+        &.large {
+            width: 100%;
+
+        }
+
+        &.small {
+            width: 100px;
+        }
+    }
+
+    .view-next span, .view-next-interior span {
+        margin-left: 7px;
+    }
+
+    .view-prev span {
+        margin-right: 7px;
+    }
+
+    .view-next, .view-next-interior {
+        span {
+            left: 0px;
+        }
+
+        &:hover {
+            span {
+                left: 5px;
+            }
+        }
+    }
+
+    .view-prev {
+        span {
+            right: 0px
+        }
+
+        &:hover {
+            span {
+                right: 5px;
+            }
+        }
+    }
+
+    .prev-next-wrapper {
+        position: relative;
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+        margin-top: 20px;
+
+        .np.large {
+            width: 48%;
+            float: left;
+        }
+
+        .np.large:first-of-type {
+            margin-right: 4%;
+        }
+
+        @include clearfix;
+
+        &.main {
+            display: none;
+        }
+    }
+
+    .checkboxes {
+        position: relative;
+        margin-top: 30px;
+
+        li {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .checkbox {
+            @include iconFont;
+            display: block;
+            position: absolute;
+            left: 0px;
+            top: -9px;
+            width: 33px;
+            height: 33px;
+            background-position: 0px 0px;
+            z-index: 2;
+            cursor: pointer;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            color: $darkGreen;
+            border: 2px solid $darkGreen;
+            border-radius: 3px;
+            padding-left: 18px;
+
+            &:after {
+                @include iconFont;
+                content: "";
+                position: absolute;
+                speak: none;
+                font-style: normal;
+                font-weight: bold;
+                font-variant: normal;
+                text-transform: none;
+                -webkit-font-smoothing: antialiased;
+                width: 100%;
+                height: 100%;
+                left: 7px;
+                top: -12px;
+                z-index: 1;
+                font-size: 14pt;
+                line-height: 54px;
+                color: #555;
+                visibility: hidden;
+                -webkit-transform: scale(2);
+                -moz-transform: scale(2);
+                -ms-transform: scale(2);
+                transform: scale(2);
+                opacity: 0;
+                -webkit-transition: none;
+                -moz-transition: none;
+                transition: none;
+            }
+
+            &:before {
+                position: absolute;
+                left: 6px;
+                top: 1px;
+                @include iconFont;
+                content: "";
+                font-size: 14pt;
+                font-weight: bold;
+                color: #fff;
+                opacity: 0;
+            }
+
+            &.activated:after {
+                visibility: visible;
+                -webkit-animation: dropDownFade 0.25s forwards;
+                -moz-animation: dropDownFade 0.25s forwards;
+                animation: dropDownFade 0.25s forwards;
+            }
+
+
+			&:hover::before {
+			    content: "Y";
+			    opacity: 1.0;
+			    color: $lightGreen;
+			}
+
+            &.selected {
+                background-color: $darkGreen;
+                color: #fff;
+
+                &:before {
+                    opacity: 100;
+                    content: "Y";
+                }
+
+                &:after {
+                    content: "Y";
+                }
+            }
+        }
+
+        .checkbox-content {
+            position: relative;
+            padding-left: 53px;
+            font-size: 12pt;
+            z-index: 1;
+
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 8px;
+            }
+        }
+
+        &.small {
+            @include clearfix;
+
+            li {
+                position: relative;
+                display: block;
+                float: left;
+                width: 50%;
+            }
+
+            .checkbox {
+                width: 22px;
+                height: 22px;
+                top: -11px;
+
+                &:after {
+                    @include iconFont;
+                    left: 4px;
+                    top: -27px;
+                }
+
+                &:before {
+                    left: 1px;
+                    top: -5px;
+                }
+            }
+
+            .checkbox-content {
+                padding-left: 36px;
+            }
+        }
+
+        &.wide {
+            li {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .in-view-dropdown {
+        position: relative;
+        margin-bottom: 30px;
+
+        .toggle {
+            position: relative;
+            width: 100%;
+            height: 65px;
+            border-radius: 0px;
+            border: 2px solid $darkGreen;
+            color: $darkGreen;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 16pt;
+            padding-top: 16px;
+            transition: 0.2s ease;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            &:hover {
+                background-color: $darkGreen;
+                color: #fff;
+            }
+
+            .symbol {
+                @include iconFont;
+                position: absolute;
+                right: 20px;
+            }
+        }
+
+        ul {
+            position: absolute;
+            float: none;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #fff;
+            border-radius: 0px;
+            border: 2px solid $darkGreen;
+            box-shadow: none;
+
+            li {
+                margin-bottom: 12px;
+            }
+
+            li:first-of-type {
+                margin-top: 12px;
+            }
+
+            li:last-of-type {
+               //margin-bottom: 0px;
+            }
+
+            a {
+                background-color: #fff;
+                transition: 0.2s ease;
+                color: #fff;
+                width: 100%;
+                height: 40px;
+                font-weight: bold;
+                font-size: 16pt;
+                padding-top: 7px;
+                color: $darkGreen;
+
+                &:hover {
+                    background-color: $darkGreen;
+                    color: #fff;
+                }
+            }
+        }
+
+        &.open {
+            .toggle {
+                background-color: $darkGreen;
+                color: #fff;
+            }
+        }
+    }
+
+    .question-block {
+        position: relative;
+        display: none;
+        opacity: 0;
+        margin-bottom: 50px;
+
+        .qb-screen1 {
+            position: relative;
+        }
+
+        .qb-screen2 {
+            position: absolute;
+            display: none;
+            top: 0px;
+            padding-right: 43px;
+
+            h1 {
+                font-size: 21pt;
+                margin-bottom: -14px;
+            }
+
+            div {
+                font-size: 14pt;
+            }
+
+            a {
+                position: absolute;
+                top: -16px;
+                right: 0px;
+                @include iconFont;
+                font-size: 30pt;
+            }
+        }
+
+        &.qb1 {
+            display: block;
+            opacity: 100;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+
+        &.openformat {
+            display: block;
+            opacity: 100;
+        }
+    }
+}
+
+.to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    background-color: $darkGreen;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    padding-top: 7px;
+
+    &:hover {
+        color: #fff;
+        background-color: $rollGreen;
+    }
+
+    &:after {
+        @include iconFont;
+        content: "\201c";
+        font-weight: bold;
+    }
+
+    &.active {
+        opacity: 100;
+        visibility: visible;
+    }
+}
+
+.compiled-lesson {
+	.actions {
+		@include actions;
+		.iconbtn { padding-left: 5px; } 
+	}
+	
+	.segment:last-child {
+	    margin-bottom: 300px;
+	}
+
+	.radio-btns {
+    display: inline-block;
+    width: 130px;
+    vertical-align: middle;
+	}
+	.btn, .btn:hover, .btn:focus {
+	    background: transparent;
+	    border: 1px solid $darkGreen;
+	    border-radius: 2px;
+	    font-size: 11px;
+	    color: $darkGreen;
+	}
+	.btn.active {
+		color: #fff;
+		background: $darkGreen;
+	}
+
+    h1 {
+        font-size: 32pt;
+       
+    }
+    h1 + p {
+     	margin-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 17pt;
+        margin-bottom: 16px;
+        font-weight: bold;
+    }
+
+    .segment-div {
+        position: relative;
+		height: 40px;
+		margin-top: 40px;
+
+        .hr {
+            position: absolute;
+            top: 50%;
+            width: 75px;
+            height: 1px;
+            background-color: #000;
+        }
+    }
+
+    .segment {
+        position: relative;
+        margin-bottom: 6px;
+    }
+
+    .segment-title {
+        font-size: 22pt;
+        margin-bottom: 15px;
+
+        .btn-edit {
+            position: relative;
+            margin-left: 20px;
+            top: 1px;
+            
+        
+        }
+    }
+
+    .segment-subtitle {
+        font-size: 14pt;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        position: relative;
+        margin-bottom: 15px;
+        margin-left: 45px;
+        font-size: 12pt;
+        list-style-type: disc !important;
+        list-style: disc !important;
+
+        li {
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 14pt;
+            font-weight: bold;
+            list-style-type: disc !important;
+            list-style: disc !important;
+        }
+    }
+
+    .block-item {
+        position: relative;
+        font-size: 14pt;
+        margin-bottom: 40px;
+        
+        .title {
+            font-weight: bold;
+        }
+
+        p {
+            margin: 0;
+            margin-left: 15px;
+			li {
+			    font-size: 12pt;
+			    font-family: museo_sans300;
+			    font-weight: normal;
+			}
+        }
+
+        &.nospace {
+            margin-bottom: 0;
+        }
+    }
+
+    .item {
+        font-weight: normal;
+
+        &.empty {
+            background-color: $darkGreen;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s ease;
+
+            &:hover {
+                  background-color: $lightGreen;  
+            }
+        }
+    }
+
+    .btn-edit {
+        @include box;
+        font-size: 37px;
+        color: $lightGreen;
+        position: relative;
+        transition: 0.2s ease;
+        @include iconFont;
+
+        &:hover {
+            text-decoration: none;
+            color: $darkGreen;
+        }
+    }
+
+    .compile-bubble {
+        display: inline-block;
+        padding: 0px 5px;
+        border: 1px solid $lightGrey;
+        color: $lightGrey;
+        font-size: 10px;
+        color: $lightGrey;
+        margin-right: 6px;
+        font-size: 10pt;
+        border-radius: 3px;
+        font-weight: bold;
+        font-family: 'museo_sans500';
+    }
+
+    .cai {
+        display: none;
+    }
+    
+	.inline-image img {
+	    max-width: 100%;
+	}
+
+    .data.showcai {
+        .cai {
+            display: inline-block;
+        }
+    }
+}
+
+.loggedin {
+    .landing {
+        .atf {
+            .header {
+                .lr {
+                    .btn-login, .btn-register {
+                        display: none;
+                    }
+
+                    .btn-saved, .btn-account {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.plan {
+    background-color: #fff;
+
+    .btn-edit, .empty {
+        display: none;
+    }
+}
+
+.ipg {
+    padding: 30px;
+    font-size: 14px;
+    
+    p {
+        font-size: 14px;
+    }
+
+    .header {
+        position: relative;
+        height: 60px;
+        visibility: hidden;
+
+        .right {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            font-size: 14px;
+
+            li {
+                display: inline-block;
+                margin-right: 15px;
+
+                &:last-of-type {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        .date {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            font-size: 12px;
+        }
+    }
+
+    .ca {
+        position: relative;
+        margin-bottom: 60px;
+
+        h1 {
+            font-size: 28px;
+        }
+        .subtitle {
+            position: relative;
+            display: block;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+
+        .indicators {
+            margin-bottom: 45px;
+            span {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+        }
+
+        .block-item {
+            margin-bottom: 15px;
+
+            .title, .item {
+                font-size: 14px;
+            }
+
+            .title {
+                font-weight: bold;
+            }
+
+            p {
+                margin-top: 0px;
+            }
+        }
+
+        .indicator-div {
+            @include relcenter;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+        }
+    }
+}
+
+
+// Crazy Checkbox Stuff 
+@-webkit-keyframes dropDownFade {
+    50% { 
+        opacity: 1;
+        -webkit-transform: scale(1.5);
+    }
+    100% { 
+        opacity: 0;
+        -webkit-transform: scale(1);
+    }
+}
+
+@-moz-keyframes dropDownFade {
+    50% { 
+        opacity: 1;
+        -moz-transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: scale(1);
+    }
+}
+
+@keyframes dropDownFade {
+    50% { 
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% { 
+        opacity: 0;
+        transform: scale(1);
+    }
+}

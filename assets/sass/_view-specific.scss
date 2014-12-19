@@ -1,0 +1,346 @@
+/* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------- */
+// ELA
+
+.view.li {
+	.input-h1 {
+		font-size: 16pt;
+	}
+}
+
+.view.litinfo {
+	p {
+		margin-bottom: 0px;
+	}
+
+	.header-buttons {
+		margin-top: 0px;
+	}
+}
+
+.view .li-btns {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .btn-li {
+	    @include box;
+	    position: relative;
+	    display: inline-block;
+	    background-color: #fff;
+	    color: $darkGreen;
+	    border-radius: 4px;
+	    border: 1px solid $darkGreen;
+	    height: 63px;
+	    font-size: 18pt;
+	    transition: 0.2s ease;
+	    padding-top: 15px;
+	    text-align: center;
+	    font-weight: bold;
+	    width: 48%;
+	    float: left;
+
+	    &:hover, &.selected {
+	        background-color: $darkGreen;
+	        color: #fff;
+	    }
+	}
+    
+    .btn-li:first-of-type {
+        margin-right: 4%;
+    }
+
+    @include clearfix;
+}
+
+.view.tb {
+
+	.btn-delete, .btn-move {
+		position: absolute;
+		right: 8px;
+		top: 0px;
+		@include iconFont;
+		font-size: 28pt;
+		opacity: 0;
+		transition: 0.2s ease;
+		
+		@include media($tablet) {
+			opacity: 100 !important;
+			visibility: visible !important;
+		}
+	}
+
+	.btn-move {
+		top: -2px;
+	}
+
+	.btn-delete {
+		right: 50px;
+	}
+
+	.tbq-item {
+		position: relative;
+		
+		.tbq-item-input.tbq-q {
+		    margin-bottom: -1px !important;
+		}
+
+		.large {
+			padding-right: 96px;
+		}
+
+		&:hover {
+			.btn-delete, .btn-move {
+				opacity: 100;
+			}
+		}
+	}
+
+	.add-another {
+        @include box;
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        color: $lightGrey;
+        border-radius: 4px;
+        border: 1px solid $lightGrey;
+        height: 50px;
+        font-size: 14pt;
+        transition: 0.2s ease;
+        padding-top: 11px;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        margin-bottom: 70px;
+
+        &:hover {
+            background-color: $darkGreen;
+            border-color: $darkGreen;
+            color: #fff;
+        }
+    }
+
+    p span {
+    	@include iconFont;
+    }
+}
+
+.view.at {
+	ul {
+		position: relative;
+		padding-left: 40px;
+		font-size: 12pt;
+		margin-bottom: 25px;
+
+		li {
+			list-style: disc;
+		}
+	}
+}
+
+.view.twr, .view.wwd {
+	.main-h1 {
+		font-size: 28pt;
+	}
+
+	.header-buttons {
+		margin-top: 12px;
+	}
+}
+
+.view.kd, .view.lf, .view.mp, .view.ts {
+	.main-h1 p {
+		margin-top: -5px;
+		margin-bottom: -15px;
+	}
+}
+
+.view.mp, .view.ts, .view.lf, .view.kd, .view.at, .view.wwd, .view.twr, .view.tbp {
+	.prev-next-wrapper {
+		margin-top: 30px;
+	}
+}
+
+
+
+/* ----------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------
+/* ---------------------------------------------------------------------------- */
+// Math
+
+.math .col-middle .data {
+	.standards-selected {
+		font-size: 16pt;
+		margin-bottom: 20px;
+	}
+
+	.major .standards-btn, .widely .standards-btn {
+		border-color: $darkGreen;
+		color: $darkGreen;
+		&:hover {
+			color: #fff;
+			background:  $darkGreen;
+		}
+	}
+	.supporting .standards-btn, .non-widely .standards-btn {
+		border-color: #36b;
+		color: #36b;
+		&:hover {
+			color: #fff;
+			background: #36b ;
+		}
+	}
+	.additional .standards-btn {
+		border-color: #dc5;
+		color: #dc5;
+		&:hover {
+			color: #fff;
+			background: #dc5;
+		}
+	}
+	
+	
+	.major .standards-list.expanded .standards-btn, .widely .standards-list.expanded .standards-btn {
+		border-color: $darkGreen;
+
+	}
+	.supporting .standards-list.expanded .standards-btn, .non-widely .standards-list.expanded .standards-btn {
+		border-color: #36b;
+
+	}
+	.additional .standards-list.expanded .standards-btn {
+		border-color: #dc5;
+	}
+		
+	.standards-btn {
+		font-size: 14px;
+		display: inline-block;
+		margin-right: 15px;
+	}
+	
+	.k8 > div, .hs > div {
+	    display: inline-block;
+	}
+
+	.standards-list.expanded {
+		position: relative;
+		font-size: 10pt;
+		font-weight: bold;
+	
+		.standards-btn {
+			width: auto;
+			padding: 3px 6px;
+			top: 0;
+			position: relative;
+			/* new style */ 
+			display: block;
+			border: none;
+			font-family: museo_sans300;
+			font-weight: normal;
+			color: #333;
+			text-align: left;
+			border-left: 5px #400 solid;
+			border-radius: 0;
+			vertical-align: middle;
+			padding: 20px;
+			margin: 10px 0;
+			font-size: 15px;
+			cursor: default;
+			
+			b {
+				font-family: museo_sans500;
+				font-weight: normal;
+			}
+			
+			
+
+			
+			&:hover {
+				color: initial;
+				background-color: transparent;
+				border-color: initial;
+			}
+		}
+	}
+}
+
+.view.focus {
+	.screen-error, .screen-ok, .screen-alternate, .cluster {
+		display: none;
+	}
+
+	.main-h1 {
+		p {
+			margin-bottom: 0px;
+		}
+	}
+
+	.standards-selected {
+		margin-bottom: 10px;
+	}
+	
+	.segment-div {
+        position: relative;
+        height: 90px;
+
+        .hr {
+            position: absolute;
+            top: 50%;
+            width: 75px;
+            height: 1px;
+            background-color: #000;
+        }
+    }
+
+    p {
+    	line-height: 24px;
+    }
+
+    .more-info {
+    	margin-top: 25px;
+    }
+}
+
+.view.rigor {
+	.checkboxes {
+		margin-bottom: 60px;
+	}
+}
+
+.view.ml {
+	.header-buttons {
+		margin-bottom: 20px;
+	}
+
+	.main-h1, .input-h1 {
+		//font-size: 28pt;
+	}
+
+	input:first-of-type {
+		margin-bottom: 40px;
+	}
+}
+.view.clusters-standards {
+	.other {
+		margin-top: 15px;
+
+		.input-h1 {
+			font-size: 16pt;
+		}
+	}
+
+	p {
+		margin-top: 0px;
+	}
+}
+
+// Misc Next Buttons
+.view.focus, .view.part-entire, .view.key-math, .view.lg, .view.add-rigor, 
+.view.cu, .view.dq, .view.feed-rev, .view.grp, .view.just, .view.math-expl, 
+.view.pers, .view.pro-struggle, .view.sol-meth, .view.sd, .view.st, .view.cfw,
+.view.cpk, .view.ml {
+	.prev-next-wrapper {
+		margin-top: 30px;
+	}
+}

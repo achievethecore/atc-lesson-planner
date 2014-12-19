@@ -1,0 +1,111 @@
+@mixin bg($image, $repeat: no-repeat) {
+    background-image: url('../imgs/'+$image);
+    background-repeat: $repeat;
+}
+
+@mixin bgwh($image, $w, $h) {
+    width: $w;
+    height: $h;
+    @include bg($image);
+}
+
+@mixin relcenter {
+    position: relative;
+    margin: 0 auto;
+}
+
+@mixin relexpand {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin absexpand {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+@mixin icon($letter, $size)
+{
+    font-size: $size;
+    font-family: SAPIcons;
+    -webkit-font-smoothing: antialiased;
+    content: $letter;
+}
+
+@mixin iconFont()
+{
+    font-family: SAPIcons;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin greenBtn {
+	border: 1px solid $darkGreen;
+    background: transparent;
+    
+    color: $darkGreen;
+    transition: 0.2s ease;
+    
+    &:hover {
+	    color: #fff;
+	    background: $darkGreen;
+	}
+}
+
+@mixin actions {
+		display: block;
+		text-align: right;
+		max-width: 1350px;
+		padding: 0 60px;
+		margin: 20px auto;
+	    
+	    .btn {
+			@include greenBtn;
+		    margin-left: 10px;
+		    font-size: 11px;
+		    font-family: museo_sans500;
+		    text-transform: uppercase;
+		    border-radius: 2px;
+			height: 30px;
+			padding: 6px 12px;
+			margin-top: 6px;
+		}
+		.plusbtn {
+		    position: relative;
+		    padding-left: 40px;
+		    display: inline-block;
+			span {
+			    position: absolute;
+			    width: 33px;
+			    border-right: 1px solid $lightGrey;
+			    height: 100%;
+			    left: 0;
+			    top: 0;
+			    text-align: center;
+			    padding-left: 3px;
+				&:before {
+				    @include icon('+', 19px);
+				    line-height: 25px;
+				}
+			}
+		}
+		.iconbtn {
+		    font-family: SAPIcons;
+		    -webkit-font-smoothing: antialiased;
+		    font-size: 21px !important;
+		    line-height: 0px;
+		    padding-right: 0;
+		    width: 30px;
+		    padding-top: 0;
+		    padding-left: 0px;
+		    text-transform: none;
+		}
+}
+
+@import "dropdown";

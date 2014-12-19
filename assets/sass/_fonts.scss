@@ -1,0 +1,99 @@
+$fontPath: "../../assets/fonts/";
+//$fontPath: "/fonts/"; 
+$iconFontPath: "../../assets/fonts/";
+//$iconFontPath: "/css/font/"; 
+
+@font-face {
+  font-family: 'museo_sans100_italic';
+  src: url($fontPath + "museosans_100_italic-webfont.eot");
+  src: url($fontPath + "museosans_100_italic-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_100_italic-webfont.woff") format("woff"), url($fontPath + "museosans_100_italic-webfont.ttf") format("truetype"), url($fontPath + "museosans_100_italic-webfont.svg#museo_sans100_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans100';
+  src: url($fontPath + "museosans_100-webfont.eot");
+  src: url($fontPath + "museosans_100-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_100-webfont.woff") format("woff"), url($fontPath + "museosans_100-webfont.ttf") format("truetype"), url($fontPath + "museosans_100-webfont.svg#museo_sans100") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans300_italic';
+  src: url($fontPath + "museosans_300_italic-webfont.eot");
+  src: url($fontPath + "museosans_300_italic-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_300_italic-webfont.woff") format("woff"), url($fontPath + "museosans_300_italic-webfont.ttf") format("truetype"), url($fontPath + "museosans_300_italic-webfont.svg#museo_sans300_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans300';
+  src: url($fontPath + "museosans_300-webfont.eot");
+  src: url($fontPath + "museosans_300-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_300-webfont.woff") format("woff"), url($fontPath + "museosans_300-webfont.ttf") format("truetype"), url($fontPath + "museosans_300-webfont.svg#museo_sans300") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans500_italic';
+  src: url($fontPath + "museosans_500_italic-webfont.eot");
+  src: url($fontPath + "museosans_500_italic-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_500_italic-webfont.woff") format("woff"), url($fontPath + "museosans_500_italic-webfont.ttf") format("truetype"), url($fontPath + "museosans_500_italic-webfont.svg#museo_sans500_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans500';
+  src: url($fontPath + "museosans_500-webfont.eot");
+  src: url($fontPath + "museosans_500-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_500-webfont.woff") format("woff"), url($fontPath + "museosans_500-webfont.ttf") format("truetype"), url($fontPath + "museosans_500-webfont.svg#museo_sans500") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans700';
+  src: url($fontPath + "museosans_700-webfont.eot");
+  src: url($fontPath + "museosans_700-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_700-webfont.woff") format("woff"), url($fontPath + "museosans_700-webfont.ttf") format("truetype"), url($fontPath + "museosans_700-webfont.svg#museo_sans700") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans900_italic';
+  src: url($fontPath + "museosans_900_italic-webfont.eot");
+  src: url($fontPath + "museosans_900_italic-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_900_italic-webfont.woff") format("woff"), url($fontPath + "museosans_900_italic-webfont.ttf") format("truetype"), url($fontPath + "museosans_900_italic-webfont.svg#museo_sans900_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'museo_sans900';
+  src: url($fontPath + "museosans_900-webfont.eot");
+  src: url($fontPath + "museosans_900-webfont.eot?#iefix") format("embedded-opentype"), url($fontPath + "museosans_900-webfont.woff") format("woff"), url($fontPath + "museosans_900-webfont.ttf") format("truetype"), url($fontPath + "museosans_900-webfont.svg#museo_sans900") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@font-face {
+    font-family: 'SAPIcons';
+    src: url($iconFontPath + 'sap_icons-webfont.eot');
+    src: url($iconFontPath + 'sap_icons-webfont.eot?#iefix') format('embedded-opentype'),
+         url($iconFontPath + 'sap_icons-webfont.woff') format('woff'),
+         url($iconFontPath + 'sap_icons-webfont.ttf') format('truetype'),
+         url($iconFontPath + 'sap_icons-webfont.svg#atc_iconsicon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+@font-face {
+    font-family: 'SAPIcons';
+    src: url($iconFontPath + '1031/' + 'sap_icons_2014_10_31-webfont.eot');
+    src: url($iconFontPath + '1031/' + 'sap_icons_2014_10_31-webfont.eot?#iefix') format('embedded-opentype'),
+         url($iconFontPath + '1031/' + 'sap_icons_2014_10_31-webfont.woff2') format('woff2'),
+         url($iconFontPath + '1031/' + 'sap_icons_2014_10_31-webfont.woff') format('woff'),
+         url($iconFontPath + '1031/' + 'sap_icons_2014_10_31-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}

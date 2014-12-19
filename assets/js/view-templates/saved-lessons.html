@@ -1,0 +1,32 @@
+{{#unless saved}}
+<p>Nothing here yet!</p>
+<p>To start your collection, create a new lesson plan. You can return to your collection here every time you log in.</p>
+{{/unless}}
+<table class="table">
+    <thead>
+    <tr>
+        <th><span>Created</span></th>
+        <th><span>Adjusted</span></th>
+        <th><span>Class</span></th>
+        <th><span>Subject</span></th>
+        <th>Shared</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+{{#each saved}}
+    <tr>
+        <td>{{date_added}}</td>
+        <td>{{date_updated}}</td>
+        <td>{{class}}</td>
+        <td>{{subject}}</td>
+        <td>{{#shared}}<i class="icon icon-sapicon-check"></i>{{/shared}}</td>
+        <td><a href="#{{id}}" class="btn-email"></a></td>
+        <td><a href="#{{id}}" class="btn-delete"></a></td>
+        <td><a href="#{{id}}" class="btn btn-go btn-viewdetail">OPEN</a></td>
+    </tr>
+{{/each}}      
+    </tbody>
+</table>

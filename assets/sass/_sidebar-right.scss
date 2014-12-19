@@ -1,0 +1,220 @@
+.col-right {
+	overflow: hidden;
+
+	p {
+		font-size: 12pt;
+	}
+	
+	.header {
+		position: relative;
+		width: 315px;
+		background-color: $darkGrey;
+		color: #fff;
+		height: 77px;
+		padding-top: 16px;
+		padding-left: 25px;
+		
+	    text-transform: uppercase;
+	    font-size: 14px;
+	    font-weight: normal;
+		.title {
+			    display: table-cell;
+			    vertical-align: middle;
+			    width: 100%;
+			    height: 48px;
+			}
+
+		a {
+			position: absolute;
+			right: 25px;
+			top: 25px;
+			color: #fff;
+			@include icon("X", 16pt);
+
+			&:hover {
+				color: $lightGreen;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.standards {
+		position: fixed;
+		width: 315px;
+		display: none;
+
+		.header {
+			padding-top: 28px;
+		}
+
+		.standards-items {
+			position: relative;
+			padding-top: 15px;
+		}
+
+		.standards-item {
+			position: relative;
+			cursor: pointer;
+
+			.title {
+				color: $darkGreen;
+				font-size: 12pt;
+				padding-left: 20px;
+				text-transform: uppercase;
+				margin-bottom: 5px;
+				font-weight: bold;
+
+				span {
+					position: absolute;
+					right: 20px;
+					top: -3px;
+					
+					&:after {
+						@include icon("\2019", 13pt);
+					}
+				}
+			}
+
+			.description {
+				position: relative;
+				padding-left: 20px;
+				font-size: 12pt;
+				color: $darkGrey;
+				margin-bottom: 6px;
+				display: none;
+			}
+
+			.hr {
+				position: relative;
+				width: 87%;
+				height: 1px;
+				background-color: $darkGrey;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				margin-top: 4px;
+			}
+
+			.side {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: $darkGreen;
+				width: 4px;
+				height: 100%;
+				visibility: hidden;
+				opacity: 0;
+			}
+
+			&:hover {
+				.title {
+					color: $lightGreen;
+				}
+
+				.side {
+					background-color: $lightGreen;
+				}
+			}
+
+			&.expanded {
+				.title span:after {
+					content: "\201c";
+				}
+			}
+		}
+	}
+
+	.cai 
+	{
+		position: fixed;
+		width: 315px;
+		display: none;
+		
+		.wrapper {
+			font-size: 16px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 20px;
+
+			.title {
+				font-weight: bold;
+				margin-bottom: 8px;
+			}
+
+			.ca {
+				margin-bottom: 15px;
+
+				.body {
+					font-weight: bold;
+				}
+			}
+
+			.indicator {
+				margin-bottom: 8px;
+			}
+
+			.letter {
+				font-weight: bold;
+			}
+		}
+	}
+	
+	.help {
+		position: static;
+		width: 315px;
+		
+		
+		li {
+			list-style-type: inherit;
+		    margin-bottom: 10px;
+		}
+		ol, ul {
+			list-style-type: inherit;
+		    margin-top: 20px;
+		    padding-left: 20px;
+		}
+		ol li { list-style-type: decimal; }
+
+	}
+	.help h4 {
+	    margin-bottom: 20px;
+	}
+	.help h5 {
+	font-size: 16px;
+	font-family: museo_sans500;
+	margin-bottom: 20px;
+	}
+	
+	.help a {
+	    font-family: museo_sans500;
+	}
+	.help .data {
+	    padding: 20px;
+	    font-size: 16px;
+	}
+	
+	.help-nav {
+	    font-size: 14px;
+	    text-align: left;
+	    padding: 10px;
+	    padding-bottom: 20px;
+	    
+	    a {
+		    font-family: museo_sans500;
+		    padding: 5px;
+		    padding-bottom: 10px;
+		    margin: 5px;
+		    color: $lightGrey;
+			&:hover, &.active {
+				    color: $darkGreen;
+				}
+				
+			&.active {
+				border-bottom: 2px solid;
+			}
+		}
+	}
+	
+
+
+
+}

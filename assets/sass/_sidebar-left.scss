@@ -1,0 +1,476 @@
+.col-left .toggle {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	transition: 0.2s ease;
+	background-color: $darkGreen;
+	cursor: pointer;
+
+	a {
+		color: white;
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		top: 50%;
+		margin-top: -10px;
+		transition: 0.2s ease;
+		font-family: museo_sans500;
+		
+		span {
+			@include icon("", 12pt);
+			margin-right: 20px;
+			transition: 0.2s ease;
+			margin-left: 0px;
+		}
+		&:hover span {
+			margin-left: -5px; 
+		}
+
+		img {
+			transform: matrix(0, 1, -1, 0, 0, 0);
+			-webkit-transform: matrix(0, 1, -1, 0, 0, 0);
+			-moz-transform: matrix(0, 1, -1, 0, 0, 0);
+		}
+
+		&.collapsed {
+			right: 16px;
+		}
+	}
+
+	&:hover {
+		background-color: $rollGreen;
+	}
+}
+
+.interior-content {
+	position: relative;
+	background-color: $darkGrey;
+	//height: 100%;
+
+	.expanded-content {
+		position: relative;
+		width: 280px;
+		left: 0px;
+		background-color: $darkGrey;
+		height: 100%;
+
+		.data {
+			position: relative;
+			background-color: #fff;
+			margin: 0;
+			padding: 0;
+
+			.navigation, .compile {
+				position: relative;
+
+				.main-category {
+					position: relative;
+					min-height: 60px;
+					background-color: $lightestGrey;
+					margin-bottom: 0;
+					padding-top: 40px;
+					cursor: pointer;
+					transition: 0.2s ease;
+					display: none;
+					&.expanded {
+						display: block;
+					}
+
+					h1 { 
+						font-size: 12pt;
+						color: #fff;
+						padding-left: 25px;
+						line-height: 24px;
+						font-weight: bold;
+					}
+
+					ul {
+						margin-top: 20px;
+						display: none;
+						opacity: 0;
+						padding-bottom: 30px;
+
+						li {
+							margin-bottom: 1px;
+							position: relative;
+						}
+					}
+
+					a {
+						color: $darkGrey;
+						font-size: 12pt;
+						display: block;
+						padding: 13px 25px;
+						transition: 0.2s ease;
+
+						.state-pin, .state-complete {
+							display: none;
+							position: relative;
+						}
+						
+						.state-pin {
+							margin-left: 7px;
+						}
+
+						.state-complete {
+							margin-left: 17px;
+						}
+
+						.state-pin:after {
+							@include icon("p", 17pt);
+							position: absolute;
+							top: -5px;
+						}
+
+						.state-complete:after {
+							@include icon("Y", 14pt);
+							position: absolute;
+							top: -5px;
+						}
+
+						&:hover {
+							//color: #fff;
+							background-color: $lightestGrey;
+							text-decoration: none;
+						}
+
+						&.active {
+							display: block;
+							background-color: inherit;
+							color: inherit;
+							&::before {
+								background-color: #22a469;
+								content: "";
+								width: 6px;
+								height: 100%;
+								position: absolute;
+								left: 0;
+								top: 0;
+							}
+						}
+					}
+
+
+					&.expanded {
+						cursor: default;
+
+						h1 {
+							color: $darkGrey;
+						}
+					}
+
+					&.preview {
+						background-color: $darkGreen !important;
+						cursor: pointer;
+
+						h1 {
+							color: #fff !important;
+						}
+
+						a { 
+							color: #fff;
+
+							&:hover {
+								background-color: $lightestGrey;
+								color: #000;
+							}
+						}
+					}
+
+					@include media($tablet) {
+						a {
+							&:hover {
+								background-color: #fff !important;
+							}
+						}
+
+						&.preview {
+							a {
+								&:hover {
+									background-color: #fff !important;
+								}
+							}
+						}
+					}
+				}
+
+				.main-category:last-of-type {
+					padding-bottom: 1px;
+				}
+			}
+
+			.compile_NOPE {
+				position: relative;
+				width: 100%;
+				background-color: $darkGreen;
+				display: none;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				//opacity: 0;
+
+				.btn-backtolp, .btn-instructional, .btn-ipg {
+					display: block;
+					width: 87%;
+					margin: 0 auto;
+					@include box;
+					padding: 8px 0px 8px;
+					text-align: center;
+					color: #fff;
+					border: 1px solid #fff;
+					background-color: $darkGreen;
+					transition: 0.4s ease;
+					border-radius: 3px;
+					font-weight: bold;
+					font-size: 9pt;
+					
+					&:hover {
+						text-decoration: none;
+						color: $darkGreen;
+						background-color: #fff;
+					}
+				}
+
+				.btn-instructional {
+					margin-bottom: 15px;
+				}
+
+				.hr {
+					@include relcenter;
+					margin-top: 28px;
+					margin-bottom: 28px;
+					width: 87%;
+					height: 1px;
+					background-color: $lighterGrey;
+				}
+
+				.icon-btn {
+					@include relcenter;
+					font-size: 13pt;
+					color: #fff;
+					width: 87%;
+					display: block;
+					padding-left: 60px;
+					font-family: museo_sans500;
+
+					&:hover {
+						color: $lightGreen;
+					}
+				}
+
+				.btn-email span:after {
+					@include icon("Q", 36pt);
+					position: absolute;
+					left: 0px;
+					top: -19px;
+				}
+
+				.btn-export span:after {
+					@include icon("f", 36pt);
+					position: absolute;
+					left: 0px;
+					top: -11px;
+				}
+
+				.btn-print span:after {
+					@include icon("P", 36pt);
+					position: absolute;
+					left: 0px;
+					top: -13px;
+				}
+
+				ul {
+					@include relcenter;
+					color: #fff;
+					font-size: 13pt;
+					width: 87%;
+					margin-bottom: 40px;
+					font-weight: bold;
+
+					li {
+						margin-bottom: 10px;
+
+						a {
+							color: #fff;
+
+							&:hover {
+								color: $lightGreen;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.bottom {
+			@include box;
+			position: relative;
+			padding-top: 25px;
+			background-color: $darkGrey;
+			//height: 100%;
+
+			.bottom-menu-wrapper {
+				position: relative;
+				width: 100%;
+				min-height: 103px;
+			}
+
+			.btn-compile {
+				display: block;
+				width: 80%;
+				margin: 0 auto;
+				@include box;
+				padding: 8px 0px 8px;
+				text-align: center;
+				color: $lightGrey;
+				border: 1px solid $lightGrey;
+				background-color: $darkGrey;
+				transition: 0.4s ease;
+				border-radius: 3px;
+				font-weight: bold;
+				position: relative;
+				
+				&:hover {
+					text-decoration: none;
+					border: 1px solid #fff;
+					background-color: #fff;
+					color: $darkGrey;
+				}
+			}
+
+			.bottom-menu {
+				position: absolute;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				bottom: 20px;
+
+				li {
+					position:relative;
+					height: 30px;
+					width: 100%;
+					border-bottom: 1px solid #ddd;
+					border-top: 1px solid #ddd;
+
+					a {
+						position: relative;
+						display: block;
+						color: #fff;
+						text-decoration: none;
+						font-size: 11px;
+						font-weight: bold;
+						width: 100%;
+						height: 100%;
+						padding-left: 30px;
+						padding-top: 0px;
+						transition: background-color 0.2s ease;
+
+						&:hover {
+							background-color: #3C3C3C;
+						}
+					}
+
+					.btn1 span:after {
+			        	@include icon("r", 13pt);
+			        	margin-right: 5px;
+			        	top: 3px;
+			        	position: relative;
+			        	font-weight: normal;
+			        }
+
+			        .btn2  span:after {
+			        	@include icon("q", 13pt);
+			        	margin-right: 5px;
+			        	font-weight: normal;
+			        }
+
+			        .btn3  span:after {
+			        	@include icon("R", 13pt);
+			        	margin-right: 5px;
+			        	top: 2px;
+			        	position: relative;
+			        	font-weight: normal;
+			        }
+				}
+
+				li:first-of-type {
+					border-bottom: 0px;
+				}
+
+				.dropdown-menu {
+					left: 319px;
+					top: -96px;
+					@include bg("bottom-drop-arrow.png");
+					background-position: left 98px;
+					border: 0;
+					box-shadow: none;
+					min-width: 225px;
+
+					ul li {
+						margin: 0;
+						padding: 0;
+						border: 0;
+						box-shadow: none;
+					}
+
+					ul {
+						position: relative;
+						margin-left: 11px;
+						background-color: $darkGrey;
+						padding-top: 14px;
+						padding-bottom: 8px;
+
+						li {
+							height: 100%;
+							margin-bottom: 6px;
+						}
+
+						li a {
+							padding-left: 12px;
+							font-size: 10pt;
+
+							&:hover {
+								color: $lightGreen;
+								background-color: $darkGrey;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.collapsed-content {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 100%;
+		width: 100%;
+		background-color: $darkGreen;
+		opacity: 0;
+		visibility: hidden;
+
+		.view-prev, .view-next {
+			display: block;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+
+			&:hover {
+				color: $lightGreen;
+			}
+		}
+
+		.view-prev:after {
+			@include icon("n", 29pt);
+		}
+
+		.view-next:after {
+			@include icon("o", 29pt);
+		}
+	}
+}
+
+.first-section .collapsed-content .view-prev {
+	display: none;
+}

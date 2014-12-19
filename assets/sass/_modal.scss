@@ -1,0 +1,767 @@
+label {
+    font-family: museo_sans500;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn {
+    font-family: museo_sans700;
+}
+
+.btn-smaller {
+    font-size: 12px;
+    font-family: museo_sans500;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 9px 12px;
+    border: none;
+}
+.btn-wide { width: 100%; }
+.btn-nopadding { padding: 9px 0;margin-top: 0 !important; }
+.btn i, .social i {
+    font-size: 16px;
+}
+.btn-goback:before {
+/*content: "\2039";
+padding-right: 11px;
+font-size: 22px;
+line-height: 1px;
+position: relative;
+top: 2px;*/
+content: "\f053";
+padding-right: 11px;
+font-size: inherit;
+line-height: 1px;
+position: relative;
+top: 0px;
+font-family: FontAwesome;
+vertical-align: middle;
+}
+.btn-goforward:after {
+/*content: "\203a";
+padding-left: 11px;
+font-size: 22px;
+line-height: 1px;
+position: relative;
+top: 2px;*/
+content: "\f054";
+padding-left: 11px;
+font-size: inherit;
+line-height: 1px;
+position: relative;
+top: -1px;
+font-family: FontAwesome;
+vertical-align: middle;
+
+}
+.btn-goback { padding-right: 18px; }
+.btn-goforward { padding-left: 18px; }
+
+.btn-go {
+color: #fff;
+background-color: #25a56a;
+border-radius: 0;
+text-transform: uppercase;
+transition: background-color 0.2s ease;
+}
+.btn-go:hover {
+    background-color: #155C3A;
+}
+.btn-gray {
+color: #fff;
+background-color: #b0aea2;
+border-radius: 0;
+text-transform: uppercase;
+transition: background-color 0.2s ease;
+}
+.btn-gray:hover {
+    background-color: #6f6e62;
+}
+
+.btn:hover, .btn:focus { color: white; }
+.btn-go-inverse {
+color: #25a56a;
+background-color: #fff;
+border-radius: 0;
+text-transform: uppercase;
+}
+
+.btn-go-inverse:hover, .btn-go-inverse:focus { color: #1f6b48; }
+
+.mainbox .form-control, .modal-dialog .form-control {
+    border-radius: 0;
+    background: #e8e6e0;
+    border: none;
+    box-shadow: inset 1px 2px 3px rgba(0,0,0,0.175);
+}
+
+
+.modal-header { border-bottom: none; }
+.modal-header .close { color: #1f6b48; }
+.modal-content h2 { margin: 30px; margin-top: 0; }
+
+.modal-content h3 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.modal-dialog textarea {
+    margin: 30px;
+    width: 510px;
+    height: 200px;
+}
+.modal-dialog .btn {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.modal-dialog .btn-go-inverse {
+    text-transform: none;
+    margin-top: 1px;
+}
+.modal-content {
+    border-radius: 0;
+}
+
+.mainbox { background: white; box-shadow: 1px 1px 3px rgba(0,0,0,0.2); padding: 30px; }
+
+.mainbox .has-error {
+    color: #dd3f3f;
+}
+.mainbox .has-error .form-control {
+    outline: 2px solid #dd3f3f;
+}
+
+
+
+
+
+
+#registerModal .modal-body {
+    padding: 20px 20px 37px;
+}
+
+#registerform .form-control {
+    width:220px;
+}
+
+#registerform #grade.form-control {
+    width: 100%;
+}
+
+.modal-body #registerform .form-group.checkbox-group {
+    width: 100%;
+    float: left;
+}
+
+#registerform label,#registerform .grade-group label:first-child {
+    display: none;
+}
+
+#registerform .grade-group label, #registerform label:last-child {
+    display: block;
+}
+
+#registerform .checkbox label {
+    font: 14.5px museo_sans100;
+}
+
+.checkbox-group .col-xs-1 {
+    padding: 0;
+    width: 12px;
+}
+
+.checkbox-group .col-xs-11 .checkbox {
+    margin-top: 3px;
+    padding-top: 0;
+    padding-left: 0;
+
+}
+
+.alreadyTxt {
+    text-align: center;
+}
+
+
+/*modals*/
+.no-touch body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom  {
+    margin:0;
+    margin-right: 17px;
+    position: relative;
+}
+
+.touch body.modal-open {
+    margin-right: 0;
+}
+
+.modal-open {
+    /* overflow: auto; ??? */ 
+}
+
+.modal {
+    overflow-y:auto;
+}
+
+.modal-content {
+    padding:5px 19px 0;
+}
+
+.modal .modal-header {
+    padding: 15px 0 32px;
+}
+
+.modal .modal-content {
+    padding:5px 37px 0;
+}
+#registerModal .modal-content {
+	padding:5px 19px 0;
+}
+.modal .modal-body .form-group:first-child {
+    margin: 0 0 29px;
+}
+
+.modal .mainbox {
+    padding: 0;
+    box-shadow: none;
+}
+#tools .wrongstep { display: none !important; }
+
+#loginModal { z-index: 1042; }
+#loginModal .modal-content {
+    padding:5px 41px 20px;
+}
+
+#loginModal .modal-footer {
+    padding:34px 0 20px;
+}
+
+#loginModal .modal-header {
+    padding: 15px 0 33px;
+}
+
+#loginModal .modal-dialog {
+    width:461px;
+}
+
+#loginModal .modal-content.forgotpass .forgetpasswordBtn {
+	display:none;
+}
+#loginModal .forgetpasswordBtn {
+    display: inline-block;
+    margin: 5px 0 0;
+}
+
+.myacct h3 {
+    color: #4a4944;
+    font-family: museo_sans300;
+    font-size: 18px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+/*#loginModal .modal-content {
+    height:396px;
+}*/
+
+.modal-title {
+    font:48px museo_sans100;
+    margin: 41px 0 0;
+}
+
+#loginModal .modal-title {
+    margin: 41px 0 0 -5px;
+}
+
+#registerModal .modal-dialog {
+    width:560px;
+}
+
+#registerModal .modal-title {
+    margin: 14px 0 0;
+}
+
+.modal-header .close {
+    font-size: 38px;
+}
+
+.modal-body .form-group {
+    margin:0 0 19px;
+}
+
+#registerform .form-group {
+    float: left;
+    width: 49%;
+}
+
+#registerform .form-group:nth-child(2n) {
+    float: right;
+    width: 220px;
+}
+
+#registerform .form-group.grade-group {
+    width: 100%;
+}
+
+.modal-dialog .btn {
+    margin: 0;
+    position: relative;
+    top:12px;
+}
+
+#registerform #register-submit {
+    top:20px;
+}
+
+.modal-footer {
+    margin: 0;
+    text-align: center;
+    border: 0;
+}
+
+/**hide all by default**/
+#main .assheader, #main .steps, #main .questions, #main .savedata, #registerform #profile-submit.btn-go, .edit h4, .editmode, .edit .registermode, #registerModal.edit #registerform #register-submit.btn-go, .btn-go-inverse.editmode, #registerModal .myacctArea, #registerModal.myacct .modal-content, #main .about, #main.aboutPage .loaddata, #main .details, #main .tableholder, #main .questions, #main .savedata, .savedata.empty .table, .savedata p, h4.forgotpass, .forgotpass h4, p.forgotpass, label.forgotpass, .forgotpass .modal-footer, .forgotpass #password, .forgotsent h4, .forgotsent #loginform, .forgotsent .modal-footer, h4.forgotsent, p.forgotsent {
+    display: none;
+}
+
+/**unhide with higher class**/
+#main.coaching-ass .assheader, #main.coaching-ass .steps, #main.coaching-landing .questions, #main.coaching-savedsearches .savedata, .edit .editmode, #registerModal.myacct .modal-content.myacctArea, #main.aboutPage .about, #main.vocab-search .details, #main.vocab-search .tableholder, #main.vocab-landing .questions, #main.vocab-savedsearches .savedata, .empty p, .modal-content.forgotpass h4.forgotpass, .modal-content.forgotpass p.forgotpass, .modal-content.forgotpass label, .modal-content.forgotsent h4.forgotsent, .modal-content.forgotsent p.forgotsent {
+    display: block;
+}
+
+
+.edit #registerform #profile-submit.btn-go, .edit .btn-go-inverse.editmode {
+    display: inline-block;
+}
+
+#registerform #profile-submit.btn-go  {
+    margin-right:16px;
+}
+
+.btn-go-inverse.editmode {
+    width:220px;
+    margin: 0 auto 30px;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+/* edit profile */
+
+#grade {
+    height: auto;
+    background: #f4f2ed;
+}
+#grade label {
+    font-size: 14px;
+    font-family: museo_sans300;
+    display: block;
+}
+
+.profile-edit #newsletter { margin-top: 14px; }
+
+.profile-edit .btn { margin-top: 40px; width: 40%; min-width: 120px; }
+.profile-edit .btn-go-inverse { text-decoration: underline; text-transform: none; min-width: 89px; }
+
+.profile-edit .col-xs-1 { padding: 0; }
+
+#reglink {
+    display: none;
+}
+
+#registerform .btn-go {
+    width: 220px;
+    margin: 0 auto 43px;
+    display: block;
+}
+
+#registerform .btn-go {
+    margin: 0 auto 30px;
+}
+
+.modal form {
+    margin-bottom: 40px;
+}
+
+#emailModal h4.modal-title {
+    background: url(../imgs/icon_blackmail.png) 0 50% no-repeat;
+    padding-left: 60px;
+}
+
+#emailModal textarea {
+    margin: 0;
+    width: 100%;
+}
+
+
+
+// -- Saved
+#savedModal {
+    .modal-dialog {
+        min-width: 728px;
+        width: 1100px;
+    }
+}
+#savedModal .table thead > tr > th {
+    border: 0;
+    padding: 0;
+}
+
+#savedModal .table thead > tr > th:last-child, #savedModal .table tbody > tr > td:last-child {
+    padding:8px 0 42px;
+    width: 139px;
+}
+
+#savedModal .table thead > tr > th:nth-child(1){
+    width: 20%;
+}
+#savedModal .table thead > tr > th:nth-child(2){
+    width: 20%;
+}
+#savedModal .table thead > tr > th:nth-child(3){
+    width: 14%;
+}
+#savedModal .table thead > tr > th:nth-child(4){
+    width: 16%;
+}
+#savedModal .table thead > tr > th:nth-child(5){
+    width: 16%;
+}
+#savedModal .table thead > tr > th:nth-child(6){
+    width: 58px;
+}
+#savedModal .btn-delete {
+    width:40px;
+    height:40px;
+    margin-right: 20px;
+}
+#savedModal .btn-viewdetail {
+    width:69px;
+    height:40px;
+    line-height: 1.6;
+    top: 1px;
+}
+#savedModal .table tbody > tr > td {
+    border-top: 1px solid $lighterGrey;
+    padding:8px 8px 42px 0;
+    position: relative;
+}
+
+#savedModal thead th {
+    text-transform: uppercase;
+    padding-top: 0;
+    font-size: 16px;
+    vertical-align: top;
+    padding-top: 18px;
+}
+#savedModal  h3 {
+    font-size: 41px;
+    letter-spacing: 1px;
+}
+#savedModal  .sort {
+    top: 32px;
+}
+#savedModal .table td {
+    vertical-align: middle;
+    padding: 0 !important;
+    height: 80px;
+}
+#savedModal .indicatormenu.areyousure {
+    width: 240px;
+    left: -50px;
+    top: 33px;
+    background: #444;
+}
+#savedModal td .indicatormenu.areyousure .btn-goforward {
+    height: 42px;
+    top: 0;
+    width: 70px;
+    line-height: 26px;
+    font-size: 16px;
+}
+#savedModal td .indicatormenu.areyousure:after {
+    border-top-color: #444;
+    right: 140px;
+}
+#savedModal .btn-delete:before {
+    content: "W";
+    font-family: SAPIcons;
+    font-size: 32px;
+}
+#savedModal .btn-email:before {
+    content: "Q";
+    font-family: SAPIcons;
+    font-size: 32px;
+line-height: 21px;
+}
+
+.icon-sapicon-check::before {
+    font-family: SAPIcons;
+    content: "Y";
+    font-size: 30px;
+}
+.icon-sapicon-check {
+    margin-left: 5px;
+}
+.btn-email {
+    display: inline-block;
+    width: 43px;
+    height: 28px;
+}
+table .header:hover {
+    color: #155C3A;
+}
+
+
+table .headerSortUp, table .headerSortDown  {
+    color: #25a56a;
+}
+
+table .headerSortUp:after, table .headerSortDown:after {
+    content: "\f077" !important;
+    font-family: FontAwesome;
+    text-transform: none;
+    margin-left: 5px;
+    position: absolute;
+    font-size: 14px;
+}
+table .headerSortDown:after {
+        content: "\f078" !important;
+}
+table .header {
+    cursor: pointer;
+}
+
+
+// inidcator thingy
+.indicatormenu .btn span {
+    position: absolute;
+    left: -35px;
+    top: 0;
+    border: 1px solid #444;
+    border-radius: 11px;
+    width: 22px;
+    text-align: center;
+    font-family: museo_sans500;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    text-indent: 0px;
+}
+.indicatormenu { position:absolute; color:white;  cursor:pointer; font-size:20px; }
+.indclose { cursor: pointer; }
+
+.indicatormenu:before {
+    content: "Indicator";
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.indicatormenu {
+    background: #25a56a;
+    height: 40px;
+    line-height: 40px;
+    margin-top: -75px;
+    margin-left: -27px;
+    box-shadow: 0px 1px #5dbb90;
+    z-index: 1;
+}
+.indicatormenu:after {
+    content: "";
+    border-color: #25a56a transparent transparent transparent;
+    border-width: 12px;
+    position: absolute;
+    left: 17px;
+    border-style: solid;
+    top: 40px;
+}
+.indicatormenu .btn-go {
+    margin-top: 0;
+    vertical-align: top;
+    height: 40px;
+}
+
+.indicatormenu .btn span {
+    left: 9px;
+    top: 9px;
+    border-color: white;
+    height: 22px;
+    line-height: 21px;
+}
+.indicatormenu .btn {
+    position: relative;
+    width: 40px;
+    padding: 8px 0;
+    border-left: 1px solid #35ba7d;
+}
+
+#savedModal .indicator {
+    background: #25a56a;
+    font-size: 11px;
+    display: inline-block;
+    line-height: 19px;
+    padding: 0px 5px;
+    margin: 0px 3px;
+}
+
+.indclose {
+font-size: 15px;
+padding-left: 5px;
+}
+.indicatormenu {
+    white-space: nowrap;
+}
+
+.indicatormenu.areyousure:after {
+    border-color: #25a56a transparent transparent transparent;
+    top: auto;
+    bottom: -24px;
+}
+.indicatormenu.areyousure {
+    bottom: 32px;
+    text-transform: none;
+    padding-bottom: 0;
+    padding-left: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    width: 400px;
+}
+.obsdel {
+    position: relative;
+}
+.indicatormenu.areyousure .btn-goforward {
+    width: 100px;
+    top: 2px;
+    left: auto;
+    border-left: none;
+    right: 0;
+    text-transform: none;
+    font-family: Museo_Sans300;
+}
+
+.indicatormenu.areyousure:before {
+    cotent: normal;
+    content: "";
+    display:none;
+    text-align: left;
+}
+.indicatormenu.areyousure {
+    text-align: left;
+    font-weight: normal;
+}
+td .indicatormenu.areyousure .btn-goforward {
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+    padding-right: 9px;
+}
+td .indicatormenu.areyousure {
+    bottom: auto;
+    top: 31px;
+    left: -318px;
+    height: 42px;
+}
+td .indicatormenu.areyousure::after {
+    right: 22px;
+    left: auto;
+}
+
+/* newstyle */
+
+
+h4.modal-title {
+    background: none !important;
+    padding-left: 0 !important;
+}
+
+.modal-dialog .form-control {
+    box-shadow: none;
+    border: 1px solid $lightGrey;
+    background: $lightestGrey;
+    padding: 10px 20px; /* 20px padding and 34px height -> invisible text in FF */
+    border-radius: 2px;
+}
+
+.modal-dialog .btn {
+    width: 100%;
+}
+
+.modal-dialog .btn {
+    background: transparent;
+    border: 1px solid $darkGreen;
+    border-radius: 2px;
+    font-size: 11px;
+    color: $darkGreen;
+}
+.modal-dialog .btn:hover, .modal-dialog .btn.active {
+	color: #fff;
+	background: $darkGreen;
+}
+
+.modal-header .close {
+    font-size: 29px;
+    opacity: 1.0;
+}
+
+
+.radio-btn-row {
+    display: table-row;
+    width: 100%;
+}
+
+.radio-btns {
+    display: table;
+    width: 100%;
+}
+
+.radio-btns .btn {
+    width: 50%;
+    border-radius: 0;
+    border-right: 0;
+}
+
+.newmodal .dropdown {
+	@include dropdown();
+}
+
+.radio-btns .btn:first-child {
+    border-radius: 2px 0 0 2px;
+}
+
+.radio-btns .btn:last-child {
+    border-right: 1px solid;
+    border-radius: 0px 2px 2px 0;
+}
+
+.math .about-math {
+    display: block;
+}
+
+.about-math, .about-ela {
+    display: none;
+}
+
+.ela .about-ela {
+    display: block;
+}
+
+#aboutModal h2 {
+    font-size: 31px;
+    margin-left: 0;
+}
+
+#aboutModal p + h2 {
+    margin-top: 40px;
+}
+
+#exportModal .modal-content, #emailModal .modal-content {
+    padding: 0 40px 15px 40px;
+}
+
+#exportModal .btn, #emailModal .btn {
+    font-size: 16px;
+    font-family: museo_sans500;
+}
+
+#export-submit, #email-submit {
+    text-transform: uppercase;
+}

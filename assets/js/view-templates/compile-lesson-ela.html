@@ -1,0 +1,26 @@
+{{#Modules}}
+<div class="segment">
+	<a name="{{slugify title}}"></a>
+	<div class="segment-title">{{title}}<a href="#" data-view="{{editSection}}" class="btn-edit">:</a></div>
+	{{#Sections}}
+	<div class="question-section">
+		{{formatQuestions}}
+		{{formatCAI}}
+	</div>
+	{{/Sections}}
+</div>
+<div class="segment-div"><hr /></div>
+{{/Modules}}
+
+
+{{#if attached}}
+<div class="segment-div"><hr /></div>
+
+<div class="segment">
+<div class="segment-title">Attached Documents</div>
+{{#csv attached}}
+<p>{{this}}</p>
+<div class="inline-image">{{imagify}}</div>
+{{/csv}}
+</div>
+{{/if}}

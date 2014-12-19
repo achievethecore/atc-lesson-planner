@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">{{name}}</h4>
+    <h3>{{role}}</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6"><p><b>Subject(s) of interest</b>:<br> {{subject}}</p><p>{{school}}<br />{{city}}, {{state}}</p></div>
+        <div class="col-md-6">
+            <p>{{email}}<br>Password: ******</p>
+            <p>
+                {{#optin}}
+                    Subscribed to the newsletter
+                {{/optin}}
+                {{^optin}}
+                    Not subscribed to the newsletter
+                {{/optin}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <a style="float:right" class="btn btn-go btn-edit-profile" href="#">Edit Account Details</a>
+    </div>
+</div>

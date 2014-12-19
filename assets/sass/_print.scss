@@ -1,0 +1,38 @@
+@media print {
+    .top-container, .col-left, .col-right, .btn-edit, .top-nav, .warnings {
+    	display: none;
+    }
+
+    .col-middle {
+    	margin-left: 0px !important;
+    	width: 100%;
+    	padding-left: 0px;
+    	overflow: visible;
+
+    	.content {
+    		padding-right: 0px;
+    		width: 100%;
+    		max-width: 100%;
+    		overflow: visible;
+
+            .segment-div {
+                height: 50px;
+                
+                .hr {
+                    display: none;
+                }
+            }
+    	}
+    }
+
+    html, body {
+    	width: 100%;
+    	height: 100%;
+    	overflow: visible;
+    }
+    
+    .compiled-lesson {
+    	.instructional { display: none; }
+    	.actions { display: none; }
+    }
+}

@@ -1,0 +1,746 @@
+.landing {
+
+    &.deep {
+        .atf {
+            background-color: $lighterGrey;
+            background-image: none;
+			position: absolute;
+			overflow: auto;
+
+            .header {
+            	.atc {
+	                img {
+						position: absolute;
+						&.logo-grey {
+							display: block;
+						}
+						&.logo-white {
+							display: none;
+						}
+					}
+				}
+                .lr {
+                    color: $darkGrey;
+                    a {
+                        color: $darkGrey;
+                    }
+                }
+            }
+
+            .bottom {
+                display: none;
+            }
+        }
+
+        .btf {
+            display: none;
+        }
+    }
+    
+    &.btf {
+        .atf {
+            height: 100px !important;
+            z-index: 2;
+            
+            .middle .landing-main {
+                margin-top: -34px;
+                // zoom: 0.8;
+                @include transform(scale(0.8));
+                @include transform-origin(right center);
+				-moz-transform: scale(0.8); /* no zoom in moz */
+				-moz-transform-origin: right center;
+                right: 40px;
+                left: auto;
+                width: auto;
+                h1 { display: none; }
+            }
+            .header .atc { 
+				padding-right: 560px;
+				font-weight: normal;
+				font-size: 11pt;
+			}
+            .lr { display: none; }
+            .bottom { display: none; }
+        }
+    }
+
+    .atf {
+        background-color: $darkGreen;
+        @include bg("bg-splash-a.jpg");
+        background-size: cover;
+        transition: background-color 0.2s ease;
+        position: fixed;
+        z-index: 0;
+
+        .header {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            
+            .atc {
+                position: absolute;
+                left: 100px;
+                font-size: 15pt;
+                color: #fff;
+                font-weight: bold;
+                padding-right: 500px;
+                
+                img {
+					position: absolute;
+					&.logo-grey {
+						display: none;
+					}
+					&.logo-white {
+						display: block;
+					}
+				}
+            }
+
+
+
+            .lr {
+                position: absolute;
+                right: 100px;
+                font-size: 12px;
+                color: #fff;
+                top: 5px;
+
+                a {
+                    color: #fff;
+                    font-weight: normal;
+
+                    &:hover {
+                        color: $lightGreen;
+                    }
+                }
+
+                .btn-login:before {
+                    @include icon("R", 15pt);
+                    font-weight: normal;
+                    position: absolute;
+                    top: -5px;
+                    left: -17px;
+                }
+
+                .btn-saved, .btn-account {
+                    display: none;
+                }
+            }
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+
+            .landing-main {
+                position: absolute;
+                top: 0px;
+                margin-top: -96px;
+                text-align: center;
+                width: 100%;
+                transition: margin 0.5s ease;
+
+                h1 {
+                    color: #fff;
+                    font-size: 24pt;
+                    text-align: center;
+                    margin-bottom: 40px;
+                    font-family: 'museo_sans100';
+                    
+                    span {
+                    	display: block;
+                    	font-size: 14pt;
+                    	margin-top: 20px;
+                    }
+                }
+
+                .landing-btn {
+                    @include box;
+                    display: inline-block;
+                    width: 240px;
+                    height: 50px;
+                    border: 1px solid #fff;
+                    border-radius: 2px;
+                    transition: 0.2s ease;
+                    color: #fff;
+                    font-size: 10pt;
+                    text-align: center;
+                    font-family: museo_sans500;
+                    padding-top: 11px;
+
+                    &:hover {
+                        background-color: #fff;
+                        border-color: #fff;
+                        color: $lightGreen;
+                    }
+                }
+
+                .btn-new {
+                    margin-right: 30px;
+
+                    span:before {
+                        @include icon("+", 12pt);
+                        margin-right: 15px;
+                    }
+                }
+
+                .btn-continue {
+                    span:before {
+                        @include icon("]", 12pt);
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            .landing-info {
+                position: absolute;
+                top: 0px;
+                margin-top: -140px;
+                display: none;
+                opacity: 0;
+                width: 100%;
+
+                h1 {
+                    text-align: center;
+                    font-size: 34pt;
+                    margin-bottom: 30px;
+                    color: $darkGrey;
+                    font-family: 'museo_sans100';
+                }
+
+                .landing-dropdown {
+                    position: relative;
+                    text-align: center;
+
+                    .toggle {
+                        position: relative;
+                        width: 540px;
+                        height: 50px;
+                        border-radius: 3px;
+                        border: 1px solid $darkGreen;
+                        color: $darkGreen;
+                        display: inline-block;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 14px;
+                        padding-top: 14px;
+                        transition: 0.2s ease;
+                        font-family: 'museo_sans100';
+
+                        span {
+                            position: absolute;
+                            @include iconFont;
+                            right: 24px;
+                            top: 12px;
+                        }
+
+                        &:hover {
+                            background-color: $darkGreen;
+                            color: #fff;
+                        }
+                    }
+
+                    ul {
+                        position: absolute;
+                        float: none;
+                        width: 540px;
+                        margin: 0 auto;
+                        left: 50%;
+                        margin-left: -270px;
+                        padding: 0;
+                        background-color: #bfe3d2;
+
+                        li {
+                            margin-bottom: 1px;
+                        }
+
+                        li:last-of-type {
+                            margin-bottom: 0px;
+                        }
+
+                        a {
+                            background-color: $darkGreen;
+                            transition: 0.2s ease;
+                            color: #fff;
+                            width: 540px;
+                            height: 45px;
+                            font-weight: bold;
+                            font-size: 14px;
+                            padding-top: 14px;
+
+                            &:hover {
+                                background-color: $lightGreen;
+                            }
+                        }
+                    }
+
+                    &.open {
+                        .toggle {
+                            background-color: $darkGreen;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                #dropdown-subject {
+                    margin-bottom: 15px;
+                }
+
+                #dropdown-grade {
+                    ul {
+                        li {
+                            display: block;
+                            float: left;
+                            width: 20%;
+                            height: 108px;
+                            border-bottom: 1px solid transparent;
+                            border-right: 1px solid transparent;
+                            margin-bottom: 0;
+                            padding: 0;
+
+                            a {
+                                width: 100%;
+                                height: 100%;
+                                margin: 0;
+                                padding-top: 37px;
+                                font-size: 23px;
+                            }
+
+                            .empty {
+                                background-color: $darkGreen;
+                                width: 100%;
+                                height: 100%;
+                                margin: 0;
+                            }
+                        }
+
+                        li:nth-child(5n) {
+                            border-right: 0px;
+                        }
+                    }
+                }
+            }
+
+            .landing-login {
+                position: absolute;
+                top: 0px;
+                margin-top: -140px;
+                display: none;
+                opacity: 0;
+                width: 100%;
+                text-align: center;
+
+                h1 {
+                    text-align: center;
+                    font-size: 34pt;
+                    margin-bottom: 30px;
+                    color: $darkGrey;
+                    font-family: museo_sans100;
+                }
+
+                input {
+                    position: relative;
+                    width: 540px;
+                    height: 50px;
+                    font-weight: normal;
+                    font-size: 14pt;
+                    border: 1px solid $darkGreen;
+                    color: $darkGreen;
+                    background-color: transparent;
+                    outline: none;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    border-radius: 3px;
+
+                    &:focus {
+                        background-color: rgba(42,142,81,0.3);
+                    }
+                }
+
+                .em {
+                    position: relative;
+                    width: 650px;
+                    margin: 0 auto; 
+                }
+
+                .pw {
+                    position: relative;
+                    width: 650px;
+                    margin: 0 auto;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+
+                    a {
+                        position: absolute;
+                        right: 12px;
+                        top: 5px;
+                        font-family: SAPIcons;
+                        -webkit-font-smoothing: antialiased;
+                        color: $darkGreen;
+                        font-size: 22pt;
+
+                        &:hover {
+                            color: $rollGreen;
+                        }
+                    }
+                }
+
+                .btn-submit {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 540px;
+                    height: 50px;
+                    border: 1px solid $darkGreen;
+                    color: $darkGreen;
+                    display: block;
+                    text-align: center;
+                    font-family: 'museo_sans500';
+                    font-size: 12pt;
+                    padding-top: 13px;
+                    transition: 0.2s ease;
+                    margin-bottom: 15px;
+
+                    &:hover {
+                        background-color: $darkGreen;
+                        color: #fff;
+                    }
+                }
+
+                span {
+                    font-size: 14pt;
+
+                    a {
+                        text-decoration: underline;
+                        color: $darkGreen;
+
+                        &:hover {
+                            color: $rollGreen
+                        }
+                    }
+                }
+
+                .errors {
+                    text-align: left;
+                    color: #dd3f3f;
+                }
+
+                .em.has-error, .pw.has-error {
+                    input {
+                        border-color: #dd3f3f;
+                    }
+
+                    .btn-forgot {
+                        top: 18px;
+                    }
+
+                    p {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+        	cursor: pointer;
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            font-size: 17pt;
+            //display: none; // temporary
+
+            div {
+                 @include iconFont;
+            }
+        }
+    }
+
+    .btf {
+        background-color: #fff;
+        //display: none; // temporary
+        z-index: 1;
+        position: relative;
+        
+        padding: 100px 100px;
+        
+        .welcome-2col {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			max-width: 880px;
+			padding-bottom: 40px;
+		}
+		
+		table, hr, p {
+			max-width: 880px;	
+		
+		}
+        
+        a {
+			outline: 0;
+		}
+        h1 {
+            text-align: left;
+            font-size: 58px;
+            font-family: museo_sans100;
+        }
+        .subhed {
+            text-align: left;
+            font-size: 14pt;
+            /*width: 65%;*/
+            margin: 20px 0 90px;
+        }
+        .nav-column {
+            display: table-cell;
+            width: 33%;
+            text-transform: uppercase;
+            a { 
+				font-family: museo_sans500;
+  				display: inline-block;
+  				padding: 20px 0 0;
+  				border-bottom: 2px transparent solid;
+			}
+			a:hover, li.active a {
+				border-bottom-color: #25a56a;
+				background-color: transparent !important;
+			}
+            .nav.affix { top: 140px; }
+        }
+        .main-column {
+            display: table-cell;
+            
+            img { width: 100%; margin-bottom: 40px; }
+            .landing-main { margin-top: 60px; }
+        }
+        h2 {
+            font-size: 24pt;
+            font-family: museo_sans100;
+            margin-bottom: 20px;
+        }
+        p a { font-family: museo_sans500; color: $darkGreen; }
+        
+		table img {
+		    width: 340px;
+		    border: 1px solid $lighterGrey;
+		}
+		
+		.btn {
+		    background: transparent;
+		    border: 1px solid $darkGreen;
+		    border-radius: 2px;
+		    font-size: 11px;
+		    color: $darkGreen;
+		    text-transform: uppercase;
+		}
+		.btn:hover, .btn.active {
+			color: #fff;
+			background: $darkGreen;
+		}
+		
+		.section-2 { 
+			.btn {
+			    background: transparent;
+			    border: 1px solid #fff;
+			    border-radius: 2px;
+			    font-size: 11px;
+			    color:  #fff;
+			    text-transform: uppercase;
+			}
+			.btn:hover, .btn.active {
+				color: $lightGreen;
+				background: #fff;
+			}
+		}
+
+        h3 {
+            color: #333;
+            font-size: 34px;
+            font-family: museo_sans100;
+        }
+		p + h3 {
+			margin-top: 70px;
+		}
+        p {
+            font-size: 14pt;
+            line-height: 1.5;
+        }
+        td h3 {
+            font-size: 24px;
+        }
+        td p {
+            font-size: 16px;
+        }
+        hr {
+            border-color: #ccc;
+            margin: 60px 0;
+        }
+		img.devices {
+		    max-width: 680px;
+		    width: 100%;
+		    margin-top: 40px;
+		}
+        
+
+        table {
+            border-spacing: 0px 20px;
+            border-collapse: separate;
+        }
+        table td {
+            padding-left: 40px;
+        }
+        table td.welcome-icon {
+			padding-left: 0;
+		}
+        .dotted .icon-box {
+            border-style: dashed;
+        }
+        .icon-sap + .icon-sap {
+            font-size: 90%;
+            position: relative;
+            left: 6px;
+        }
+        
+        
+                .landing-btn {
+                    @include box;
+                    display: inline-block;
+                    width: 305px;
+                    height: 62px;
+                    border: 1px solid $darkGreen;
+                    border-radius: 2px;
+                    transition: 0.2s ease;
+                    color: $darkGreen;
+                    font-size: 12pt;
+                    text-align: center;
+                    font-weight: bold;
+                    padding-top: 14px;
+
+                    &:hover {
+                        border-color: $lightGreen;
+                        color: $lightGreen;
+                    }
+                }
+
+                .btn-new {
+                    margin-right: 30px;
+
+                    span:before {
+                        @include icon("+", 14pt);
+                        margin-right: 15px;
+                    }
+                }
+
+                .btn-continue {
+                    span:before {
+                        @include icon("]", 14pt);
+                        margin-right: 15px;
+                    }
+                }
+        
+        
+    }
+}
+
+.dd-hs {
+    display: none !important;
+    border-right: 0px;
+}
+
+.ela {
+    .dd-hs {
+        display: none !important;
+    }
+    .dd-ela {
+        display: block !important;
+    }
+}
+
+.math {
+    .dd-ela {
+        display: none !important;
+    }
+    .dd-hs {
+        display: block !important;
+        border-right: 0px !important;
+    }
+}
+
+
+/* new landing */
+.landing .btf > div {
+    text-align: center;
+    padding: 10% 0;
+}
+
+.section-2, .section-4 {
+    background: #25a56a;
+    color: white;
+}
+
+.landing .btf {
+    padding: 0;
+    text-align: center;
+}
+
+.landing .btf h1 {
+    text-align: center;
+}
+
+.landing .btf .subhed {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.landing .btf table, .landing .btf hr, .landing .btf p {
+    margin: 0 auto;
+}
+.landing .btf hr {
+    margin: 60px auto;
+}
+
+.landing .btf h3 {
+    font-size: 20px;
+    margin: 20px;
+    font-family: museo_sans300;
+}
+
+.section-1 svg {
+    width: 190px;
+    height: 190px;
+}
+
+.section-1 svg path {
+    transition: 1.0s fill ease;
+    fill: $lightGrey;
+}
+.landing.btf .section-1 svg path {
+	fill: #25a56a;
+}
+
+.section-3 img {
+    max-width: 545px;
+}
+
+.landing .btf a.final {
+    margin-top: 280px;
+    margin-bottom: 150px;
+}
+
+.splash-icon {
+    font-family: sapicons;
+    color: #25a56a;
+    -webkit-font-smoothing: antialiased;
+}
+
+.landing .btf td h3 {
+    color: #25a56a;
+}
+
+p .splash-icon {
+    font-size: 46px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px;
+}
