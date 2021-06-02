@@ -26,7 +26,7 @@ module.exports = {
   },
   externals: {
   	jquery: 'jQuery',
-  	tinymce: 'tinyMCE',
+  	tinymce: 'tinymce',
   	tweenlite: 'TweenLite'
   },
   module: {

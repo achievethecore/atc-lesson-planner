@@ -1,6 +1,6 @@
 define(
     ['jquery', 'modules/view', 'modules/utils', 'tinymce'], 
-    function ($, view, utils, tinyMCE)
+    function ($, view, utils, tinymce)
 {
 	var theBigPicture = 
 	{

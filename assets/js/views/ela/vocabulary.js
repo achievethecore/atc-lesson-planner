@@ -1,6 +1,6 @@
 define(
     ['jquery', 'modules/view', 'tinymce'], 
-    function ($, view, tinyMCE)
+    function ($, view, tinymce)
 {
 	var vocabulary = 
 	{

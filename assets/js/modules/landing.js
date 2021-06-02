@@ -18,6 +18,8 @@ define(
 		priorToLogin: 'landing-main',
 		onComplete: null,
 		affixNavTop: null,
+		
+		scrollDepth: 0,
 
 		init: function()
 		{
@@ -47,6 +49,8 @@ define(
 			
 			$('.landing').toggleClass('btf', btfMode);
 			$('.btf .to-top').toggleClass('active', btfMode);
+			
+			landing.scrollDepth = Math.max(landing.scrollDepth, top + wH);
 			
 			
 			/*if(landing.affixNavTop === null && $('.nav-column .nav').position().top > 0) landing.affixNavTop = $('.nav-column .nav').position().top;
@@ -111,6 +115,7 @@ define(
 			// -- Main
 			$('.btn-new').click(function(event) 
 			{
+				_gaq.push(['_trackEvent', 'Landing', 'Scroll Depth', 'Percentage of Page', Math.floor(100 * landing.scrollDepth / $(document).height()) ]);
 				_gaq.push(['_trackEvent', 'Landing', 'Start New']);
 				$('.landing').addClass('deep');
 				$(window).scrollTop(0);
@@ -125,6 +130,8 @@ define(
 
 			$('.btn-continue').click(function(event) 
 			{
+				_gaq.push(['_trackEvent', 'Landing', 'Scroll Depth', 'Percentage of Page', Math.floor(100 * landing.scrollDepth / $(document).height()) ]);
+				
 				_gaq.push(['_trackEvent', 'Landing', 'Continue Saved']);
 				$(window).scrollTop(0);
 				if (!account.loggedIn) 

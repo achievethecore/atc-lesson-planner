@@ -1,13 +1,13 @@
 define(
-    ['jquery', 'modules/view', 'tinymce', 'modules/state-manager', 'modules/utils', 'views/math/_base'], 
-    function ($, view, tinyMCE, stateManager, utils, mathBase)
+    ['jquery', 'modules/view', 'tinymce', 'modules/state-manager', 'modules/utils', 'views/math/_base'],
+    function ($, view, tinymce, stateManager, utils, mathBase)
 {
 	var id = 'coh';
-	
-	var coherenceFW = 
+
+	var coherenceFW =
 	{
 		template: function() {
-			return view.view(id, 
+			return view.view(id,
 			[
 				(mathBase.hasMajorWork() ?
 					view.header('Determine Coherence and Major Work', 'How does this work connect to previous or future work in the grade?')
@@ -24,18 +24,18 @@ define(
 				view.mce(id),
 				view.prevnext()
 			]
-			); 
+			);
 		},
 
 		getViewMarkup: function(content)
 		{
-			tinymce.remove();
+			tinymce.remove && tinymce.remove();
 
 			var viewData = {};
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -43,22 +43,22 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking About Coherence'],
-					'Coherence means to think across grades and link to major topics within grades, and is one of the major shifts required by the CCSS.',
+					'Coherence means to think across grades and link to major topics within grades, and is one of the major shifts required by college- and career-ready standards.',
 					['ul',
-						['li', 'Thinking across grades: The Standards are designed around coherent progressions from grade to grade. Learning is carefully connected across grades so that students can build new understanding onto foundations built in previous years. Each standard is not a new event, but an extension of previous learning.'],
-						['li', 'Linking to major topics: Instead of allowing additional or supporting topics to detract from the focus of the grade, these concepts serve the grade level focus. For example, instead of data displays as an end in themselves, they are an opportunity to do grade-level word problems.']
+						['li', 'Thinking across grades and courses: CCR-standards are designed around coherent progressions of mathematical ideas.  Learning is carefully connected so that students can build new understanding onto foundations built in previous years. Each standard is not a new event, but an extension of previous learning.'],
+						['li', 'Consider how the standard(s) you will be teaching tie into previous and future learning. Designing your lesson with this in mind will help students make sense of the learning goal.']
 					],
-					'Consider how the standard(s) you will be teaching tie into previous and future learning.  Designing your lesson with this in mind will help students  make sense of the  learning goal.',
-					(!utils.isHS()) ? ['p', 
+					//'Consider how the standard(s) you will be teaching tie into previous and future learning. Designing your lesson with this in mind will help students make sense of the learning goal.',
+					/*(!utils.isHS()) ? ['p',
 					'A detailed graphic created by CCSSM lead writer Jason Zimba shows the connections among standards within and across grades K–8; an excerpt of this graphic is shown above.  An interactive version of the graphic is available ',
 					['a', {href:'http://achievethecore.org/content/upload/ccssmgraph.pdf', 'target':'_blank'}, 'here'],
 					'. After following the link, save the PDF and open using a PDF reader for interactivity. Best viewing is at 50% to 70% zoom'
-					]:['br'],
+        ]:*/['br'],
 						'A video explaining coherence can be found ',
 						['a', {href:'https://vimeo.com/92784230', target:'_blank'}, 'here'],
 						'.'
@@ -66,8 +66,8 @@ define(
 				['div',
 					['h4', 'Progressions in the Standards'],
 					 'The ',
-					['a', {href:'http://achievethecore.org/page/254/progressions-documents-for-the-common-core-state-standards-for-mathematics-detail-pg', target:'_blank'}, 'progression documents'], 
-					' are helpful in tracing standards back to previous grades to ensure your lesson\'s content is built on student\'s prior knowledge. Similarly, the documents also articulate the mathematical content stuents are preparing for.  Knowing the full progression of mathematical content for your targeted standard(s) will strengthen your lesson as well as be useful in scaffolding for struggling students or challenging advanced students.'
+					['a', {href:'http://achievethecore.org/page/254/progressions-documents-for-the-common-core-state-standards-for-mathematics-detail-pg', target:'_blank'}, 'progression documents'],
+            ' are helpful in tracing standards back to previous grades to ensure your lesson\'s content is built on student\'s prior knowledge. Similarly, the documents also articulate the mathematical content students are preparing for.  Knowing the full progression of mathematical content for your targeted standard(s) will strengthen your lesson as well as be useful in scaffolding for struggling students or challenging advanced students.'
 				]
 				].concat(true?[
 				/*['div', 'For example (for standards 3.OA.A.1 & 3.OA.B.5)',['blockquote', 'Work in this lesson builds on the experience students had in 2nd grade with arrays (2.OA.C.4) to connect to the understanding of multiplication as equal groups. To help students see the connection between equal groups of objects and arrays, arrays should be formatted so that the rows are clearly arranged as groups (see problem #1 below).']],*/
@@ -78,7 +78,7 @@ define(
 		initView: function()
 		{
 			mathBase.createMCE('#'+id+'-text');
-			
+
 			mathBase.loadStandards();
 		}
 	};

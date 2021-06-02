@@ -1,6 +1,6 @@
 define(
     ['jquery', 'view-templates/math/addressing-rigor.html', 'tinymce', 'views/math/_base'], 
-    function ($, template, tinyMCE, mathBase)
+    function ($, template, tinymce, mathBase)
 {
 	var addRigor = 
 	{

@@ -67,20 +67,28 @@ define(
 
 		parseTemplate: function()
 		{
+      var names = {};
+      try {
+        names = JSON.parse(compileLesson.dataJson.attachnames);
+      }
+      catch(e) {}
+        
 			Handlebars.registerHelper('csv', function(csv, options) {
 				var vals = _.unique((csv||'').split(','));
 				var out = '';
 				for(var i in vals) {
+          if(vals.hasOwnProperty(i))
 					out += options.fn(vals[i]);
 				}
 				return out;
 			});
 			Handlebars.registerHelper('imagify', function() {
 				var src = this;
-				if(/pdf$/i.test(src)) {
-					return new Handlebars.SafeString("<div class='inline-pdf' data-url='"+Handlebars.Utils.escapeExpression(src)+"' />");
-				}
-				return new Handlebars.SafeString("<img src=\"attachments/" + compileLesson.dataJson.lessonid + '/' + Handlebars.Utils.escapeExpression(src) + "\">");
+				//if(/pdf$/i.test(src)) {
+				//	return new Handlebars.SafeString("<div class='inline-pdf' data-url='"+Handlebars.Utils.escapeExpression(src)+"' />");
+				//}
+        var nameFor = function(s) { var n = s.split('#').pop(); if(names[n]) return names[n]; return n; };
+				return new Handlebars.SafeString("<a href=\"http://"+location.hostname+"/lesson-planning-tool/attachments/" + compileLesson.dataJson.lessonid + '/' + Handlebars.Utils.escapeExpression(src) + "\" target=\"_blank\">" + nameFor(src) + "</a>");
 			});
 			
 			Handlebars.registerHelper('editSection', function() {
@@ -120,7 +128,7 @@ define(
 					
 
 					
-					var h = '<div class="block-item"><span class="title">' + htxt + '</span>';
+					var h = '<div class="block-item compile-q-'+q.sid+' "><span class="title">' + htxt + '</span>';
 					if(hdr) h = '<h2>' + hdr + '</h2>' + h;
 					
 					if(q.cai) h += ' ' + (q.cai.split(',').map(function(a) { return '<span class="compile-bubble cai">CORE ACTION '+a+'</span>'; }).join(' '));
@@ -193,6 +201,12 @@ define(
 					$('#grtext4').html('Course');
 				}
 			}
+			
+			// don't always show the Text Analysis question 
+			if(compileLesson.dataJson.lessontype == 'ela') {
+				$('.compile-q-ta-check').parent().toggle($('.compile-q-tc2-check .item').text() === 'Yes');
+				$('.compile-q-lexscore-check').parent().toggle($('.compile-q-tc2-check .item').text() !== 'Yes' || $('.compile-q-ta-check .item').text() !== 'Yes');
+			}
 
 			compileLesson.itemTypes();
 			
@@ -210,7 +224,7 @@ define(
 		{
 			$('.item').each(function(index, val) 
 			{
-				// -- Check for HTML (tinyMCE)
+				// -- Check for HTML (tinymce)
 				if ($(this).attr('data-html')) {
 					$(this).html($(this).text());
 				}
@@ -370,16 +384,19 @@ define(
                     $(dataMarkup).find('.tbq-item-input').each(function(index, val) 
                     {
                         var value = $(this).attr('value');
-                        if (value!==undefined)
+                        if (value!==undefined || 1)
                         {
+                        	if($(this).hasClass('tbq-q')) compileMarkup += '<span><b>QUESTION & EXAMPLE ANSWER</b>';
+                        	if($(this).hasClass('tbq-a')) compileMarkup += '<b>ACTIVITY</b>';
                             compileMarkup+=value;
                             compileMarkup+='<br/><br/>';
+                            if($(this).hasClass('tbq-a')) compileMarkup += '</span>';
                         }
                     });
 
                     if (compileMarkup!=='')
                     {
-                        compileMarkup = compileMarkup.slice(0, -5);
+                        //compileMarkup = compileMarkup.slice(0, -5);
                         $(item).html(compileMarkup);
                     }
                 }
@@ -427,7 +444,7 @@ define(
 					tagData = compileLesson.dataJson['ela-standards-tags'] || compileLesson.dataJson['standards-tags'] || compileLesson.dataJson['cs-other'];
 					tags = tagData.split(',');
 					compileMarkup = '';
-					if(compileLesson.dataJson['cs-other']) tags = [];
+					//if(compileLesson.dataJson['cs-other']) tags = [];
 
 					for (i=0; i<tags.length; ++i)
 					{
@@ -437,7 +454,7 @@ define(
 						compileMarkup += markup + '<br/>';
 					}
 
-					if(compileLesson.dataJson['cs-other']) compileMarkup = compileLesson.dataJson['cs-other'];
+					if(compileLesson.dataJson['cs-other']) compileMarkup += compileLesson.dataJson['cs-other'] + '<br/>';
 					compileMarkup = compileMarkup.slice(0, -5);
 					$(item).html(compileMarkup);
 				}

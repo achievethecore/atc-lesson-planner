@@ -1,21 +1,21 @@
 define(
-    ['jquery', 'modules/view', 'tinymce'], 
-    function($, view, tinyMCE)
+    ['jquery', 'modules/view', 'tinymce'],
+    function($, view, tinymce)
 {
-		
+
 	var id = 'wwd2';
-	
-	var meaningPurpose = 
+
+	var meaningPurpose =
 	{
-		
-		template: function() { 
-			return view.view(id, 
+
+		template: function() {
+			return view.view(id,
 			[
 				view.header('Culminating Task', 'How will students demonstrate understanding of the Big Idea and what will the culminating activity be? How will I provide for authentic learning, application of literacy skills, student-directed inquiry, analysis, evaluation and/or reflection?', 1),
 				view.mce(id),
 				view.prevnext()
 			]
-			); 
+			);
 		},
 
 		getViewMarkup: function(content)
@@ -29,7 +29,7 @@ define(
 				app.showDashboard();
 			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -43,14 +43,14 @@ define(
 			elaBase.createMCE('#'+id+'-text');
 
 		},
-		
+
 		getHelpText: function() {
-			return [ 
-				['div', 
+			return [
+				['div',
 					['h4', 'Culminating Task'],
 					'Should relate to core understanding and key ideas.',
 					['br'],
-					'A coherent sequence of text-dependent questions will scaffold students toward successfully completing the culminating task.' 
+					'A coherent sequence of text-dependent questions will scaffold students toward successfully completing the culminating task.'
 				],
 				elaBase.PDExamples(
 					['div',
@@ -70,7 +70,7 @@ define(
 					],
 					true
 				),
-				'!ca2/i2b'
+				'!ca2/i2a,ca3/i3a,i3c'
 			];
 		}
 

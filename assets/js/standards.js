@@ -1,9 +1,4 @@
 window.standardsData = {
-    "major": "K.CC.A,K.CC.A.1,K.CC.A.2,K.CC.A.3,K.CC.B,K.CC.B.4,K.CC.B.4a,K.CC.B.4b,K.CC.B.4c,K.CC.B.5,K.CC.C,K.CC.C.6,K.CC.C.7,K.OA.A,K.OA.A.1,K.OA.A.2,K.OA.A.3,K.OA.A.4,K.OA.A.5,K.NBT.A,K.NBT.A.1,1.OA.A,1.OA.A.1,1.OA.A.2,1.OA.B,1.OA.B.3,1.OA.B.4,1.OA.C,1.OA.C.5,1.OA.C.6,1.OA.D,1.OA.D.7,1.OA.D.8,1.NBT.A,1.NBT.A.1,1.NBT.B,1.NBT.B.2,1.NBT.B.2a,1.NBT.B.2b,1.NBT.B.2c,1.NBT.B.3,1.NBT.C,1.NBT.C.4,1.NBT.C.5,1.NBT.C.6,1.MD.A,1.MD.A.1,1.MD.A.2,2.OA.A,2.OA.A.1,2.OA.B,2.OA.B.2,2.NBT.A,2.NBT.A.1,2.NBT.A.1a,2.NBT.A.1b,2.NBT.A.2,2.NBT.A.3,2.NBT.A.4,2.NBT.B,2.NBT.B.5,2.NBT.B.6,2.NBT.B.7,2.NBT.B.8,2.NBT.B.9,2.MD.A,2.MD.A.1,2.MD.A.2,2.MD.A.3,2.MD.A.4,2.MD.B,2.MD.B.5,2.MD.B.6,3.OA.A,3.OA.A.1,3.OA.A.2,3.OA.A.3,3.OA.A.4,3.OA.B,3.OA.B.5,3.OA.B.6,3.OA.C,3.OA.C.7,3.OA.D,3.OA.D.8,3.OA.D.9,3.NF.A,3.NF.A.1,3.NF.A.2,3.NF.A.2a,3.NF.A.2b,3.NF.A.3,3.NF.A.3a,3.NF.A.3b,3.NF.A.3c,3.NF.A.3d,3.MD.A,3.MD.A.1,3.MD.A.2,3.MD.C,3.MD.C.5,3.MD.C.5a,3.MD.C.5b,3.MD.C.6,3.MD.C.7,3.MD.C.7a,3.MD.C.7b,3.MD.C.7c,3.MD.C.7d,4.OA.A,4.OA.A.1,4.OA.A.2,4.OA.A.3,4.NBT.A,4.NBT.A.1,4.NBT.A.2,4.NBT.A.3,4.NBT.B,4.NBT.B.4,4.NBT.B.5,4.NBT.B.6,4.NF.A,4.NF.A.1,4.NF.A.2,4.NF.B,4.NF.B.3,4.NF.B.3a,4.NF.B.3b,4.NF.B.3c,4.NF.B.3d,4.NF.B.4,4.NF.B.4a,4.NF.B.4b,4.NF.B.4c,4.NF.C,4.NF.C.5,4.NF.C.6,4.NF.C.7,5.NBT.A,5.NBT.A.1,5.NBT.A.2,5.NBT.A.3,5.NBT.A.3a,5.NBT.A.3b,5.NBT.A.4,5.NBT.B,5.NBT.B.5,5.NBT.B.6,5.NBT.B.7,5.NF.A,5.NF.A.1,5.NF.A.2,5.NF.B,5.NF.B.3,5.NF.B.4,5.NF.B.4a,5.NF.B.4b,5.NF.B.5,5.NF.B.5a,5.NF.B.5b,5.NF.B.6,5.NF.B.7,5.NF.B.7a,5.NF.B.7b,5.NF.B.7c,5.MD.C,5.MD.C.3,5.MD.C.3a,5.MD.C.3b,5.MD.C.4,5.MD.C.5,5.MD.C.5a,5.MD.C.5b,5.MD.C.5c,6.RP.A,6.RP.A.1,6.RP.A.2,6.RP.A.3,6.RP.A.3a,6.RP.A.3b,6.RP.A.3c,6.RP.A.3d,6.NS.A,6.NS.A.1,6.NS.C,6.NS.C.5,6.NS.C.6,6.NS.C.6a,6.NS.C.6b,6.NS.C.6c,6.NS.C.7,6.NS.C.7a,6.NS.C.7b,6.NS.C.7c,6.NS.C.7d,6.NS.C.8,6.EE.A,6.EE.A.1,6.EE.A.2,6.EE.A.2a,6.EE.A.2b,6.EE.A.2c,6.EE.A.3,6.EE.A.4,6.EE.B,6.EE.B.5,6.EE.B.6,6.EE.B.7,6.EE.B.8,6.EE.C,6.EE.C.9,7.RP.A,7.RP.A.1,7.RP.A.2,7.RP.A.2a,7.RP.A.2b,7.RP.A.2c,7.RP.A.2d,7.RP.A.3,7.NS.A,7.NS.A.1,7.NS.A.1a,7.NS.A.1b,7.NS.A.1c,7.NS.A.1d,7.NS.A.2,7.NS.A.2a,7.NS.A.2b,7.NS.A.2c,7.NS.A.2d,7.NS.A.3,7.EE.A,7.EE.A.1,7.EE.A.2,7.EE.B,7.EE.B.3,7.EE.B.4,7.EE.B.4a,7.EE.B.4b,8.EE.A,8.EE.A.1,8.EE.A.2,8.EE.A.3,8.EE.A.4,8.EE.B,8.EE.B.5,8.EE.B.6,8.EE.C,8.EE.C.7,8.EE.C.7a,8.EE.C.7b,8.EE.C.8,8.EE.C.8a,8.EE.C.8b,8.EE.C.8c,8.F.A,8.F.A.1,8.F.A.2,8.F.A.3,8.F.B,8.F.B.4,8.F.B.5,8.G.A,8.G.A.1,8.G.A.1a,8.G.A.1b,8.G.A.1c,8.G.A.2,8.G.A.3,8.G.A.4,8.G.A.5,8.G.B,8.G.B.6,8.G.B.7,8.G.B.8",
-    "supporting": "K.MD.B,K.MD.B.3,K.G.B,K.G.B.4,K.G.B.5,K.G.B.6,1.MD.C,1.MD.C.4,2.OA.C,2.OA.C.3,2.OA.C.4,2.MD.C,2.MD.C.7,2.MD.C.8,2.MD.D,2.MD.D.9,2.MD.D.10,3.MD.B,3.MD.B.3,3.MD.B.4,3.G.A,3.G.A.1,3.G.A.2,4.OA.B,4.OA.B.4,4.MD.A,4.MD.A.1,4.MD.A.2,4.MD.A.3,4.MD.B,4.MD.B.4,5.MD.A,5.MD.A.1,5.MD.B,5.MD.B.2,6.G.A,6.G.A.1,6.G.A.2,6.G.A.3,6.G.A.4,7.SP.A,7.SP.A.1,7.SP.A.2,7.SP.C,7.SP.C.5,7.SP.C.6,7.SP.C.7,7.SP.C.7a,7.SP.C.7b,7.SP.C.8,7.SP.C.8a,7.SP.C.8b,7.SP.C.8c,8.NS.A,8.NS.A.1,8.NS.A.2,8.SP.A,8.SP.A.1,8.SP.A.2,8.SP.A.3,8.SP.A.4",
-    "additional": "K.MD.A,K.MD.A.1,K.MD.A.2,K.G.A,K.G.A.1,K.G.A.2,K.G.A.3,1.MD.B,1.MD.B.3,1.G.A,1.G.A.1,1.G.A.2,1.G.A.3,2.G.A,2.G.A.1,2.G.A.2,2.G.A.3,3.NBT.A,3.NBT.A.1,3.NBT.A.2,3.NBT.A.3,3.MD.D,3.MD.D.8,4.OA.C,4.OA.C.5,4.MD.C,4.MD.C.5,4.MD.C.5a,4.MD.C.5b,4.MD.C.6,4.MD.C.7,4.G.A,4.G.A.1,4.G.A.2,4.G.A.3,5.OA.A,5.OA.A.1,5.OA.A.2,5.OA.B,5.OA.B.3,5.G.A,5.G.A.1,5.G.A.2,5.G.B,5.G.B.3,5.G.B.4,6.NS.B,6.NS.B.2,6.NS.B.3,6.NS.B.4,6.SP.A,6.SP.A.1,6.SP.A.2,6.SP.A.3,6.SP.B,6.SP.B.4,6.SP.B.5,6.SP.B.5a,6.SP.B.5b,6.SP.B.5c,6.SP.B.5d,7.G.A,7.G.A.1,7.G.A.2,7.G.A.3,7.G.B,7.G.B.4,7.G.B.5,7.G.B.6,7.SP.B,7.SP.B.3,7.SP.B.4,8.G.C,8.G.C.9",
-    "widely": "N-RN.A,N-RN.A.1,N-RN.A.2,N-RN.B,N-RN.B.3,N-Q.A,N-Q.A.1,N-Q.A.2,N-Q.A.3,A-SSE.A,A-SSE.A.1,A-SSE.A.1a,A-SSE.A.1b,A-SSE.A.2,A-SSE.B,A-SSE.B.3,A-SSE.B.3a,A-SSE.B.3b,A-SSE.B.3c,A-SSE.B.4,A-APR.A,A-APR.A.1,A-APR.B,A-APR.B.2,A-APR.B.3,A-APR.C,A-APR.C.4,A-APR.C.5,A-APR.D,A-APR.D.6,A-APR.D.7,A-CED.A,A-CED.A.1,A-CED.A.2,A-CED.A.3,A-CED.A.4,A-REI.A,A-REI.A.1,A-REI.A.2,A-REI.B,A-REI.B.3,A-REI.B.4,A-REI.B.4a,A-REI.B.4b,A-REI.C,A-REI.C.5,A-REI.C.6,A-REI.C.7,A-REI.C.8,A-REI.C.9,A-REI.D,A-REI.D.10,A-REI.D.11,A-REI.D.12,F-IF.A,F-IF.A.1,F-IF.A.2,F-IF.A.3,F-IF.B,F-IF.B.4,F-IF.B.5,F-IF.B.6,F-IF.C,F-IF.C.7,F-IF.C.7a,F-IF.C.7b,F-IF.C.7c,F-IF.C.7d,F-IF.C.7e,F-IF.C.8,F-IF.C.8a,F-IF.C.8b,F-IF.C.9,F-BF.A,F-BF.A.1,F-BF.A.1a,F-BF.A.1b,F-BF.A.1c,F-LE.A.1,F-LE.A.1a,F-LE.A.1b,F-LE.A.1c,G-CO.A,G-CO.A.1,G-CO.A.2,G-CO.A.3,G-CO.A.4,G-CO.A.5,G-CO.B,G-CO.B.6,G-CO.B.7,G-CO.B.8,G-CO.C,G-CO.C.9,G-CO.C.10,G-SRT.A,G-SRT.A.1,G-SRT.A.1a,G-SRT.A.1b,G-SRT.A.2,G-SRT.A.3,G-SRT.B,G-SRT.B.4,G-SRT.B.5,G-SRT.C,G-SRT.C.6,G-SRT.C.7,G-SRT.C.8,S-ID.A.2,S-ID.C.7,S-IC.A,S-IC.A.1",
-    "widelyclusters": "N-RN.A,N-RN.B,N-Q.A,A-SSE.A,A-SSE.B,A-APR.A,A-APR.B,A-APR.C,A-APR.D,A-CED.A,A-REI.A,A-REI.B,A-REI.C,A-REI.D,F-IF.A,F-IF.B,F-IF.C,F-BF.A,G-CO.A,G-CO.B,G-CO.C,G-SRT.A,G-SRT.B,G-SRT.C,S-IC.A",
     "clusters": "K.CC.A,K.CC.B,K.CC.C,K.OA.A,K.NBT.A,K.MD.A,K.MD.B,K.G.A,K.G.B,1.OA.A,1.OA.B,1.OA.C,1.OA.D,1.NBT.A,1.NBT.B,1.NBT.C,1.MD.A,1.MD.B,1.MD.C,1.G.A,2.OA.A,2.OA.B,2.OA.C,2.NBT.A,2.NBT.B,2.MD.A,2.MD.B,2.MD.C,2.MD.D,2.G.A,3.OA.A,3.OA.B,3.OA.C,3.OA.D,3.NBT.A,3.NF.A,3.MD.A,3.MD.B,3.MD.C,3.MD.D,3.G.A,4.OA.A,4.OA.B,4.OA.C,4.NBT.A,4.NBT.B,4.NF.A,4.NF.B,4.NF.C,4.MD.A,4.MD.B,4.MD.C,4.G.A,5.OA.A,5.OA.B,5.NBT.A,5.NBT.B,5.NF.A,5.NF.B,5.MD.A,5.MD.B,5.MD.C,5.G.A,5.G.B,6.RP.A,6.NS.A,6.NS.B,6.NS.C,6.EE.A,6.EE.B,6.EE.C,6.G.A,6.SP.A,6.SP.B,7.RP.A,7.NS.A,7.EE.A,7.EE.B,7.G.A,7.G.B,7.SP.A,7.SP.B,7.SP.C,8.NS.A,8.EE.A,8.EE.B,8.EE.C,8.F.A,8.F.B,8.G.A,8.G.B,8.G.C,8.SP.A,N-RN.A,N-RN.B,N-Q.A,N-CN.A,N-CN.B,N-CN.C,N-VM.A,N-VM.B,N-VM.C,A-SSE.A,A-SSE.B,A-APR.A,A-APR.B,A-APR.C,A-APR.D,A-CED.A,A-REI.A,A-REI.B,A-REI.C,A-REI.D,F-IF.A,F-IF.B,F-IF.C,F-BF.A,F-BF.B,F-LE.A,F-LE.B,F-TF.A,F-TF.B,F-TF.C,G-CO.A,G-CO.B,G-CO.C,G-CO.D,G-SRT.A,G-SRT.B,G-SRT.C,G-SRT.D,G-C.A,G-C.B,G-GPE.A,G-GPE.B,G-GMD.A,G-GMD.B,G-MG.A,S-ID.A,S-ID.B,S-ID.C,S-IC.A,S-IC.B,S-CP.A,S-CP.B,S-MD.A,S-MD.B",
     "cai": {
 	    "ela": {
@@ -12,51 +7,63 @@ window.standardsData = {
                 "b": "Focus each lesson on a high-quality text (or multiple texts)."
             },
             "ca2": {
-                "c": "Employ questions and tasks, both oral and written, that are text-specific and reflect the standards."
+                "c": "Employ questions and tasks, both oral and written, that are text-specific and accurately address the analytical thinking required by the grade-level standards."
             },
             "ca3": {
                 "c": "Provide all students with opportunities to engage in the work of the lesson."
             },
+            "i1a": {
+                "a": "A majority of the lesson is spent listening to, reading, writing, or speaking about text(s).",
+                "b": "A majority of the lesson is spent reading, writing, or speaking about text(s)."
+            },
             "i1b": {
-                "a": "The text(s) are above the complexity level expected for the grade and time in the school year.",
+                "a": "The anchor text(s) are at or above the complexity level expected for the grade and time in the school year.",
                 "b": "The text(s) are at or above the complexity level expected for the grade and time in the school year."
             },
             "i1c": {
-                "a": "The text(s) exhibit exceptional craft and thought and/or provide useful information; where appropriate the texts are richly illustrated.",
-                "b": "The text(s) exhibit exceptional craft and thought and/or provide useful information."
+                "a": "The text(s) exhibit exceptional craft and thought and/or provide meaningful information in the service of building knowledge; where appropriate, the texts are richly illustrated.",
+                "b": "The text(s) exhibit exceptional craft and thought and/or provide meaningful information in the service of building knowledge."
+            },
+            "i2a": {
+            	"a": "Questions and tasks address the text by attending to its particular qualitative features: its meaning/purpose and/or language, structure(s), or knowledge demands.",
+            	"b": "Questions and tasks address the text by attending to its particular qualitative features: its meaning/purpose and/or language, structure(s), or knowledge demands."
             },
             "i2b": {
             	"a": "Questions and tasks require students to use evidence from text to demonstrate understanding and to support their ideas about the text. These ideas are expressed through a variety of means (e.g. drawing, writing, dramatic play, speaking).",
             	"b": "Questions and tasks require students to use evidence from the text to demonstrate understanding and to support their ideas about the text. These ideas are expressed through both written and oral responses."
             },
             "i2c": {
-                "a": "Questions and tasks attend to the words, phrases and sentences within the text.",
-                "b": "Questions and tasks attend to the words, phrases and sentences within the text."
+                "a": "Questions and tasks attend to the words (academic vocabulary), phrases, and sentences within the text.",
+                "b": "Questions and tasks attend to the words (academic vocabulary), phrases, and sentences within the text."
             },
             "i3a": {
-                "a": "The teacher keeps all students perservering with challenging tasks. Students habitually display persistence with challenging tasks, particularly when providing textual evidence to support answers and responses, both orally and in writing.",
-                "b": "The teacher keeps all students perservering with challenging tasks. Students habitually display persistence with challenging tasks, particularly when providing textual evidence to support answers and responses, both orally and in writing."
+                "a": "The teacher poses questions and tasks for students to do the majority of the work: speaking/listening, reading, and/or writing. Students do the majority of the work of the lesson.",
+                "b": "The teacher poses questions and tasks for students to do the majority of the work: speaking/listening, reading, and/or writing. Students do the majority of the work of the lesson."
             },
             "i3b": {
-                "a": "The teacher encourages reasoning and problem solving by posing challenging questions and tasks that offer opportunities for productive struggle. Students persevere in solving questions and tasks in the face of initial difficulty.",
-                "b": "The teacher expects evidence and precision from students and probes students’ answers accordingly. Students habitually display persistence in providing textual evidence to support answers and responses, both orally and in writing."
+                "a": "The teacher cultivates reasoning and meaning making by allowing students to productively struggle. Students persevere through difficulty.",
+                "b": "The teacher cultivates reasoning and meaning making by allowing students to productively struggle. Students persevere through difficulty."
             },
             "i3c": {
-                "a": "The teacher guides students to read with purpose and understanding by making frequent connections between acquisition of foundational skills and making meaning from reading. Students demonstrate comprehension while developing foundational skills in reading.",
-                "b": "The teacher encourages reasoning and problem solving by posing challenging questions and tasks that offer opportunities for productive struggle. Students persevere in solving questions and tasks in the face of initial difficulty."
+                "a": "The teacher expects evidence and precision from students and probes students’ answers accordingly. Students provide text evidence to support their ideas and display precision in their oral and/or written responses.",
+                "b": "The teacher expects evidence and precision from students and probes students’ answers accordingly. Students provide text evidence to support their ideas and display precision in their oral and/or written responses."
             },
             "i3d": {
-                "a": "The teacher demonstrates awareness and appropriate action regarding the variations present in student progress toward reading independently. When appropriate, students demonstrate progress toward independence in reading and writing.",
-                "b": "The teacher demonstrates awareness and appropriate action regarding the variations present in student progress toward reading independently. When appropriate, students demonstrate progress toward independence in reading and writing."
+                "a": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking. Students talk and ask questions about each other’s thinking, in order to clarify or improve their understanding.",
+                "b": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking. Students talk and ask questions about each other’s thinking, in order to clarify or improve their understanding."
             },
             "i3e": {
-                "a": "The teacher focuses on explicitly and systematically strengthening students’ reading foundational skills. Students demonstrate use of language conventions and decoding skills, activating such strategies as needed to read, write, and speak with grade-level fluency and skill.",
-                "b": "When appropriate, the teacher explicitly attends to strengthening students’ language and reading foundational skills. Students demonstrate use of language conventions and decoding skills, activating such strategies as needed to read, write, and speak with grade-level fluency and skill."
+                "a": "The teacher deliberately checks for understanding throughout the lesson and adapts the lesson according to student understanding. When appropriate, students refine written and/or oral responses.",
+                "b": "The teacher deliberately checks for understanding throughout the lesson and adapts the lesson according to student understanding. When appropriate, students refine written and/or oral responses."
+            },
+            "i3f": {
+              "a": "When appropriate, the teacher explicitly attends to strengthening students’ language and reading foundational skills. Students demonstrate use of language conventions and decoding skills, activating such strategies as needed to read, write, and speak with grade-level fluency and skill.",
+              "b": "When appropriate, the teacher explicitly attends to strengthening students’ language and reading foundational skills. Students demonstrate use of language conventions and decoding skills, activating such strategies as needed to read, write, and speak with grade-level fluency and skill."
             }
         },
         "math": {
             "ca1": {
-                "c": "Ensure the work of the lesson reflects the Shifts required by the CCSS for Mathematics."
+                "c": "Ensure the work of the enacted lesson reflects the Focus, Coherence, and Rigor required by college- and career- ready standards in mathematics."
             },
             "ca2": {
                 "a": "Employ instructional practices that allow all students to learn the content of the lesson.",
@@ -67,56 +74,56 @@ window.standardsData = {
                 "b": "Provide all students with opportunities to exhibit mathematical practices while engaging with the content of the lesson."
             },
             "i1a": {
-                "a": "The lesson focuses on the depth of grade-level cluster(s), grade-level content standard(s) or part(s) thereof.",
-                "b": "The lesson focuses on the depth of course-level cluster(s), course-level content standard(s) or part(s) thereof."
+                "a": "The enacted lesson focuses on the grade-level cluster(s), grade-level content standard(s), or part(s) thereof.",
+                "b": "The enacted lesson focuses on the course-level cluster(s), course-level content standard(s), or part(s) thereof."
             },
             "i1b": {
-                "a": "The lesson intentionally relates new concepts to students’ prior skills and knowledge.",
-                "b": "The lesson intentionally relates new concepts to students’ prior skills and knowledge."
+                "a": "The enacted lesson appropriately relates new content to math content within or across grades.",
+                "b": "The enacted lesson appropriately relates new content to math content within or across grades."
             },
             "i1c": {
-                "a": "The lesson intentionally targets the aspect(s) of rigor (conceptual understanding, procedural skill and fluency, application) called for by the standard(s) being addressed.",
-                "b": "The lesson intentionally targets the aspect(s) of rigor (conceptual understanding, procedural skill and fluency, application) called for by the standard(s) being addressed."
+                "a": "The enacted lesson intentionally targets the aspect(s) of Rigor (conceptual understanding, procedural skill and fluency, application) called for by the standard(s) being addressed.",
+                "b": "The enacted lesson intentionally targets the aspect(s) of Rigor (conceptual understanding, procedural skill and fluency, application) called for by the standard(s) being addressed."
             },
             "i2a": {
-                "a": "The teacher makes the mathematics of the lesson explicit by using explanations, representations, and/or examples.",
-                "b": "The teacher makes the mathematics of the lesson explicit by using explanations, representations, and/or examples."
+                "a": "The teacher makes the mathematics of the lesson explicit through the use of explanations, representations, tasks, and/or examples.",
+                "b": "The teacher makes the mathematics of the lesson explicit through the use of explanations, representations, tasks, and/or examples."
             },
             "i2b": {
-                "a": "The teacher provides opportunities for students to work with and practice grade-level problems and exercises.",
-                "b": "The teacher provides opportunities for students to work with and practice course-level problems and exercises."
+                "a": "The teacher strengthens all students’ understanding of the content by strategically sharing a students’ representations and/or solution methods.",
+                "b": "The teacher strengthens all students’ understanding of the content by strategically sharing a students’ representations and/or solution methods."
             },
             "i2c": {
-                "a": "The teacher strengthens all students’ understanding of the content by sharing a variety of students’ representations and solution methods.",
-                "b": "The teacher strengthens all students’ understanding of the content by sharing a variety of students’ representations and solution methods."
+                "a": "The teacher deliberately checks for understanding throughout the lesson to surface misconceptions and opportunities for growth, and adapts the lesson according to student understanding.",
+                "b": "The teacher deliberately checks for understanding throughout the lesson to surface misconceptions and opportunities for growth, and adapts the lesson according to student understanding."
             },
             "i2d": {
-                "a": "The teacher deliberately checks for understanding throughout the lesson and adapts the lesson according to student understanding.",
-                "b": "The teacher deliberately checks for understanding throughout the lesson and adapts the lesson according to student understanding."
+                "a": "The teacher facilitates the summary with references to student work and discussion in order to reinforce the purpose of the lesson.",
+                "b": "The teacher facilitates the summary with references to student work and discussion in order to reinforce the purpose of the lesson."
             },
             "i2e": {
-                "a": "The teacher summarizes the mathematics with references to student work and discussion in order to reinforce the focus of the lesson.",
-                "b": "The teacher summarizes the mathematics with references to student work and discussion in order to reinforce the focus of the lesson."
+                "a": "The teacher strengthens all students’ understanding of the content by strategically sharing a variety of students’ representations and solution methods.",
+                "b": "The teacher strengthens all students’ understanding of the content by strategically sharing a variety of students’ representations and solution methods."
             },
             "i3a": {
-                "a": "The teacher poses high quality  questions and problems that prompt students to share their developing thinking about the content of the lesson.<br/><br/>Students share their developing thinking about the content of the lesson.",
-                "b": "The teacher poses high quality questions and problems that prompt students to share their developing thinking about the content of the lesson.<br/><br/>Students share their developing thinking about the content of the lesson."
+                "a": "The teacher provides opportunities for all students to work with and practice grade-level problems and exercises.<br/><br/>Students work with and practice grade-level problems and exercises.",
+                "b": "The teacher provides opportunities for all students to work with and practice course-level problems and exercises.<br/><br/>Students work with and practice course-level problems and exercises."
             },
             "i3b": {
-                "a": "The teacher encourages reasoning and problem solving by posing challenging problems that offer opportunities for productive struggle.<br/><br/>Students persevere in solving problems in the face of initial difficulty.",
-                "b": "The teacher encourages reasoning and problem solving by posing challenging problems that offer opportunities for productive struggle.<br/><br/>Students persevere in solving problems in the face of initial difficulty."
+                "a": "The teacher cultivates reasoning and problem solving by allowing students to productively struggle.<br/><br/>Students persevere in solving problems in the face of difficulty.",
+                "b": "The teacher cultivates reasoning and problem solving by allowing students to productively struggle.<br/><br/>Students persevere in solving problems in the face of difficulty."
             },
             "i3c": {
-                "a": "The teacher establishes a classroom culture in which students explain their thinking.<br/><br/>Students elaborate with a second sentence (spontaneously or prompted by the teacher or another student) to explain their thinking and connect it to their first sentence.",
-                "b": "The teacher establishes a classroom culture in which students explain their thinking.<br/><br/>Students elaborate with a second sentence (spontaneously or prompted by the teacher or another student) to explain their thinking and connect it to their first sentence."
+                "a": "The teacher poses questions and problems that prompt students to explain their thinking about the content of the lesson.<br/><br/>Students share their thinking about the content of the lesson beyond just stating answers.",
+                "b": "The teacher poses questions and problems that prompt students to explain their thinking about the content of the lesson.<br/><br/>Students share their thinking about the content of the lesson beyond just stating answers."
             },
             "i3d": {
-                "a": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking.<br/><br/>Students talk about and ask questions about each other’s thinking, in order to clarify or improve their own mathematical understanding.",
-                "b": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking.<br/><br/>Students talk about and ask questions about each other’s thinking, in order to clarify or improve their own mathematical understanding."
+                "a": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking.<br/><br/>Students talk and ask questions about each other’s thinking, in order to clarify or improve their own mathematical understanding.",
+                "b": "The teacher creates the conditions for student conversations where students are encouraged to talk about each other’s thinking.<br/><br/>Students talk and ask questions about each other’s thinking, in order to clarify or improve their own mathematical understanding."
             },
             "i3e": {
-                "a": "The teacher connects and develops students' informal language to precise mathematical language appropriate to their grade.<br/><br/>Students use precise mathematical language in their explanations and discussions.",
-                "b": "The teacher connects and develops students' informal language to precise mathematical language appropriate to their grade.<br/><br/>Students use precise mathematical language in their explanations and discussions."
+                "a": "The teacher connects and develops students’ informal language and mathematical ideas to precise mathematical language and ideas.<br/><br/>Students use increasingly precise mathematical language and ideas.",
+                "b": "The teacher connects and develops students’ informal language and mathematical ideas to precise mathematical language and ideas.<br/><br/>Students use increasingly precise mathematical language and ideas."
             },
             "i3f": {
                 "a": "The teacher establishes a classroom culture in which students choose and use appropriate tools when solving a problem.<br/><br/>Students use appropriate tools strategically when solving a problem.",
@@ -757,12 +764,36 @@ window.standardsData = {
     }
 };
 
-var standardsHTML = $(require('../data/standards-select.html'));
+var standardsHTML = $(window._standardsHTML);
 
-window.standardsData.ela = standardsHTML.filter('.standards-ela').find('option').map(function() { 
+window.standardsData.ela = standardsHTML.filter('.standards-ela').find('option').map(function() {
 	return { id:this.value, description:this.innerHTML.replace(this.value+": ", "") };
 }).get();
 
-window.standardsData.math = standardsHTML.filter('.standards-math').find('option').map(function() { 
+window.standardsData.math = standardsHTML.filter('.standards-math').find('option').map(function() {
 	return { id:this.value, description:_.unescape(this.innerHTML.replace(this.value+": ", "")) };
 }).get();
+
+window.standardsData.major = standardsHTML.filter('.standards-math').find('option[data-msa="0"]').map(function() {
+	return this.value;
+}).get().join(',');
+
+window.standardsData.supporting = standardsHTML.filter('.standards-math').find('option[data-msa="1"]').map(function() {
+	return this.value;
+}).get().join(',');
+
+window.standardsData.additional = standardsHTML.filter('.standards-math').find('option[data-msa="2"]').map(function() {
+	return this.value;
+}).get().join(',');
+
+window.standardsData.widely = standardsHTML.filter('.standards-math').find('option[data-wap="0"]').filter(function () {
+	return this.value.split('.').length > 2
+}).map(function () {
+	return this.value;
+}).get().join(',');
+
+window.standardsData.widelyclusters = standardsHTML.filter('.standards-math').find('option[data-wap="0"]').filter(function () {
+	return this.value.split('.').length <= 2
+}).map(function () {
+	return this.value;
+}).get().join(',');

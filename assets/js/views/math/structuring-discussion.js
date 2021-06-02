@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'view-templates/math/structuring-discussion.html', 'tinymce', 'views/math/_base'], 
-    function ($, template, tinyMCE, mathBase)
+    ['jquery', 'view-templates/math/structuring-discussion.html', 'tinymce', 'views/math/_base'],
+    function ($, template, tinymce, mathBase)
 {
-	var structuringDiscussion = 
+	var structuringDiscussion =
 	{
 		template: template,
 
@@ -14,7 +14,7 @@ define(
 			viewData.markup = this.template;
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -24,11 +24,11 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking about Structuring Discussions'],
 					'Effective teaching of mathematics facilitates discourse among students to build shared understanding of mathematical ideas by analyzing and comparing student approaches and arguments.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -44,12 +44,12 @@ define(
 'Listening carefully to and critiquing the reasoning of peers, using examples to support or counterexamples to refute arguments.'
 ].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 35 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 35 NCTM. 2014 www.nctm.org)',
 				],
-				'!ca2/i2a,i2c'
+				'!ca2/i2a,i2b'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#scd1-text');

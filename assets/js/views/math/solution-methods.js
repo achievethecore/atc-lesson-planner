@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'tinymce', 'views/math/_base'], 
-    function ($, tinyMCE, mathBase)
+    ['jquery', 'tinymce', 'views/math/_base'],
+    function ($, tinymce, mathBase)
 {
-	var solutionMethods = 
+	var solutionMethods =
 	{
 
 		getViewMarkup: function(content)
@@ -13,7 +13,7 @@ define(
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -23,14 +23,15 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
-				'!ca2/i2c'
+			return [
+				'!ca2/i2b'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#solmeth-text');
+      mathBase.createMCE('#solmeth2-text');
 		}
 
 	};

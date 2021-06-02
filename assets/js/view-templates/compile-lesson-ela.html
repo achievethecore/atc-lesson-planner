@@ -14,12 +14,10 @@
 
 
 {{#if attached}}
-<div class="segment-div"><hr /></div>
-
 <div class="segment">
+<a name="attached"></a>
 <div class="segment-title">Attached Documents</div>
 {{#csv attached}}
-<p>{{this}}</p>
 <div class="inline-image">{{imagify}}</div>
 {{/csv}}
 </div>

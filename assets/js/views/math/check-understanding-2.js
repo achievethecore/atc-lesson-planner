@@ -1,10 +1,10 @@
 define(
-    ['jquery', 'modules/view', 'tinymce', 'views/math/_base'], 
-    function ($, view, tinyMCE, mathBase)
+    ['jquery', 'modules/view', 'tinymce', 'views/math/_base'],
+    function ($, view, tinymce, mathBase)
 {
 	var id = 'cu1';
-	
-	var checkUnderstanding = 
+
+	var checkUnderstanding =
 	{
 
 		getViewMarkup: function(content)
@@ -15,7 +15,7 @@ define(
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -25,11 +25,11 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking About Checks for Understanding'],
 					' Effective teaching of mathematics uses evidence of student thinking to assess progress toward mathematical understanding and to adjust instruction continually in ways that support and extend learning.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -50,13 +50,13 @@ define(
 							'Assessing and monitoring their own progress toward mathematics learning goals and identifying areas in which they need to improve.'
 						].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 56 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 56 NCTM. 2014 www.nctm.org)',
 				],
-				mathBase.PDSimple('Strategies', 'There are many techniques to check for understanding.  It will be important to use a variety of strategies to get a good sense of where students are and to be able to adjust the current lesson or next day\'s lesson accordingly (e.g., administering exit tickets, students self-assessing using fist to five, teacher recording observations of student understanding.)'),
-				'!ca2/i2d'
+				mathBase.PDSimple('Strategies', 'There are many techniques to check for understanding.  It is important to use a variety of strategies to get a good sense of where students are and to be able to adjust the current lesson or next day\'s lesson accordingly (e.g., administering exit tickets, students self-assessing using fist to five, teacher recording observations of student understanding.)'),
+				'!ca2/i2c'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#'+id+'-text');

@@ -36,3 +36,14 @@
     	.actions { display: none; }
     }
 }
+
+@media screen {
+  body.plan {
+      margin: 40px;
+  }
+  
+  body.plan .inline-image {
+      font-size: 18px;
+      line-height: 30px;
+  }
+}

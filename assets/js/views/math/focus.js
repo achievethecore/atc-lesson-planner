@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'view-templates/math/focus.html', 'modules/state-manager', 'modules/sidebar-right', 'modules/utils', 'tinymce', 'views/math/_base'], 
-    function ($, template, stateManager, sidebarRight, utils, tinyMCE, mathBase)
+    ['jquery', 'view-templates/math/focus.html', 'modules/state-manager', 'modules/sidebar-right', 'modules/utils', 'tinymce', 'views/math/_base'],
+    function ($, template, stateManager, sidebarRight, utils, tinymce, mathBase)
 {
-	var focus = 
+	var focus =
 	{
 		template: template,
 
@@ -14,7 +14,7 @@ define(
 			viewData.markup = this.template;
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -22,22 +22,22 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					'For more information, ',
 					['a', {href:'http://vimeo.com/92784229', target:'_blank'}, 'view this video'], '.'
 				],
-				['div', 
+				['div',
 					['a', {href:focus.getFocusLink(), target:'_blank'}, 'The focus documents'],
 					' also help to put the Major Work of the Grade in a coherent sequence.'
 				],
 				'!ca1/i1a'
 				];
 		},
-		
-		getFocusLink: function() 
+
+		getFocusLink: function()
 		{
 			var grade = utils.lessonGrade;
 			if (grade == 'k') {
@@ -48,7 +48,7 @@ define(
 				grade = parseInt(grade);
 			}
 
-			var link = [
+			/*var link = [
 				'http://achievethecore.org/page/630/focus-in-kindergarten-detail-pg',
 				'http://achievethecore.org/page/631/focus-in-grade-one-detail-pg',
 				'http://achievethecore.org/page/633/focus-in-grade-two-detail-pg',
@@ -59,8 +59,19 @@ define(
 				'http://achievethecore.org/page/638/focus-in-grade-seven-detail-pg',
 				'http://achievethecore.org/page/639/focus-in-grade-eight-detail-pg',
 				'http://achievethecore.org/prerequisites'
-			][grade];
-			
+			][grade];*/
+      var link = [
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_K%252011.12.14.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_1.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_2.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_3.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_4.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_5.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_6.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_7.pdf&embedded=true',
+        'https://docs.google.com/gview?url=https%3A%2F%2Fachievethecore.org%2Fcontent%2Fupload%2FSAP_Focus_Math_8.pdf&embedded=true'
+      ][grade];
+
 			return link;
 		},
 
@@ -88,7 +99,7 @@ define(
 
 
 			$('.view.focus p a').attr('href', focus.getFocusLink());
-			
+
 		},
 
 		loadStandards: function()
@@ -101,13 +112,13 @@ define(
 			{
 				standards = true;
 				var allTags = blob['standards-tags'].split(',');
-				
+
 				// Filter out all clusters
 				allTags = _.reject(allTags, function(val) {
 					return val.substr(0,7)=='CLUSTER';
 				});
-				
-				// Grade Labeling 
+
+				// Grade Labeling
 				var grade = utils.lessonGrade;
 				var gradeLabel;
 				if (grade=="9" || grade=="10" || grade=="11" || grade=="12") {
@@ -145,7 +156,7 @@ define(
 							$('.view.focus .hs .major .standards-selected span').append(tagMarkup);
 						});
 					}
-					
+
 					// Sort clusters
 					var widelyClusterBlob = sidebarRight.jsonStandards.widelyclusters;
 					var widelyClusterTags = widelyClusterBlob.split(',');
@@ -173,12 +184,12 @@ define(
 
 					var additionalBlob = sidebarRight.jsonStandards.additional;
 					var additionalTags = additionalBlob.split(',');
-					
+
 					var majorMatches = _.intersection(majorTags, allTags);
 					var supportingMatches = _.intersection(supportingTags, allTags);
 					var additionalMatches = _.intersection(additionalTags, allTags);
-					
-					
+
+
 					var standardToTag = function(id) {
 							return ['a', {class:'standards-btn '+ (/CLUSTER/.test(id)?'cluster-btn':'')}, ['b', id, ': '],
 								_.findWhere(sidebarRight.jsonStandards.math,{id: id}).description].toDomNodes();
@@ -212,12 +223,12 @@ define(
 				}
 			}
 
-			
+
 			// -- Check for other, than check for standards
 			var otherVal = stateManager.dataJson['cs-other'];
 			if (otherVal!==undefined && otherVal!=='') {
 				$('.screen-alternate').css('display', 'block');
-			} else 
+			} else
 			{
 				if (standards) {
 					$('.screen-ok').css('display', 'block');

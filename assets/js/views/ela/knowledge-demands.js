@@ -1,11 +1,11 @@
 define(
-    ['jquery', 'modules/view', 'modules/state-manager', 'tinymce'], 
-    function($, view, stateManager, tinyMCE)
+    ['jquery', 'modules/view', 'modules/state-manager', 'tinymce'],
+    function($, view, stateManager, tinymce)
 {
-		
+
 	var id = 'kd';
-	
-	var meaningPurpose = 
+
+	var meaningPurpose =
 	{
 
 		getViewMarkup: function(content)
@@ -19,7 +19,7 @@ define(
 				app.showDashboard();
 			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -36,15 +36,15 @@ define(
 						'The text makes many assumptions about the extent of prior knowledge the reader has, for example. ____.  The text does not explain or provide the necessary background knowledge for comprehension.',
 						].map(function(e) { return ['li', e]; })
 					);
-			
+
 			return stateManager.isInformational()?
 			[
-				['div', 
+				['div',
 					['h4', 'Determining Evidence'],
 					'To determine the knowledge demands, try completing these sentences:',
 					sec2list
 				],
-				['div', 
+				['div',
 					['h4', 'Determining Complexity'],
 					'Texts that make few assumptions about the extent of prior knowledge and content/discipline knowledge are generally less complex than are texts that make many assumptions in one or more of those areas.'
 				],
@@ -55,12 +55,12 @@ define(
 				'!ca1/i1b'
 			]
 			:[
-				['div', 
+				['div',
 					['h4', 'Determining Evidence'],
 					'To determine the knowledge demands, try completing these sentences:',
 					sec2list
 				],
-				['div', 
+				['div',
 					['h4', 'Determining Complexity'],
 					'Texts that make few assumptions about the extent of prior knowledge and the depth of their cultural/literary and content/discipline knowledge are generally less complex than are texts that make many assumptions in one or more of those areas.'
 				],
@@ -68,10 +68,10 @@ define(
 					'Some knowledge of farm life helps in understanding the setting, but is not essential to have prior to reading the book. The text itself helps you build knowledge about life on a farm, spiders, and the seasons.',
 					'The text explores multiple complex themes and describes experiences far removed from the average reader. There is no prior knowledge needed to gain access to the text; however, references to the Ninth Three-Year Plan will have greater impact on students familiar with Stalin’s five-year plans in Communist Russia.'
 				),
-				'!ca1/i1b'
+				'!ca1/i1c'
 			];
 		},
-		
+
 		initView: function()
 		{
 			elaBase.createMCE('#'+id+'-text');

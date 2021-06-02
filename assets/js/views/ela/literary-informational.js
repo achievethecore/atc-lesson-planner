@@ -2,9 +2,9 @@ define(
     ['jquery', 'view-templates/ela/literary-informational.html'],
     function($, template)
 {
-	var literaryInformational = 
+	var literaryInformational =
 	{
-		
+
 
 		getViewMarkup: function(content)
 		{
@@ -12,7 +12,7 @@ define(
 			viewData.markup = template;
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -22,8 +22,8 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
-				['div', 
+			return [
+				['div',
 					['h4', 'Determining Qualitative Complexity'],
 					'To determine the qualitative complexity, you need to review the text for specific features and then you will be asked to rate it on a rubric, ranging from slightly complex to exceedingly complex based upon your evidence.  The two features that are more influential are uncommon vocabulary and complex sentences.  What makes a text complex?',
 					['ul'].concat(
@@ -38,7 +38,7 @@ define(
 'Multiple and/or subtle themes and purposes',
 'Unfamiliar settings, topics or events',
 'Lack of repetition, overlap, or similarity in words and sentences'].map(function(e) { return ['li', e]; })
-					) 
+					)
 				],
 				['div',
 					['h4', 'Evaluating Qualitative Features of Texts'],
@@ -46,19 +46,19 @@ define(
 					 ['p', ['a', {href: 'http://achievethecore.org/content/upload/SCASS_Text_Complexity_Qualitative_Measures_Lit_Rubric_2.8.pdf', target:'_blank'}, 'SCASS Rubric for Literary Texts']],
 					['p', ['a', {href: 'http://achievethecore.org/content/upload/SCASS_Info_Text_Complexity_Qualitative_Measures_Info_Rubric_2.8.pdf', target:'_blank'}, 'SCASS Rubric for Informational Texts']]
 					 ],
-				'!ca1/i1b'
+				'!ca1/i1a'
 			];
 		},
-		
+
 		initView: function()
 		{
-			$('.btn-li').click(function(event) 
+			$('.btn-li').click(function(event)
 			{
 				var id = $(this).index();
 
 				if(id === 0) $('#1_2').text('Meaning');
 				if(id === 1) $('#1_2').text('Purpose');
-				
+
 				$('.btn-li').each(function(index, value)
 				{
 					if (index == id) {

@@ -198,5 +198,5 @@ function ordinal($number) {
 									<label for="<?= $id ?>"><?= $label . $req ?></label>
 								 	<input type="<?= $type ?>" class="form-control" id="<?= $id ?>" name="<?= $id ?>" placeholder="<?= $label ?>" value="<?= isset($values[$id])?$values[$id]:'' ?>">
 								</div>
-							<?
+							<?php
 						} 

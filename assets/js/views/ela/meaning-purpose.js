@@ -1,6 +1,6 @@
 define(
     ['jquery', 'modules/view', 'modules/state-manager', 'tinymce'], 
-    function($, view, stateManager, tinyMCE)
+    function($, view, stateManager, tinymce)
 {
 		
 	var id = 'mp';

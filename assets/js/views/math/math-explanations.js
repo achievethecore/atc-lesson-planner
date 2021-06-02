@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'tinymce', 'modules/state-manager', 'views/math/_base'], 
-    function ($, tinyMCE, stateManager, mathBase)
+    ['jquery', 'tinymce', 'modules/state-manager', 'views/math/_base'],
+    function ($, tinymce, stateManager, mathBase)
 {
-	var mathExp = 
+	var mathExp =
 	{
 		getViewMarkup: function(content)
 		{
@@ -12,7 +12,7 @@ define(
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -20,13 +20,13 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking About Mathematical Explanations'],
 					'Effective teaching of mathematics engages students in making connections among mathematical representations to deepen understanding of mathematics concepts and procedures and as tools for problem solving.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -50,11 +50,11 @@ define(
 							'Considering the advantages or suitability of using various representations when solving problems.'
 						].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 29 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 29 NCTM. 2014 www.nctm.org)',
 				],
 ['div', ['h4', 'Additional Resources'], 'In ', ['a', {href:'http://vimeo.com/92830193', target:'_blank'}, 'this video'], ', Phil Daro, a lead writer of the CCSS, stresses the value of teaching mathematics in greater depth and avoiding "clutter" in the curriculum using a series of specific examples.'],
 
-				'!ca1/i2d'
+				'!ca2/i2c'
 				];
 		},
 

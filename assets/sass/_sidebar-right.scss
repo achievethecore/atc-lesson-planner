@@ -197,6 +197,7 @@
 	    text-align: left;
 	    padding: 10px;
 	    padding-bottom: 20px;
+      text-align: center;
 	    
 	    a {
 		    font-family: museo_sans500;
@@ -213,6 +214,22 @@
 			}
 		}
 	}
+    
+  .help-nav a.btn-helpnext {
+      font-family: museo_sans100;
+      position: absolute;
+      right: 10px;
+      top: 98px;
+      font-size: 11px;
+      color: #25a56a;
+  }
+  
+  .help-nav .btn-helpnext span::before {
+      font-family: SAPIcons;
+      content: "]";
+      -webkit-font-smoothing: antialiased;
+  }
+
 	
 
 

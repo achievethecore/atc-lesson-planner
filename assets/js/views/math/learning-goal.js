@@ -27,7 +27,7 @@ define(
 				['div',
 					['h4', 'Thinking About the Learning Goal'], 
 					'Effective teaching of mathematics establishes clear goals for the mathematics that students are learning, situates goals within learning progressions, and uses goals to guide instructional decisions.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -45,7 +45,7 @@ define(
 'Connecting their current work with the mathematics  that they studied previously and seeing where the mathematics is going.',
 'Assessing and monitoring their own understanding and progress toward the mathematics learning goals.'].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 16 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 16 NCTM. 2014 www.nctm.org)',
 				],
 				/*['div', ['h4', 'Example'], 'For example (for standards 3.OA.A.1 & 3.OA.B.5):',
 					['blockquote', 'Students will recognize arrays as a representation of equal groups and translate  them into language and notation of multiplication']

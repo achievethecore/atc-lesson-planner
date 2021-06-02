@@ -10,3 +10,4 @@ assets/js/main-built.js
 browser-bundle.js
 *.map
 raw-loader/
+package-lock.json

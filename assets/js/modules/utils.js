@@ -218,8 +218,17 @@ Notes:
 		
 		gradeOrCourse: function() {
 			return (utils.isHS() ? 'course' : 'grade');
+		},
+
+		getCurrentView: function(quick)
+		{
+			var app = require('app');
+			if (quick) {
+				return app.quickView;
+			} else {
+				return app.currentView;
+			}
 		}
-		
 	};
 
 	module.exports = utils;

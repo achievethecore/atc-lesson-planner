@@ -1003,6 +1003,21 @@ blockquote { border-left-color: $lightGrey; }
             }
         }
     }
+    
+	.compile-q-tbq .item span {
+	    border-left: 4px solid #25a56a;
+	    display: block;
+	    padding-left: 10px;
+	    margin-bottom: 25px;
+	}
+	
+	.compile-q-tbq .item span b {
+	    color: #25a56a;
+	    font-weight: normal;
+	    display: block;
+	    font-family: museo_sans100;
+	    font-size: 14px;
+	}
 
     .btn-edit {
         @include box;

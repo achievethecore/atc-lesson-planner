@@ -45,7 +45,7 @@ window.Content = {
                         "questions": function(sm, utils) { return [
                             {
                                 "header": "Text Choice",
-                                "text": /^(k|1)$/.test(utils.lessonGrade) ? "What is the title of the read-aloud text(s) (e.g. book, article, etc.) I will use in the lesson?" : "What is the title of the text(s) (e.g. book, article, etc.) I will use in the lesson?",
+                                "text": /^(k|1|2)$/.test(utils.lessonGrade) ? "What is the title of the read-aloud anchor text(s) (e.g. book, article, etc.) I will use in the lesson?" : "What is the title of the anchor text(s) (e.g. book, article, etc.) I will use in the lesson?",
                                 "format": "",
                                 "type": "text",
                                 "sid": "tc-1",
@@ -58,7 +58,7 @@ window.Content = {
                         "questions": function(sm, utils) { return [
                             {
                                 "header": "Text Complexity",
-                                "text": /^(k|1)$/.test(utils.lessonGrade) ? "Has this text already been evaluated for its read-aloud complexity from a trusted source?" : "Has this text already been evaluated for complexity from a trusted source?",
+                                "text": /^(k|1|2)$/.test(utils.lessonGrade) ? "Has this anchor text already been evaluated for its read-aloud complexity from a trusted source?" : "Has this anchor text already been evaluated for complexity from a trusted source?",
                                 "format": "",
                                 "type": "check2col",
                                 "labels": ["Yes", "No"],
@@ -72,7 +72,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Text Analysis",
-                                "text": "Am I confident that this text belongs at this grade level at this time of year?",
+                                "text": "Am I confident the anchor text(s) are at or above the complexity level expected for the grade and time in the school year?",
                                 "format": "",
                                 "type": "check2col",
                                 "labels": ["Yes", "No"],
@@ -92,16 +92,16 @@ window.Content = {
                                 "type": "check",
                                 "labels": [
 											'ATOS Analyzer – Renaissance Learning ',
-											'Degrees of Reading Power® – Questar', 
+											'Degrees of Reading Power® – Questar',
 											'The Lexile Framework® – MetaMetrix',
-											'Coh-Metrix Easability Tool  – University of Memphis (For Flesch-Kincaid  measure)', 
+											'Coh-Metrix Easability Tool  – University of Memphis (For Flesch-Kincaid  measure)',
 											'Reading Maturity – Pearson Knowledge Technologies'
 										],
                                 "sid": "lexscore-check",
                                 "cai": "1B",
                             },
                             {
-                                "header": "What is quantitative measure for your text?",
+                                "header": "What is the quantitative measure for your text?",
                                 "format": "inline",
                                 "type": "text",
                                 "cai": "1B",
@@ -124,7 +124,7 @@ window.Content = {
 								type: "lit-info",
 								sid: "libtn",
 								labels: ["Literary", "Informational"],
-								"cai": "1B",
+								"cai": "1A",
 							}
 						]
                     },
@@ -166,7 +166,7 @@ window.Content = {
                     },
                     {
                         "title": "Text Structure",
-                        "questions": function(sm) { return  sm.isInformational()? 
+                        "questions": function(sm) { return  sm.isInformational()?
 						[
                             {
                                 "header":"Text Structure: Organization of Main Ideas, Text Features, and Use of Graphics",
@@ -322,7 +322,7 @@ window.Content = {
                     },
                     {
                         "title": "Knowledge Demands",
-                        "questions": function(sm) { return sm.isInformational() ? 
+                        "questions": function(sm) { return sm.isInformational() ?
 						[
                             {
                                 "header": "Knowledge Demands: Subject Matter Knowledge and Intertextuality",
@@ -343,7 +343,7 @@ window.Content = {
                                 "labels": [
 					'Extensive, perhaps specialized or even theoretical discipline-specific content knowledge; range of challenging abstract and theoretical concepts',
 					'Moderate levels of discipline-specific content knowledge; some theoretical knowledge may enhance understanding; range of recognizable ideas and challenging abstract concepts',
-					'Everyday practical knowledge and some discipline-specific content knowledge; both simple and more complicated, abstract ideas', 
+					'Everyday practical knowledge and some discipline-specific content knowledge; both simple and more complicated, abstract ideas',
 					'Everyday, practical knowledge; simple, concrete ideas'
 				]
                             },
@@ -381,10 +381,10 @@ window.Content = {
                                 "sid": "kd2-check",
                                 "cai": "1B",
                                 "labels": [
-					'Explores complex, sophisticated themes; experiences are distinctly different from the common reader', 
+					'Explores complex, sophisticated themes; experiences are distinctly different from the common reader',
 					'Explores themes of varying levels of complexity; experiences portrayed are uncommon to most readers',
 					'Explores a single theme; experiences portrayed are common to many readers',
-					'Explores a single theme;experiences portrayed are everyday and common to most readers' 
+					'Explores a single theme;experiences portrayed are everyday and common to most readers'
 				]
                             },
                             {
@@ -395,10 +395,10 @@ window.Content = {
                                 "sid": "kd3-check",
                                 "cai": "1B",
                                 "labels": [
-					'Many references or allusions to other texts or cultural elements', 
+					'Many references or allusions to other texts or cultural elements',
 					'Some references or allusions to other texts or cultural elements',
 					'A few references or allusions to other texts or cultural elements',
-					'No references or allusions to other texts or cultural elements' 
+					'No references or allusions to other texts or cultural elements'
 				]
                             }
                         ];
@@ -417,7 +417,8 @@ window.Content = {
                                 "text": "What are the Big Ideas of the text?",
                                 "format": "",
                                 "type": "textarea",
-                                "sid": "tbp-mce"
+                                "sid": "tbp-mce",
+                                "cai": "1C"
                             }
                         ]
                     },
@@ -429,7 +430,7 @@ window.Content = {
                                 "text": "How will students demonstrate understanding of the Big Idea and what will the culminating activity be? How will I provide for authentic learning, application of literacy skills, student-directed inquiry, analysis, evaluation and/or reflection?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2B",
+                                "cai": "2A,3A,3C",
                                 "sid": "wwd2-mce"
                             }
                         ]
@@ -445,32 +446,32 @@ window.Content = {
                         "multi": true,
                         "questions": [
                             {
-                                "header": "Supports for Challenging Text",
-                                "text": "How will I focus on challenging sections of text(s) to engage students in learning through discussion questions, and other supports that build toward understanding?",
+                                "header": "Student Engagement",
+                                "text": "How will I ensure students do the majority of the work in the lesson? How will I provide students the opportunity to directly engage with the text?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "3A",
                                 "sid": "twr1-mce"
                             },
                             {
-                                "header": "Student Opportunities with Complex Text",
-                                "text": "How will I provide students with multiple opportunities to engage with text of appropriate complexity for reading aloud at this grade? How can I include appropriate scaffolding so that students will come to comprehend difficult sections of text?",
+                                "header": "Student Engagement",
+                                "text": "How will I provide students opportunities to build understanding through productive struggle?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3A",
+                                "cai": "3B",
                                 "sid": "twr2-mce"
                             },
                             {
-                                "header": "Student Extensions",
-                                "text": "What extensions and/or more advanced text will I provide for students who read well above the grade-level text band?",
+                                "header": "Student Engagement",
+                                "text": "What specifically will I do to ensure students provide precise text evidence when writing and/or speaking about text? How will I contribute feedback to student responses to provide support for students in this process?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3D",
+                                "cai": "3C",
                                 "sid": "twr3-mce"
                             },
                             {
-                                "header": "Student Support",
-                                "text": "What supports will I provide for students who read below the grade-level text band?",
+                                "header": "Student Engagement",
+                                "text": "How will I provide students opportunities to work collaboratively to discuss each other’s thinking and clarify or improve understanding? How will I support students during these opportunities? What will my role be during this collaboration?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "3D",
@@ -484,27 +485,27 @@ window.Content = {
                         "sid": "wwd",
                         "questions": function(sm, utils) { return [
                             {
-                                "header": "Evidence Support",
+                                "header": "Student Supports",
                                 "text": (
-									/^(k|1)$/.test(utils.lessonGrade) ? 
-									"What specifically will I do to ensure students can draw evidence from texts to produce a final, age-appropriate product that informs, explains, or makes an argument in any of a variety of forms (e.g., draw pictures, write words or sentences, short responses, etc.?)" 
-									: 
-									"What specifically will I do to ensure students draw evidence from texts to produce clear and coherent writing that informs, explains, or makes an argument in various written forms (e.g., notes, summaries, short responses, or formal essays?)"),
+									/^(k|1)$/.test(utils.lessonGrade) ?
+									"How will I check for understanding throughout the lesson? What scaffolds will I employ for students who are struggling with understanding during the lesson? What supports will I provide for students who read below the grade-level text band? What extensions will I provide for students who read above the grade-level text band?"
+									:
+									"How will I check for understanding throughout the lesson? What scaffolds will I employ for students who are struggling with understanding during the lesson? What supports will I provide for students who read below the grade-level text band? What extensions will I provide for students who read above the grade-level text band?"),
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3B",
+                                "cai": "3E",
                                 "sid": "wwd1-mce"
                             },
                             {
                                 "header": "Integrate Targeted Instruction",
                                 "text": (
-									/^(k|[1-5])$/.test(utils.lessonGrade) ? 
-									"How will I integrate targeted instruction in such areas as grammar and conventions, writing strategies, discussion rules and all aspects of foundational reading (if applicable)?" 
-									: 
+									/^(k|[1-5])$/.test(utils.lessonGrade) ?
+									"How will I integrate targeted instruction in such areas as grammar and conventions, writing strategies, discussion rules and all aspects of foundational reading (if applicable)?"
+									:
 									"How will I integrate targeted instruction in such areas as grammar and conventions, writing strategies, or discussion rules? "),
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3E",
+                                "cai": "3F",
                                 "sid": "wwd3-mce"
                             }
                             ];
@@ -518,12 +519,12 @@ window.Content = {
                     {
                         "title": "Creation of Text-Dependent Questions",
                         "questions": [
-                        	{ 
+                        	{
 								"header": "Text-Dependent Questions and Activities",
 	                        	"text": "",
 								"type": "tbq",
 								"format": "",
-								"cai": "2",
+								"cai": "2,3",
 								"sid": "tbq"
 							}
 						]
@@ -535,7 +536,7 @@ window.Content = {
                             {
                                 "header": "Vocabulary",
                                 "text": "What vocabulary words demand time and attention because they are critical to comprehension or are related to the big picture?  Once you have determined these words, you may choose to create additional text-dependent questions to address this vocabulary.",
-                                "compiletext": "What vocabulary words demand time and attention because they are critical to comprehension or are related to the big picture?", 
+                                "compiletext": "What vocabulary words demand time and attention because they are critical to comprehension or are related to the big picture?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "2C",
@@ -560,12 +561,13 @@ window.Content = {
                     {
                         "title": "Standards",
                         "questions": [
-                        	{ 
+                        	{
 								"header": "Standards",
 	                        	"text": "What standard(s) am I targeting in this lesson?",
 								"type": "standards",
 								"format": "",
-								"sid": "ela-standards-tags"
+								"sid": "ela-standards-tags",
+                                "cai": "1,2"
 							}
 						]
                     }
@@ -618,21 +620,21 @@ window.Content = {
                         "title": "Clusters & Standards",
                         "sid": "clst",
                         "questions": [
-                        	{ 
+                        	{
 								"header": "Selecting Clusters & Standards",
 	                        	"text": "What standard(s) and/or cluster(s) am I targeting in this lesson?",
 								"type": "standards",
 								"format": "",
-								"cai": "1B",
+								"cai": "1A",
 								"sid": "standards-tags"
 							}
 						]
                     },
                     {
                         "title": "Coherence",
-                        "questions": function(sm, utils) { 
+                        "questions": function(sm, utils) {
 							var mathBase = require('views/math/_base');
-							
+
 							return [
                             {
                                 "header": ('Coherence'),
@@ -659,7 +661,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Learning Goal",
-                                "text": "What is the learning goal for students in this lesson?",
+                                "text": "What is the mathematical learning goal of the lesson?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "1A",
@@ -688,10 +690,10 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Mathematical Explanations",
-                                "text": "What explanations, representations, and/or examples will I share to make the mathematics of this lesson clear?",
+                                "text": "What explanations, representations, tasks, and/or examples will I share to make the mathematics of this lesson clear?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "1A",
+                                "cai": "2C",
                                 "sid": "me1-mce"
                             }
                         ]
@@ -704,7 +706,7 @@ window.Content = {
                                 "text": ( utils.isHS() ? "What course-level problem(s) will I ask the whole class to solve? Attach a document or write below." : "What grade-level problem(s) will I ask the whole class to solve? Attach a document or write below." ),
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2B",
+                                "cai": "3A",
                                 "sid": "grp-mce"
                             }
                         ] }
@@ -715,10 +717,10 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Checks for Understanding",
-                                "text": "What strategies and opportunities will I use to check for understanding throughout the lesson?",
+                                "text": "What strategies and opportunities will I use to check for understanding throughout the lesson? What questions or problems will I ask?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2D",
+                                "cai": "2C",
                                 "sid": "cu1-mce"
                             }
                         ]
@@ -729,7 +731,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Discussion Questions",
-                                "text": "What questions will I ask to allow students to share their thinking and when will this happen in this lesson?",
+                                "text": "What questions will I ask to prompt students to share their thinking about the content of the lesson and when will that happen?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "3C",
@@ -771,7 +773,7 @@ window.Content = {
                             },
                             {
                                 "header": "",
-                                "text": "How will I ensure this lesson will reach the depth of the expectations of the standard(s) targeted?",
+                                "text": "How will I ensure the lesson will meet the expectations of the standard(s) targeted?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "1A",
@@ -786,7 +788,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Mathematical Explanations",
-                                "text": "What common misconceptions related to this topic, including mnemonics or tricks, do I anticipate will arise?",
+                                "text": "What common misconceptions and opportunities for growth do I anticipate will arise?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "2D",
@@ -897,12 +899,12 @@ window.Content = {
                                 "text": "Think about students who might need extra support or extension: what scaffolding will I use to support students?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2B",
+                                "cai": "1A,3A",
                                 "sid": "al1-mce"
                             },
                             {
                                 "header": "",
-                                "text": "How will I address remediation or unfinished learning in the context of the on-"+(utils.isHS()?"course":"grade")+"-level work?",
+                                "text": "How will I address remediation or unfinished learning in the context of the on-course-level work?",
                                 "format": "",
                                 "type": "textarea",
                                 "sid": "al2-mce"
@@ -925,7 +927,7 @@ window.Content = {
                                 "text": "Which problem(s) will prompt students to share their thinking and apply their mathematical language?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3A",
+                                "cai": "3C,3E",
                                 "sid": "st-mce"
                             }
                         ]
@@ -939,12 +941,12 @@ window.Content = {
                                 "text": "Which problem(s), if any, will require students to persevere?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3G",
+                                "cai": "3B",
                                 "sid": "pers-mce"
                             },
                             {
                                 "header": "",
-                                "text": "How will I encourage students to persist with this problem even after initial difficulty?",
+                                "text": "How will I encourage students to persist with this problem even in the face of difficulty?",
                                 "format": "",
                                 "type": "textarea",
                                 "sid": "pers2-mce"
@@ -960,7 +962,7 @@ window.Content = {
                                 "text": "Which problem(s) will require students to explain and justify their work?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3G",
+                                "cai": "3C",
                                 "sid": "just-mce"
                             }
                         ]
@@ -975,16 +977,30 @@ window.Content = {
                                 "text": "What solution methods or representations do I anticipate seeing from students?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2C",
+                                "cai": "2B",
                                 "sid": "solmeth-mce"
+                            },
+                            {
+                                "header": "",
+                                "text": "How will I connnect these solution methods or representations to each other to strengthen all students' understanding?",
+                                "format": "",
+                                "type": "textarea",
+                                "sid": "solmeth2-mce"
                             }
                         ]
                     },
                     {
                         "title": "Tools",
                         "refs": "grp",
-                        "questions": [
-                            {
+                        "questions": function(sm, utils) { return (utils.getCurrentView(true)=='compile-lesson') ?
+                            [{
+                                "header": "Tools",
+                                "text": "See Beyond the Lesson Guide",
+                                "format": "",
+                                "type": "",
+                                "cai": "",
+                                "sid": ""
+                            }]:[{
                                 "header": "Tools",
                                 "text": "Select the tools that may be useful as students solve the problems posed in this lesson.",
                                 "format": "",
@@ -1001,7 +1017,7 @@ window.Content = {
                                 "cai": "3F",
                                 "sid": "tool1-mce"
                             }
-                        ]
+                        ]}
                     },
                     {
                         "title": "Addressing Rigor",
@@ -1010,7 +1026,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Addressing Rigor",
-                                "text": "Describe how the problems in this lesson address the aspect of rigor targeted by the standards.",
+                                "text": "Describe how the problems in this lesson address the aspect(s) of rigor called for by the standard(s) being addressed?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "1C",
@@ -1032,8 +1048,15 @@ window.Content = {
                                 "text": "How will I use the information gained from these checks for understanding?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2D",
+                                "cai": "2C",
                                 "sid": "cu2-mce"
+                            },
+                            {
+                                "header": "",
+                                "text": "In what ways may I need to adapt the lesson as a result of this data?",
+                                "format": "",
+                                "type": "textarea",
+                                "sid": "cu22-mce"
                             }
                         ]
                     },
@@ -1041,8 +1064,15 @@ window.Content = {
                         "title": "Feedback & Revision",
                         "sid": "fr",
                         "refs": "cfu",
-                        "questions": [
-                            {
+                        "questions": function(sm, utils) { return (utils.getCurrentView(true)=='compile-lesson') ?
+                            [{
+                                "header": "Feedback & Revision",
+                                "text": "See Beyond the Lesson Guide",
+                                "format": "",
+                                "type": "",
+                                "cai": "",
+                                "sid": ""
+                            }]:[{
                                 "header": "Feedback & Revision",
                                 "text": "How will I provide feedback to students?",
                                 "format": "",
@@ -1058,7 +1088,7 @@ window.Content = {
                                 "cai": "3G",
                                 "sid": "fr2-mce"
                             }
-                        ]
+                        ]}
                     }
                 ]
             },
@@ -1072,7 +1102,7 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Structuring Discussions",
-                                "text": "What ideas/concepts will I focus on during discussions?",
+                                "text": "What ideas/concepts from the selected standard(s) will I focus on during discussions?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "2A,2C",
@@ -1080,7 +1110,7 @@ window.Content = {
                             },
                             {
                                 "header": "",
-                                "text": "How will I select which students will share/present their mathematical work? How will I sequence their responses to connect and develop all students' understanding of the topic at hand?",
+                                "text": "What criteria will I use to determine which students will be chosen to share their mathematical work? How will I sequence this sharing of student representations and/or solution methods to connect and strengthen all students’ understanding of the content?",
                                 "format": "",
                                 "type": "textarea",
                                 "sid": "scd2-mce"
@@ -1094,10 +1124,10 @@ window.Content = {
                         "questions": [
                             {
                                 "header": "Student-driven Discussions",
-                                "text": "How will I encourage students to talk about, ask questions about, and learn from other students' thinking, and when will this happen in the lesson?",
+                                "text": "How will I encourage students to engage in mathematical discourse? How can I facilitate student discussions that prompt students to critique the reasoning of others, justify solutions, ask questions, and learn from other students’ thinking?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "3C",
+                                "cai": "3C,3D",
                                 "sid": "sd1-mce"
                             }
                         ]
@@ -1112,12 +1142,12 @@ window.Content = {
                                 "text": "What will the summary of the lesson look or sound like?",
                                 "format": "",
                                 "type": "textarea",
-                                "cai": "2E",
+                                "cai": "2D",
                                 "sid": "ls1-mce"
                             },
                             {
                                 "header": "",
-                                "text": "What student work and discussion will I highlight to reinforce the learning goal of the lesson?",
+                                "text": "What student work and discussion will I highlight to reinforce the mathematical learning goal(s) of the lesson?",
                                 "format": "",
                                 "type": "textarea",
                                 "cai": "2E",

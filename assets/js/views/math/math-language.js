@@ -1,6 +1,6 @@
 define(
     ['jquery', 'tinymce', 'modules/state-manager', 'views/math/_base'], 
-    function ($, tinyMCE, stateManager, mathBase)
+    function ($, tinymce, stateManager, mathBase)
 {
 	var mathLanguage = 
 	{

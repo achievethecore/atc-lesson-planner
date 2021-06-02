@@ -38,22 +38,23 @@
     <meta property="og:url" content="http://achievethecore.org/lesson-planner/">
     <meta property="og:site_name" content="Achievethecore.org">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://achievethecore.org/img/fbshare.jpg">
+    <meta property="og:image" content="//achievethecore.org/img/fbshare.jpg">
 
     <meta name="viewport" content="width=1088, initial-scale=0.70, maximum-scale=0.70">
 
-    <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <!--<script src="http://tinymce.cachefly.net/4/tinymce.min.js"></script>-->
+    <script src="//achievethecore.org/_standards-select.php"></script>
     <script>window.tinyMCE = window.tinymce = {}</script>
 </head>
-<body class="plan compiled-lesson" data-id="<?= htmlspecialchars($_GET['id']) ?>" data-section="<?= htmlspecialchars($_GET['section']) ?>">
+<body class="plan compiled-lesson" data-id="<?= htmlspecialchars($_GET['id']) ?>" data-section="<?= !isset($_GET['section']) ? '-1' : htmlspecialchars($_GET['section']) ?>">
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
@@ -70,7 +71,7 @@
          }
          _gaq.push(['_trackPageview']);
          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-         g.src='http://www.google-analytics.com/ga.js';
+         g.src='//www.google-analytics.com/ga.js';
          s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
 </body>

@@ -1,13 +1,13 @@
 define(
-    ['jquery', 'view-templates/ela/standards.html', '../../../data/standards-select.html', 'modules/state-manager', 'modules/utils', 'lib/select2'],
-    function($, template, standardsData, stateManager, utils)
+    ['jquery', 'view-templates/ela/standards.html', 'modules/state-manager', 'modules/utils', 'lib/select2'],
+    function($, template, stateManager, utils)
 {
-	var standardsViewELA = 
+	var standardsViewELA =
 	{
-		
+
 		template: template,
-		
-		standardsData: standardsData,
+
+		standardsData: window._standardsHTML,
 
 		getViewMarkup: function(content)
 		{
@@ -18,7 +18,7 @@ define(
 				app.showDashboard();
 			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -26,11 +26,11 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
-					['h4', 'Selecting Standards'], 
+					['h4', 'Selecting Standards'],
 					'A close-reading lesson will address multiple ELA/Literacy standards. Select all that apply.',
 				],
 				'!ca1,ca2',
@@ -47,8 +47,8 @@ define(
 
 			// -- Load standards select data
 			$(standardsViewELA.standardsData).insertAfter('#details_standards');
-			var standards = $('.view select option').map(function() { 
-				return { id:this.value, text:this.innerHTML, subj:this.parentElement.className }; 
+			var standards = $('.view select option').map(function() {
+				return { id:this.value, text:_.unescape(this.innerHTML), subj:this.parentElement.className };
 			}).get();
 
 			// -- Create the Select2 box
@@ -59,7 +59,7 @@ define(
 				formatSelection: function(a) {
 					return a.id + '<span>' + a.text.replace(a.id+':', '') + '</span>';
 				},
-				minimumInputLength: 1, 
+				minimumInputLength: 1,
 				placeholder: "Begin typing a standard",
 				initSelection: function(element, callback)
 				{
@@ -67,8 +67,8 @@ define(
 					$(element.val().split(",")).each(function()
 					{
 						var id = this;
-					    data.push({id:id, text:standards.filter(function(a) { 
-					    	return a.id==id; })[0].text 
+					    data.push({id:id, text:standards.filter(function(a) {
+					    	return a.id==id; })[0].text
 						});
 					});
 
@@ -78,8 +78,8 @@ define(
 				{
 					/*
 					var s = q.term.toLowerCase();
-					q.callback({results:standards.filter(function(a) { 
-						return a.subj=='standards-ela' && a.text.toLowerCase().indexOf(s) > -1 }).slice(0, 200) 
+					q.callback({results:standards.filter(function(a) {
+						return a.subj=='standards-ela' && a.text.toLowerCase().indexOf(s) > -1 }).slice(0, 200)
 					})
 					*/
 					var s = q.term.toLowerCase();
@@ -93,13 +93,13 @@ define(
 					if(utils.isHS()) {
 						//grades = '([A-JL-Z]|HS)';
 					}
-			
+
 					var re = new RegExp('^' + grades + '[.-]');
-					q.callback({results:standards.filter(function(a) 
+					q.callback({results:standards.filter(function(a)
 					{
-						return a.subj=='standards-ela' && a.text.toLowerCase().indexOf(s) > -1 && re.test(a.id); }).slice(0, 200) 
+						return a.subj=='standards-ela' && a.text.toLowerCase().indexOf(s) > -1 && re.test(a.id); }).slice(0, 200)
 					});
-				} 
+				}
 			});
 
 
@@ -113,7 +113,8 @@ define(
 				for (var i=0; i<tags.length; ++i)
 				{
 					var targetStandard = _.findWhere(standards, {id:tags[i]});
-					var meaning = targetStandard.text;
+          if(!targetStandard) continue;
+					var meaning = targetStandard.text||'';
 					meaning = meaning.substr(tags[i].length+2);
 
 					var dataObject = {};
@@ -141,7 +142,7 @@ define(
 			var viewData = {};
 			viewData.smList = {};
 
-			$('.view').find('.sm').each(function(index, val) 
+			$('.view').find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';

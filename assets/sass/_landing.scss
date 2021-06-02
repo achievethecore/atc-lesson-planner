@@ -101,13 +101,14 @@
             .lr {
                 position: absolute;
                 right: 100px;
-                font-size: 12px;
+                font-size: 12pt;
                 color: #fff;
                 top: 5px;
 
                 a {
                     color: #fff;
                     font-weight: normal;
+                    font-family: museo_sans500;
 
                     &:hover {
                         color: $lightGreen;
@@ -743,4 +744,90 @@ p .splash-icon {
     vertical-align: middle;
     display: inline-block;
     margin: 10px;
+}
+
+
+@media (max-device-width: 544px) and (orientation: portrait) {
+	.landing .atf .middle {
+	    transform: scale(1.75);
+	    -webkit-transform: scale(1.75);
+	}
+}
+@media (max-device-width: 544px) {
+	
+	.header .atc {
+	    transform: scale(1.75);
+	    transform-origin: 0 0;
+	    -webkit-transform: scale(1.75);
+	    -webkit-transform-origin: 0 0;
+	}
+	.landing .atf .bottom, .to-top {
+	    transform: scale(1.75);
+	    -webkit-transform: scale(1.75);
+	}
+	
+	.header .lr {
+	    display: none !important;
+	}
+	
+
+	.landing .atf .middle h1 {
+		display: none;
+	}
+	.landing .atf .middle h1.blocker {
+		display: block !important;
+		font-size: 39pt;
+    margin-top: -110px;
+	}
+	.landing .atf .middle h1.blocker span {
+		font-size: 33px;
+		width: 43%;
+		margin: 10px auto;
+	}
+	.landing .atf .middle h1.blocker svg {
+		margin: 10px;
+	}
+	
+	.landing-btn {
+	    /*display: none !important;*/
+	}
+		
+	.landing .btf p {
+	    font-size: 19pt !important;
+	}
+	
+	.landing .btf h2 {
+	    font-size: 31pt !important;
+	}
+	
+	.landing .btf .btn {
+	    font-size: 21px !important;
+	    margin-top: 28px;
+	    border-width: 2px;
+	}
+	
+	.landing .btf h3 {
+	    font-size: 29px;
+	}
+	
+	.landing.btf .atf .middle h1.blocker {
+	    display: none !important;
+	}
+
+}
+@media (max-device-width: 544px) and (orientation: landscape) {
+	.landing .atf .bottom {
+	    transform: scale(1.25);
+	    -webkit-transform: scale(1.25);
+	    margin-top: -40px;
+	}
+	.landing .atf .middle .landing-main h1 {
+	    margin-top: -60px;
+	}
+	.landing .atf .middle h1.blocker span {
+		font-size: 31px;
+	}
+  .landing .atf .middle h1.blocker svg {
+		display: none;
+	}
 }

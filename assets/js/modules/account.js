@@ -17,7 +17,7 @@ var Handlebars = require('handlebars');
 require('tablesorter');
 var app = require('app');
 
-var account = 
+var account =
 	{
 		loggingIn: false,
 		loggedIn: false,
@@ -35,30 +35,35 @@ var account =
 			account.initLoginModal();
 			account.initRegisterModal();
 
-			if ($('body').hasClass('loggedin')) 
+			if ($('body').hasClass('loggedin'))
 			{
 				account.loggedIn = true;
 				account.getProfile();
 				account.loadSavedLessons();
+
+				if(/^#\d+$/.test(location.hash)) {
+					var lessonId = location.hash.split('#')[1];
+					account.loadLesson(lessonId);
+				}
 			}
 		},
 
 		initGeneral: function()
-		{	
+		{
 			// -- Saved Lessons
-			$.tablesorter.addParser({ 
-		        id: 'natext', 
-		        is: function(s) { 
+			$.tablesorter.addParser({
+		        id: 'natext',
+		        is: function(s) {
 		            return /N\/A/.test(s);
-		        }, 
-		        format: function(s) { 
+		        },
+		        format: function(s) {
 		            return $.trim(s.toLocaleLowerCase()).replace(/n\/a/g, '');
-		        }, 
-		        type: 'text' 
+		        },
+		        type: 'text'
 		    });
 
 		    $('#savedModal').on('click', '.btn-viewdetail', function()
-		    { 
+		    {
 		    	var lessonId = this.hash.split('#')[1];
 		    	account.loadLesson(lessonId);
 		    	$("#savedModal .close").trigger("click");
@@ -67,20 +72,30 @@ var account =
 			});
 
 			$('#savedModal').on('click', '.btn-delete', account.areyousure('td', function()
-			{ 
+			{
 				_gaq.push(['_trackEvent', 'Data', 'Delete Saved Data' ]);
-				var me = $(this).closest('td').find('.btn-delete'); 
+				var me = $(this).closest('td').find('.btn-delete');
 				$.post('/lpt-delete-data', {id: me.attr('href').split(/#/)[1]}, function(data)
 				{
 					me.parent().parent().fadeOut();
-				}, 'json'); 
+				}, 'json');
 
-				return false; 
+				return false;
 				})
 			);
 
 			$('#savedModal').on('click', '.btn-email', function()
 			{
+        // needed when accessing saved lessons from landing
+				if($('#emailModal .radio-btns .active').length === 0) {
+					$('#emailModal .radio-btns .btn:first-child').addClass('active');
+				}
+				$('#emailModal .radio-btns .btn').off('click').click(function() {
+					$(this).closest('.radio-btns').find('.active').removeClass('active');
+					$(this).addClass('active');
+					return false;
+				});
+        
 				utils.shareClass = $(this).parent().parent().find('td').eq(2).html();
 				utils.shareId = this.hash.split('#')[1];
 				$("#savedModal .close").trigger("click");
@@ -92,21 +107,21 @@ var account =
 
 
 			// -- Continue with randomness
-		    $('#registerModal, #loginModal').on('shown.bs.modal', function() {  
-		    	$(this).find('input').eq(0).focus(); 
+		    $('#registerModal, #loginModal').on('shown.bs.modal', function() {
+		    	$(this).find('input').eq(0).focus();
 		    });
 
 		    $('#registerModal, #loginModal').on('hidden.bs.modal', function()
 		    {
 		        account.removeErrors();
-		        
+
 		        if(account.loggingIn && !$('.modal:visible').size())
 		        {
 		        	account.loggingIn = false;
 
 		        	// opening w/o timeout results in no .modal-open on body
-					setTimeout(function() { 
-						$('#detailsModal').modal({backdrop:'static',keyboard:false}); 
+					setTimeout(function() {
+						$('#detailsModal').modal({backdrop:'static',keyboard:false});
 					}, 10);
 				}
 
@@ -144,6 +159,7 @@ var account =
 		    $(document).on("click", "#email-submit", function()
 		    {
 		    	var lessonId = utils.lessonId;
+				var file = 'plan';
 		    	if (utils.shareId !== null)
 		    	{
 		    		lessonId = utils.shareId;
@@ -152,21 +168,23 @@ var account =
 
 		 		_gaq.push(['_trackEvent', 'UI', 'Email']);
 
-		 		var url = 'http://'+location.host+'/lesson-planning-tool/pdf2.php?url=';
-				url += encodeURIComponent('http://'+location.host+'/lesson-planning-tool/plan.php?id=' + lessonId + '&section=-1') + '&filename=LessonPlan.pdf';
+
+				if($('#emailModal .view-type .btn').eq(1).hasClass('active')){ file = 'ipg'; }
+
+				var url = 'http://'+location.host+'/lesson-planning-tool/' + file + '.php?id=' + lessonId;
 
 				$.post('/lpt-mail', {
 					'url':url,
 					'comments':utils.nl2br($("#emailform textarea").val()),
 					'mailto':$("#emailform input").val(),
-					'copyme':$('#email_copyme:checked:visible').length 
+					'copyme':$('#email_copyme:checked:visible').length
 				}, function() {}, "json" );
-				
+
 				$("#emailform textarea, #emailform input:eq(0)").val('');
-				
-				$('.modal.in').modal('hide'); 
+
+				$('.modal.in').modal('hide');
 				$('<div class=modal><div class=modal-dialog><div class=modal-content><div class=modal-header><button type="button" class="close" data-dismiss="modal">&times;</button></div><h2>Your lesson plan has been sent.</h2></div></div></div>').modal();
-				
+
 				account.updateShared(lessonId);
 
 				return false;
@@ -200,7 +218,7 @@ var account =
 		                        account.getprofile = data.user;
 		                        account.username = data.user.name;
 		                        $('#namebtn').html('<span></span>'+account.username.toUpperCase());
-		                        
+
 		                        trackprof = [data.user.id, data.user.role, data.user.subject, data.user.grades, 'Login'];
 							     var trnames = ['uid', 'role', 'subject', 'grades'];
 							     for(var i=1;i<=4;i++)
@@ -213,7 +231,7 @@ var account =
 
 		                        account.onCompleteHandler('login');
 		                    });
-		                    
+
 		                    if(account.loggingIn) {
 		                        loggingIn = false;
 		                    }
@@ -221,7 +239,7 @@ var account =
 		                    account.errorHandling(data);
 		                }
 		            }, "json");
-		        } else 
+		        } else
 		        {
 		        	_gaq.push(['_trackEvent', 'Account', 'Forgot Password']);
 		            $.post(account.root_uri + '/forgotpass', $('#loginform input').serialize(), function(data)
@@ -267,7 +285,7 @@ var account =
 		        });
 
 		        $('#registerform #password').val('');
-		        
+
 		        $("#role").val(account.getprofile.role);
 		        $("#subject").val(account.getprofile.subject);
 		        $("#email").val(account.getprofile.email);
@@ -333,7 +351,7 @@ var account =
 		        $("#registerModal .close").trigger("click");
 		        $("#profilenamelink").html(account.username);
 		        $("body").addClass("loggedin");
-		        
+
 		        if(account.loggingIn)
 		        {
 		            account.loggingIn = false;
@@ -354,7 +372,7 @@ var account =
 		            account.getprofile = data.user;
 		            account.username = data.user.name;
 		            $('#namebtn').html('<span></span>'+account.username.toUpperCase());
-		            
+
 		            trackprof = [data.user.id, data.user.role, data.user.subject, data.user.grades, 'Register'];
 				     var trnames = ['uid', 'role', 'subject', 'grades'];
 				     for(var i=1;i<=4;i++)
@@ -431,15 +449,15 @@ var account =
 			return function() {
 		    	$(this).closest(closest).append('<div class="indicatormenu areyousure">Are you sure? <a href="#" class="btn btn-go btn-goforward">Yes</a></div>');
 		    	$(this).closest(closest).find('.indicatormenu').hide().fadeIn();
-		    	
+
 		    	$(this).closest(closest).find('.areyousure .btn-goforward').click(after);
-		        
+
 		        setTimeout(function() {
 		        $('html').one('click', function() {  $('.areyousure').remove(); });
 		        },10);
-		      
+
 		        return false;
-		  	}; 
+		  	};
 		},
 
 
@@ -498,7 +516,7 @@ var account =
 
 		newLesson: function(location)
 		{
-			$.post('/lpt-new-data', function(response) 
+			$.post('/lpt-new-data', function(response)
 			{
 				var rJSON = JSON.parse(response);
 				utils.lessonId = rJSON.id;
@@ -524,18 +542,18 @@ var account =
 
 		loadLesson: function(lessonId)
 		{
-			$.get('/lpt-get-data/' + lessonId, function(response) 
+			$.get('/lpt-get-data/' + lessonId, function(response)
 			{
 				var rJSON = JSON.parse(response);
 				utils.lessonId = lessonId;
-				
+
 				var rstate = JSON.parse(rJSON.state);
 				utils.lessonType = rstate.lessontype;
 				utils.lessonGrade = rstate.lessongrade;
-				
+
 				$('body').addClass(utils.lessonType);
 
-				//require(['modules/state-manager', 'modules/sidebar-left'], function(stateManager, sidebarLeft) 
+				//require(['modules/state-manager', 'modules/sidebar-left'], function(stateManager, sidebarLeft)
 				//{
             		stateManager.halt();
 		            sidebarLeft.reset();
@@ -568,13 +586,13 @@ var account =
 		loadSavedLessons: function()
 		{
 			_gaq.push(['_trackEvent', 'UI', 'Saved Data Dialog' ]);
-			$.get('/lpt-saved-data', function(data) 
+			$.get('/lpt-saved-data', function(data)
 			{
 				$('#saved-lesson-data').empty();
 
 				data = JSON.parse(data);
 				for(var d in data.saved)
-				{ 
+				{
 					//data.saved[d].shared = !!(1*data.saved[d].shared);
 					data.saved[d].shared = parseInt(data.saved[d].shared);
 					data.saved[d].shared = !!data.saved[d].shared;
@@ -593,11 +611,11 @@ var account =
 				$('#saved-lesson-data').html(lessonsMarkup);
 
 				$('#saved-lesson-data table').tablesorter({
-					sortList:(window.sort||[[1,1]]), 
+					sortList:(window.sort||[[1,1]]),
 					headers:{
 						2:{sorter:'natext'},3:{sorter:'natext'},4:{sorter:'natext'},
 						5:{sorter:false},6:{sorter:false},7:{sorter:false},8:{sorter:false}
-					} 
+					}
 				}).bind('sortEnd', function(e) {
 					window.sort = this.config.sortList; // saved ref? to sort setting for next table load
 				});
@@ -607,8 +625,8 @@ var account =
 		usdate: function(d)
 		{
 			if(typeof d !== 'string') return '';
-			d = d.split('-'); 
-	  		return [d[1],d[2],d[0]].join('/'); 
+			d = d.split('-');
+	  		return [d[1],d[2],d[0]].join('/');
 		},
 
 		updateShared: function(lessonId)

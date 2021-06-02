@@ -3,10 +3,10 @@ define(
     function($, view, stateManager)
 {
 	var id = 'ta';
-	
-	var viewDataModule = 
+
+	var viewDataModule =
 	{
-		template: view.view(id, 
+		template: view.view(id,
 				[
 					view.header('Text Analysis', 'Am I confident that this text belongs at this grade level at this time of year?', true),
 					view.checkboxes_2col(id, ['Yes', 'No']),
@@ -32,7 +32,7 @@ define(
 					app.pushView('lexile-score');
 			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -40,16 +40,17 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
-				elaBase.PDSimple('Determining Appropriateness', 'Engaging with appropriately complex text is paramount to planning a close reading lesson.  Consider the text selection - is it appropriate for your students at this time of the year?')
-			];
+			return [
+				elaBase.PDSimple('Determining Appropriateness', 'Engaging with appropriately complex text is paramount to planning a close reading lesson.  Consider the text selection - is it appropriate for your students at this time of the year?'),
+        '!ca1/i1b'
+        ];
 		},
 
 		initView: function()
 		{
-			
+
 		}
 
 	};

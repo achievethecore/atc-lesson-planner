@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'view-templates/math/justifications.html', 'tinymce', 'views/math/_base'], 
-    function ($, template, tinyMCE, mathBase)
+    ['jquery', 'view-templates/math/justifications.html', 'tinymce', 'views/math/_base'],
+    function ($, template, tinymce, mathBase)
 {
-	var justifications = 
+	var justifications =
 	{
 		template: template,
 
@@ -14,7 +14,7 @@ define(
 			viewData.markup = this.template;
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -24,11 +24,11 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
-				'!ca3/i3g'
+			return [
+				'!ca3/i3c'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#just-text');

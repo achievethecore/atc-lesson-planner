@@ -1,7 +1,7 @@
 
-	module.exports = 
+	module.exports =
 	{
-		
+
 
 		getViewMarkup: function(content)
 		{
@@ -11,7 +11,7 @@
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -24,47 +24,46 @@
 
 			return [
 			[
-				elaBase.PDSimple('Reader and Task', 'Throughout this section, you will consider "Reader and Task".  This is the third component of evaluating a text for complexity.  Reader and task is a teacher\'s professional judgement on whether a text is appropriately complex for your students at this time.  Essentially, you are asking yourself, "Is this the right text at this particular time?"'),
-				elaBase.PDSimple('Skills and Content', 'In addition to considering the overall complexity, a teacher should determine what she wants students to get from this text: skills and content.  A text should provide learning English Language Arts skills in context, and build a student\'s content knowledge.'),
-				elaBase.PDSimple('Example', 'For example, I will chunk the text and provide brief questions for each chunk of text to be answered before students go on to the next chunk of text.'),
-				'!ca3/i3a'
-			],
-			[
-				elaBase.PDSimple('Example', 
-				['div', 'For example, I will download the ',
-					['a', {href:'http://www.wordsmyth.net/?mode=widget', target:'_blank'}, 'Wordsmyth widget'], 
-					' to classroom computers/tablets for students to access student-friendly definitions for unknown words. ']
-				),
-				'!ca3/i3a'
-			],
-			[
-				(/^(k|1)$/.test(utils.lessonGrade) ?
-				elaBase.PDSimple('Example', 'For example, for students already reading, I will provide additional readings related to the text and allow them to complete a text-dependent task across multiple texts.') 
+				elaBase.PDSimple('Reader and Task', 'Throughout this section, you will consider the reader and task as they relate to the text. This is the portion of the Lesson Planning Tool where you will consider how to meet the needs of the students as they engage in the work of the lesson.'),
+				elaBase.PDSimple('Support', 'During the lesson, students should have multiple opportunities to interact with the text through reading, discussion, or writing. You should provide a variety of activities that allow for the students to interact with the text to develop understanding.'),
+
+				(/^(k|1|2)$/.test(utils.lessonGrade) ?
+				elaBase.PDSimple('Example', 'If students are listening to a text, I will ask students to recall details from the text which I will record on chart paper as a reference for later in the lesson.')
 				:
-				elaBase.PDSimple('Example', 'For example, I will provide additional complex readings related to the topic and students may complete text-dependent tasks across multiple texts.')),
-				'!ca3/i3d'
+				elaBase.PDSimple('Example', 'If students are reading a text, I will provide the students a guiding question that they will answer in small groups as they read a portion of the text aloud. As they read the text aloud in their groups, they will answer the question through discussion with group-partners, citing evidence from the text to support their answers.')),
+				'!ca3/i3a'
 			],
 			[
-				elaBase.PDSimple('Example', 
-					['div', 'For example, I will:',
-						['ul'].concat(
-							[
-	'Provide a brief student-friendly glossary of some of the academic vocabulary (tier 2) and domain', 
-	['span', 'Download the ', ['a', {href:'http://www.wordsmyth.net/?mode=widget', target:'_blank'}, 'Wordsmyth Widget'], ' to classroom computers/tablets for students to access student-friendly definitions for unknown words.'],
-	'Provide brief student friendly explanations of necessary background knowledge',
-	'Include pictures or videos related to the topic within and in addition to the set of resources in the pack', 
-	'Select a small number of texts to read aloud with some discussion about vocabulary work and background knowledge',
-	'Provide audio recordings of the texts being read by a strong reader (teacher, parent, etc.)', 
-	'Provide volunteer helpers from the school community during independent reading time.'].map(function(e) { return ['li', e]; })
-						)
-					]
-				
+				elaBase.PDSimple('Support',
+				['div', 'Students will develop deeper understanding by productively struggling through texts and tasks. Productive struggle is different than frustration. Students who productively struggle ultimately develop reasoning and make meaning.']
 				),
+				elaBase.PDSimple('Example', 'I will use the Academic Word Finder to provide student-friendly definitions for unknown words.  This will focus students on engaging with the words in the context of the text.'),
+				'!ca3/i3b'
+			],	//For example, I will download the Wordsmyth widget to classroom computers/tablets for students to access student-friendly definitions for unknown words
+			[
+				(/^(k|1|2)$/.test(utils.lessonGrade) ?
+				elaBase.PDSimple('Support', 'Using evidence from the text to support answers is one of the ELA Shifts and is an important skill for students. You can support students’ ability to use evidence from the text when speaking and writing about the text by asking probing questions and expecting precision in student responses.')
+				:
+				elaBase.PDSimple('Support', 'Using evidence from the text to support answers is one of the ELA Shifts and is an important skill for students. You can support students’ ability to use evidence from the text when speaking and writing about the text by asking probing questions and expecting precision in student responses.')),
+				(/^(k|1|2)$/.test(utils.lessonGrade) ?
+				elaBase.PDSimple('Example', 'Students will complete a graphic organizer by drawing or writing details from a text that has been read aloud to the class. These details may come from an anchor chart I have created.')
+				:
+				elaBase.PDSimple('Example', 'When students are given a text to read, I will provide them with a guiding question. I will ask them to answer the guiding question and use a highlighter to highlight the evidence that supports their answer to the guiding question. I will anticipate misconceptions and provide addtional prompting as needed.')),
+				'!ca3/i3c'
+			],
+			[
+				elaBase.PDSimple('Support',
+					['div', 'Students can learn from each other through discussions about the text. For example, when students are given text-dependent questions to answer about a text or a selection of text, sharing their thinking through group discussions with their peers allows students to clarify or improve understanding.']
+				),
+				(/^(k|1|2)$/.test(utils.lessonGrade) ?
+				elaBase.PDSimple('Example', 'I will read a story to the class aloud. Students will work with a shoulder partner and complete sentence frames that include key details about the story. To scaffold this lesson, I may include an anchor chart with details pre-recorded.')
+				:
+				elaBase.PDSimple('Example', 'I will select a portion of text from a larger text we are reading as a class. In small groups, the students will read the text together and annotate the text, identifying the key details and the key vocabulary of that section.')),
 				'!ca3/i3d'
 			]
 			][app.subPage];
 		},
-		
+
 		initView: function()
 		{
 			elaBase.createMCE('#twr1-text');

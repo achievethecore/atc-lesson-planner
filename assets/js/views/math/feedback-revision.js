@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'view-templates/math/feedback-revision.html', 'tinymce', 'views/math/_base'], 
-    function ($, template, tinyMCE, mathBase)
+    ['jquery', 'view-templates/math/feedback-revision.html', 'tinymce', 'views/math/_base'],
+    function ($, template, tinymce, mathBase)
 {
-	var feedbackRevision = 
+	var feedbackRevision =
 	{
 		template: template,
 
@@ -15,9 +15,9 @@ define(
 			viewData.smList = {};
 			viewData.onNext = function(app) {
 				app.showDashboard();
-			};		
+			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -31,11 +31,18 @@ define(
 			mathBase.createMCE('#fr1-text');
 			mathBase.createMCE('#fr2-text');
 		},
-		
+
 		getHelpText: function() {
-			return [ 
-				'!ca3/i3g'
-				];
+			return [
+        ['div',
+          ['p', 'Feedback and revision are critical components of lesson planning. This work is not directly related to language of the Core Actions and indicators of the ',
+            ['a', {href:'/instructional-practice-guide', target:'_blank'}, 'Instructional Practice Guide'],
+            ['span', ', but it is incorporated into the questions of the .'],
+            ['a', {href:'https://achievethecore.org/content/upload/Beyond%20the%20Lesson%20Discussion%20Guide_Mathematics.pdf', 'target':'_blank'}, 'Beyond the Lesson Discussion Guide'],
+            ['span', '.']
+          ]
+        ]
+      ];      
 		}
 
 	};

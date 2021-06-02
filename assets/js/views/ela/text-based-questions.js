@@ -1,10 +1,10 @@
 define(
-    ['jquery', 'view-templates/ela/text-based-questions.html', 'view-templates/ela/text-based-questions-item.html', 'modules/state-manager', 'jqueryui'], 
+    ['jquery', 'view-templates/ela/text-based-questions.html', 'view-templates/ela/text-based-questions-item.html', 'modules/state-manager'],
     function($, template, templateItem, stateManager)
 {
-	var textBasedQuestions = 
+	var textBasedQuestions =
 	{
-		
+
 		templateItem: templateItem,
 
 		getViewMarkup: function(content)
@@ -13,7 +13,7 @@ define(
 			viewData.markup = template;
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -21,10 +21,10 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
-				['div', 
+			return [
+				['div',
 					['h4', 'What are Text-Dependent Questions?'],
 					'Text-Dependent Questions:',
 					['ul'].concat(
@@ -43,7 +43,7 @@ define(
 						'Just questions…'].map(function(e) { return ['li', e]; })
 					)
 				],
-				['div', 
+				['div',
 					['h4', 'Engaging with Evidence'],
 					['p', 'One of the main shifts of the Common Core is to increase the emphasis on reading, writing, and speaking grounded in evidence from text, both literary and informational. Text-dependent questions (TDQs) are questions that can only be answered by referring to evidence provided in a text. Text-specific questions are questions that are related to the unique text and no other.'],
 					['p', 'When you\'re writing or reviewing a set of questions, consider the following three categories:'],
@@ -56,7 +56,7 @@ define(
 				],
 				['div', {class:'has-image','data-src':'8'},
 					['h4', 'Example'],
-					''/*['h3', 'Non-Examples and Examples'], 
+					''/*['h3', 'Non-Examples and Examples'],
 					['table',
 						['tr',
 							['th', 'Not Text-Dependent'], ['th', 'Text-Dependent']
@@ -69,7 +69,7 @@ define(
 						]
 					]*/
 				],
-				'!ca2'
+				'!ca2,ca3'
 			];
 		},
 
@@ -81,7 +81,7 @@ define(
 			$('.i-tooltip').tooltip();
 
 			// -- Check
-			if (!stateManager.dataJson['tbq-items']) 
+			if (!stateManager.dataJson['tbq-items'])
 			{
 				textBasedQuestions.addItem(true);
 				textBasedQuestions.firstOne = true;
@@ -116,6 +116,9 @@ define(
 			$('body').on('change keyup paste', '.tbq-item-input', function()
 			{
 				$(this).attr('value', $(this).val());
+				 this.innerHTML = this.value;
+
+				if(this.scrollHeight > this.clientHeight) this.style.cssText = "height: "+(10+this.scrollHeight)+"px !important;resize: none; line-height: 49px;";
 
 				if ($('.add-another').css('display') == 'none') {
 					$('.add-another').css('display', 'block');

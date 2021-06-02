@@ -32,10 +32,10 @@ require.config(
             deps: ['jquery']
         },
         tinymce: {
-        	exports: 'tinyMCE',
+        	exports: 'tinymce',
         	init: function() {
-        		this.tinyMCE.DOM.events.domLoaded = true;
-        		return this.tinyMCE;
+        		this.tinymce.DOM.events.domLoaded = true;
+        		return this.tinymce;
         	}
         },
         select2: {

@@ -40,12 +40,13 @@ define(
 			var dropzoneConfig = {
 				url: 'upload.php',
 				maxFilesize: 2,
-				acceptedFiles: 'image/*,application/pdf',
+				//acceptedFiles: 'image/*,application/pdf',
 				autoProcessQueue: true,
 				parallelUploads: 1,
 				uploadMultiple: false,
-				dictDefaultMessage: 'Drag & drop jpg, png or pdf files here<div class="sub">or click to upload from your computer.</div>',
+				dictDefaultMessage: 'Drag & drop files here<div class="sub">or click to upload from your computer.</div>',
 				addRemoveLinks: true,
+				fallback: function() { this.element.innerHTML = "<div class=dz-message>You are using an unsupported version of Internet Explorer. <div class=\"sub\">To upload a file, you'll need to <a href='http://www.whatbrowser.org/' target='_blank'>upgrade to a modern browser</a>.</div></div>"; return this.element; },
 				previewsContainer: '.dz-previews'
 			};
 			attachDocument.dropzone = new Dropzone('form#dropzone', dropzoneConfig);
@@ -95,9 +96,9 @@ define(
 			var fileData = {};
 			fileData.url = 'attachments/' + utils.lessonId + '/' + file;
 			if (extension == 'jpg' || extension == 'peg') {
-				fileData.icon = '@';	
+				fileData.icon = 'G';	
 			} else {
-				fileData.icon = 'C';
+				fileData.icon = 'G';
 			}
 
 			var fileName = file;
@@ -105,10 +106,30 @@ define(
 				fileName = fileName.substr(0, 21);
 				fileName += '...';
 			}
-			fileData.file = fileName;
+			fileData.fileName = fileName;
+      fileData.file = file;
+      var displayNames = JSON.parse($('.dz-displaynames').html()||'{}');
+      if(displayNames[file])
+        fileData.fileName = displayNames[file];
+      displayNames[file] = fileName;
+      $('.dz-displaynames').html(JSON.stringify(displayNames));
 
 			var fileMarkup = attachDocument.templateFile(fileData);
 			$('.filelist').append(fileMarkup);
+      
+
+      $('.filelist .edit').last().unbind('mousedown').mousedown(function() {
+      	if($(this).prev('input').length) { $(this).prev('input').val('').focus().blur(); return; }
+        var displayNames = JSON.parse($('.dz-displaynames').html()||'{}');
+        $(this).prev().replaceWith('<input class=link data-file="'+file+'" value="'+displayNames[file]+'" />');
+        $('.filelist input').bind('blur', function() {
+            var displayNames = JSON.parse($('.dz-displaynames').html()||'{}');
+            if($(this).val()) 
+              displayNames[file] = $(this).val();
+            $('.dz-displaynames').html(JSON.stringify(displayNames));
+            $(this).replaceWith('<a href="'+fileData.url+'" data-file="'+file+'" class="link" target="_blank">'+displayNames[file]+'</a>');
+        });
+      });
 			$('.attach-document').addClass('files');
 
 			// -- Add to SM list
@@ -124,7 +145,7 @@ define(
 			// -- Actually remove it
 			file = $(file).parent();
 
-			var fileName = $(file).find('.link').text();
+			var fileName = $(file).find('.link').data('file');
 
 			var fileList = $('.dz-filelist').html();
 			var files = fileList.split(',');

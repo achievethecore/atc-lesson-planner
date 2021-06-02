@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'tinymce', 'views/math/_base'], 
-    function ($, tinyMCE, mathBase)
+    ['jquery', 'tinymce', 'views/math/_base'],
+    function ($, tinymce, mathBase)
 {
-	var perseverance = 
+	var perseverance =
 	{
 
 		getViewMarkup: function(content)
@@ -13,7 +13,7 @@ define(
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -21,13 +21,13 @@ define(
 
 			return viewData;
 		},
-		
+
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking about Perserverance'],
 					'Effective teaching of mathematics consistently provides students, individually and collectively, with opportunities and supports to engage in productive struggle as they grapple with mathematical ideas and relationships.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -47,10 +47,10 @@ define(
 							'Helping one another without telling their classmates what the answer is or how to solve the problem.'
 ].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 52 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 52 NCTM. 2014 www.nctm.org)',
 				],
 				mathBase.PDSimple('Perseverance in Problem Solving', 'Mathematically proficient students start by explaining to themselves the meaning of a problem and looking for entry points to its solution. They analyze givens, constraints, relationships, and goals. They make conjectures about the form and meaning of the solution and plan a solution pathway rather than simply jumping into a solution attempt. They consider analogous problems, and try special cases and simpler forms of the original problem in order to gain insight into its solution. They monitor and evaluate their progress and change course if necessary. Older students might, depending on the context of the problem, transform algebraic expressions or change the viewing window on their graphing calculator to get the information they need. Mathematically proficient students can explain correspondences between equations, verbal descriptions, tables, and graphs or draw diagrams of important features and relationships, graph data, and search for regularity or trends. Younger students might rely on using concrete objects or pictures to help conceptualize and solve a problem. Mathematically proficient students check their answers to problems using a different method, and they continually ask themselves, "Does this make sense?" They can understand the approaches of others to solving complex problems and identify correspondences between different approaches.'),
-				'!ca3/i3b,i3g'
+				'!ca3/i3b'
 				];
 		},
 

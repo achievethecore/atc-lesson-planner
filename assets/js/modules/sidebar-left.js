@@ -74,7 +74,11 @@ var sidebarLeft =
 								m.title] ];
 						}))]].toDomNodes();
 						
+				
+				
 				$('.col-left .interior-content .data').append(nodes);
+				
+				$('.compile .main-category.expanded ul').append('<li class=attachednav><a href="#attached">Attached Documents</a></li>');
 
 
 				//$('.col-left .interior-content .data').load('assets/js/view-templates/sidebar-left-' + utils.lessonType + '.html', function() 
@@ -584,6 +588,10 @@ var sidebarLeft =
 			
 			TweenLite.to($('.compile').find('ul').show(), 0.01, {autoAlpha:1});
 			$('.compile ul li a').removeClass('active').eq(0).addClass('active');
+			
+			setTimeout( function() {
+				$('.compile ul li.attachednav').toggle( $('a[name=attached]').length == 1 );
+			}, 260); 
 
 			sidebarLeft.busy = false;
 		},

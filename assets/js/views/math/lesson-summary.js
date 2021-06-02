@@ -1,22 +1,22 @@
 define(
-    ['jquery', 'tinymce', 'views/math/_base'], 
-    function ($, tinyMCE, mathBase)
+    ['jquery', 'tinymce', 'views/math/_base'],
+    function ($, tinymce, mathBase)
 {
-	var lessonSummary = 
+	var lessonSummary =
 	{
 
 		getViewMarkup: function(content)
 		{
 			tinymce.remove();
-			
+
 			var viewData = {};
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 			viewData.onNext = function(app) {
 				app.showDashboard();
-			};		
+			};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -26,11 +26,11 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking about the Lesson Summary'],
 					'Effective teaching of mathematics facilitates discourse among students to build shared understanding of mathematical ideas by analyzing and comparing student approaches and arguments.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -44,12 +44,12 @@ define(
 'Identifying how different approaches to solving a task are the same and how they are different.'
 ].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 35 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 35 NCTM. 2014 www.nctm.org)',
 				],
-				'!ca2/i2e'
+				'!ca2/i2d'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#ls1-text');

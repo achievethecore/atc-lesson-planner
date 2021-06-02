@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'modules/utils', 'views/math/_base'], 
+    ['jquery', 'modules/utils', 'views/math/_base'],
     function ($, utils, mathBase)
 {
-	var gradeProblems = 
+	var gradeProblems =
 	{
 		getViewMarkup: function(content)
 		{
@@ -12,7 +12,7 @@ define(
 			viewData.markup = view.formatContent(content);
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -22,10 +22,10 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					mathBase.PDCourseGrade('Thinking About Grade-Level Problems', 'Effective teaching of mathematics engages students in solving and discussing tasks that promote mathematical reasoning and problem solving and allow multiple entry points and varied solution strategies.'),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -45,9 +45,9 @@ define(
 							'Accepting and expecting that their classmates will use a variety of solution justify their strategies to one another.'
 						].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 24 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 24 NCTM. 2014 www.nctm.org)',
 				],
-				['div', 
+				['div',
 					['h4', 'Additional Resources'],
 				'Here are two free-resources for standards-aligned tasks and problems.',
 				 ['br'],
@@ -55,10 +55,10 @@ define(
 				 ['br'],
 				 ['a', {href:'http://achievethecore.org/dashboard/300/search/1/2/0/1/2/3/4/5/6/7/8/9/10/11/12/page/786/annotated-tasks-list-pg', target:'_blank'}, 'Achieve the Core']
 				],
-				'!ca2/i2b'
+				'!ca3/i3a'
 				];
 		},
-		
+
 		initView: function()
 		{
 			mathBase.createMCE('#grp-text');

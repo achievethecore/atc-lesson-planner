@@ -1,8 +1,8 @@
 define(
-    ['jquery', 'views/math/_base'], 
+    ['jquery', 'views/math/_base'],
     function ($, mathBase)
 {
-	var discussionQuestions = 
+	var discussionQuestions =
 	{
 
 		getViewMarkup: function(content)
@@ -16,7 +16,7 @@ define(
 			};
 			viewData.smList = {};
 
-			$(viewData.markup).find('.sm').each(function(index, val) 
+			$(viewData.markup).find('.sm').each(function(index, val)
 			{
 				var sId = $(this).attr('data-sid');
 				viewData.smList[sId] = '1';
@@ -26,11 +26,11 @@ define(
 		},
 
 		getHelpText: function() {
-			return [ 
+			return [
 				['div',
 					['h4', 'Thinking About Discussion Questions'],
 					'Effective teaching of mathematics uses purposeful questions to assess and advance students’ reasoning and sense making about important mathematical ideas and relationships.',
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 10 NCTM. 2014 www.nctm.org)',
 					['br'],
 					'What are teachers doing?',
 					['ul'].concat(
@@ -50,19 +50,20 @@ define(
 							'Listening to, commenting on, and questioning the contributions of their classmates.'
 						].map(function(e) { return ['li', e]; })
 					),
-					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principals to Actions'], ', p. 41 NCTM. 2014 www.nctm.org)',
+					'(The National Council of Teachers of Mathematics, Inc., ', ['i', 'From Principles to Actions'], ', p. 41 NCTM. 2014 www.nctm.org)',
 				],
 				['div',
 					['h4', 'Additional Resources'],
 					['p', 'For some questioning prompts and ideas, ',
-						['a', {href:'http://www-tc.pbs.org/teachers/_files/pdf/TL_MathCard.pdf', target:'_blank'}, 'here is a resource from PBS.']
+						['a', {href:'https://www.pbslearningmedia.org/resource/ea6a2ce8-5e15-4efa-af55-5685971ea0d4/ea6a2ce8-5e15-4efa-af55-5685971ea0d4', target:'_blank'}, 'here'],
+            ['span', ' is a resource from PBS.']
 					]
 				],
 				'!ca3/i3c'
 				];
 		},
-		
-		
+
+
 		initView: function()
 		{
 			mathBase.createMCE('#dq1-text');

@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'handlebars', '../data/standards-select.html', 'view-templates/ipg-ela.html', 'view-templates/ipg-math.html'], 
-    function ($, Handlebars, standardsHTMLData, elaTemplate, mathTemplate)
+    ['jquery', 'handlebars', 'view-templates/ipg-ela.html', 'view-templates/ipg-math.html'],
+    function ($, Handlebars, elaTemplate, mathTemplate)
 {
     var ipg = 
     {
@@ -12,10 +12,10 @@ define(
         lessonType: null,
         lessonGrade: null,
 
-        initialize: function() 
+        initialize: function()
         {
             var lessonId = $('body').attr('data-id');
-            $.get('/lpt-get-data/' + lessonId + '/static', function(response) 
+            $.get('/lpt-get-data/' + lessonId + '/static', function(response)
             {
                 var rJSON = JSON.parse(response);
                 ipg.dataJson = JSON.parse(rJSON.state);
@@ -30,21 +30,21 @@ define(
 
         getData: function()
         {
-            //$.get('assets/data/standards.json', function(response) 
+            //$.get('assets/data/standards.json', function(response)
             //{
                 ipg.dataStandards = window.standardsData; /*JSON.parse(response);
-                
+
                 var standardsHTML = $(standardsHTMLData);
-                
-				ipg.dataStandards.ela = standardsHTML.filter('.standards-ela').find('option').map(function() { 
+
+				ipg.dataStandards.ela = standardsHTML.filter('.standards-ela').find('option').map(function() {
 					return { id:this.value, description:this.innerHTML.replace(this.value+": ", "") };
 				}).get();
-				
-				ipg.dataStandards.math = standardsHTML.filter('.standards-math').find('option').map(function() { 
+
+				ipg.dataStandards.math = standardsHTML.filter('.standards-math').find('option').map(function() {
 					return { id:this.value, description:this.innerHTML.replace(this.value+": ", "") };
 				}).get();*/
-				
-				
+
+
                 ipg.parseTemplate();
             //});
         },
@@ -107,7 +107,7 @@ define(
                 {
                 	ipg.dataJson.ca2 = ipg.dataStandards.cai.math.ca2.b;
                 	ipg.dataJson.ca3 = ipg.dataStandards.cai.math.ca3.b;
-                
+
                     ipg.dataJson.i1a = ipg.dataStandards.cai.math.i1a.b;
                     ipg.dataJson.i1b = ipg.dataStandards.cai.math.i1b.b;
                     ipg.dataJson.i1c = ipg.dataStandards.cai.math.i1c.b;
@@ -126,7 +126,7 @@ define(
                 } else {
                 	ipg.dataJson.ca2 = ipg.dataStandards.cai.math.ca2.a;
                 	ipg.dataJson.ca3 = ipg.dataStandards.cai.math.ca3.a;
-                	
+
                     ipg.dataJson.i1a = ipg.dataStandards.cai.math.i1a.a;
                     ipg.dataJson.i1b = ipg.dataStandards.cai.math.i1b.a;
                     ipg.dataJson.i1c = ipg.dataStandards.cai.math.i1c.a;
@@ -153,9 +153,9 @@ define(
 
         itemTypes: function()
         {
-            $('.item').each(function(index, val) 
+            $('.item').each(function(index, val)
             {
-                // -- Check for HTML (tinyMCE)
+                // -- Check for HTML (tinymce)
                 if ($(this).attr('data-html')) {
                     $(this).html($(this).text());
                 }
@@ -191,7 +191,7 @@ define(
                 if (ipg.dataJson[fieldName] !== undefined)
                 {
                     var val = ipg.dataJson[fieldName];
-                    if (val.indexOf('selected') > -1) 
+                    if (val.indexOf('selected') > -1)
                     {
                         var label = ipg.dataStandards.compile[checkId].label[i];
                         var meaning = ipg.dataStandards.compile[checkId].meaning[i];
@@ -200,7 +200,7 @@ define(
                         markup += '<div>' + meaning + '</div>';
                         if($(item).html()) $(item).append('<br>');
                         $(item).append(markup);
-                    } 
+                    }
                 }
             }
         },
@@ -209,8 +209,8 @@ define(
         {
             var specialType = $(item).attr('data-special');
             var tagData, tags, compileMarkup, i, markup;
-            
-            // -- Literary Informational 
+
+            // -- Literary Informational
             if (specialType == 'literary')
             {
                 var found = false;
@@ -219,21 +219,21 @@ define(
                 if (ipg.dataJson.libtn1)
                 {
                     val = ipg.dataJson.libtn1;
-                    if (val.indexOf('selected') > -1) 
+                    if (val.indexOf('selected') > -1)
                     {
                         found = true;
                         $(item).html('Literary Text');
-                    } 
+                    }
                 }
 
                 if (ipg.dataJson.libtn2)
                 {
                     val = ipg.dataJson.libtn2;
-                    if (val.indexOf('selected') > -1) 
+                    if (val.indexOf('selected') > -1)
                     {
                         found = true;
                         $(item).html('Informational Text');
-                    } 
+                    }
                 }
 
                 if (!found) {
@@ -249,7 +249,7 @@ define(
                 {
                     compileMarkup = '';
                     var dataMarkup = ipg.dataJson['tbq-items'];
-                    $(dataMarkup).find('.tbq-item-input').each(function(index, val) 
+                    $(dataMarkup).find('.tbq-item-input').each(function(index, val)
                     {
                         var value = $(this).attr('value');
                         if (value!==undefined)

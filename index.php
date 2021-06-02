@@ -35,34 +35,46 @@
     <title>Achievethecore.org :: Instructional Practice Guide: Lesson Planning</title>
     <meta name="description" content="This guide is a practical tool that teachers, and teacher-trainers, can use (and re-use!) in order to build fluency with the Common Core State Standards (CCSS).">
     <meta property="og:description" content="This guide is a practical tool that teachers, and teacher-trainers, can use (and re-use!) in order to build fluency with the Common Core State Standards (CCSS).">
-    <meta property="og:url" content="http://achievethecore.org/lesson-planner/">
+    <meta property="og:url" content="//achievethecore.org/lesson-planner/">
     <meta property="og:site_name" content="Achievethecore.org">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://achievethecore.org/img/fbshare.jpg">
+    <meta property="og:image" content="//achievethecore.org/img/fbshare.jpg">
 
-    <meta name="viewport" content="width=1088, initial-scale=0.70, maximum-scale=0.70">
+    <meta name="viewport" content="width=1088, maximum-scale=0.70">
 
-    <link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-    <script src="http://tinymce.cachefly.net/4/tinymce.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/<?=$GLOBALS['tiny-api-key']?>/tinymce/5/tinymce.min.js"></script>
+    <script src="//achievethecore.org/_standards-select.php"></script>
 </head>
 <body class="<?php echo (isset($user['name'])) ? 'loggedin' : ''; ?> first-section">
     <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-
+<!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+window.__insp = window.__insp || [];
+__insp.push(['wid', 874386827]);
+(function() {
+function ldinsp()
+{var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+;
+document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+})();
+</script>
+<!-- End Inspectlet Embed Code -->
     <div class="landing">
         <div class="atf">
             <div class="header">
                 <div class="atc"><a href="." class="logo-atc"></a><img src="assets/imgs/LPT_Icons_SVG_atc_lessonplanning_logo_grey.svg" class="logo-grey"><img src="assets/imgs/LPT_Icons_SVG_atc_lessonplanning_logo_white.svg" class="logo-white"></div>
                 <div class="lr">
-                    <a href="#loginModal" class="btn-login">LOGIN -</a> 
+                    <a href="#loginModal" class="btn-login">LOGIN -</a>
                     <a data-toggle="modal" href="#registerModal" class="btn-register registerbtn">REGISTER</a>
                     <a href="#" class="btn-account">ACCOUNT INFORMATION -</a>
                     <a data-toggle="modal" href="#savedModal" class="btn-saved"> SAVED LESSONS</a>
@@ -72,7 +84,27 @@
             </div>
             <div class="middle">
                 <div class="landing-main">
-                    <h1>Lesson Planning<span>Plan with the Common Core in mind</span></h1>
+                    <h1>Lesson Planning<span>Plan with the Shifts in mind</span></h1>
+<h1 class="blocker" style="display:none">Welcome<span>This tool is best viewed on a desktop or tablet device</span>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="243 380 110 85" width=110 height=85 xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M314.8,462.9c0,0-1.9-1.6-3-2.7c-1-1-1.3-2.3-1.3-2.3l-0.8-8.9h-23.1l-0.8,8.9c0,0-0.3,1.4-1.3,2.4
+		c-1,1-3,2.6-3,2.6s-1.7,1.2,0.9,1.6c1.5,0.2,8,0.4,13.3,0.4h5c5.4,0,11.8-0.2,13.3-0.4C316.5,464.1,314.8,462.9,314.8,462.9"/>
+	<path fill="#FFFFFF" d="M348.4,442.5H247.2v-57.4h101.2V442.5z M350.3,380.2H245.8c-1.5,0-2.8,1.4-2.8,2.9v61.4
+		c0,1.5,1.3,2.9,2.8,2.9h38.7h2.2h22.8h2.3h38.5c1.5,0,2.6-1.4,2.6-2.9v-61.4C353,381.6,351.8,380.2,350.3,380.2"/>
+</g>
+</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="266 374 64 94" width=64 height=94 xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M326.7,460.5h-57.8v-76.6h57.8V460.5z M297.8,467.3c-1.4,0-2.6-1.2-2.6-2.6c0-1.4,1.2-2.6,2.6-2.6
+		c1.4,0,2.6,1.2,2.6,2.6C300.4,466.2,299.3,467.3,297.8,467.3 M329.6,379.4c0-2.6-2.1-4.6-4.6-4.6h-54.3c-2.6,0-4.6,2.1-4.6,4.6
+		v84.8c0,2.6,2.1,4.6,4.6,4.6H325c2.6,0,4.6-2.1,4.6-4.6V379.4z"/>
+</g>
+</svg>
+
+					</h1>
                     <a href="#" class="landing-btn btn-new"><span></span>START A NEW LESSON</a>
                     <a href="#" class="landing-btn btn-continue"><span></span>CONTINUE A LESSON</a>
                 </div>
@@ -127,7 +159,7 @@
         </div>
         <div class="btf">
         	<div class="section-1">
-        	
+
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="101px" height="64px" viewBox="0 0 101 64" enable-background="new 0 0 101 64" xml:space="preserve">
 <g>
 	<path fill="#B1AEA3" d="M100.437,23.752c0-1-0.029-0.441-0.069-0.55c-0.011-0.029-0.021-0.159-0.034-0.187
@@ -155,16 +187,11 @@
 </svg>
 
 			<h1>What is the Lesson Planning Tool?</h1>
-			<p class="subhed">The Lesson Planning Tool provides guiding questions and supports that
-help teachers create lessons that align to the Common Core by embodying
-the Shifts. English Language Arts teachers will be guided through the process of creating a close-reading lesson. Math teachers will focus on grade
-or course-level standards while developing lessons.</p>
+			<p class="subhed">The Lesson Planning Tool guides teachers through a series of prompts about the lesson content, structure, and activities to ensure the Shifts required by college- and career-ready standards are central to the lesson. English Language Arts teachers will be guided through the process of creating a close-reading lesson. Math teachers will focus on grade or course-level standards while developing lessons.</p>
 			</div>
 			<div class="section-2">
 			<h2>What are the Shifts?</h2>
-			<p>The Shifts represent the fundamental principles of the Common Core State Standards. They
-must be present for content and instruction to be considered “Common Core-aligned”,
-which is why the Shifts provide the framing for this Lesson Planning Tool.</p>
+			<p>The Shifts represent the fundamental principles of the Common Core State Standards and other college- and career-ready standards.</p>
 <p><a href="http://achievethecore.org/content/upload/122113_Shifts.pdf" target="_blank" class="btn">Learn more about the Shifts</a></p>
 			</div>
 			<div class="section-3">
@@ -179,8 +206,8 @@ worry - all of your work will save automatically!</p>
 
 <hr>
 <h3>Need Help?</h3>
-							<p>If you need support answering a question, you can always click on the “Need Help” link to find background
-information, sample answers, and the related Core Actions and Indicators (from the complementary Coaching Tool).</p>
+							<p>If you need support answering a question, you can always click on the “Examples & Support” link to find background
+information, sample answers, and the related Core Actions and Indicators (from the complementary Instructional Practice Guide).</p>
 <hr>
 <table>
 
@@ -222,31 +249,27 @@ lesson, start a new lesson, or access previous lessons.</p>
 					</tr>
 					<tr>
 						<td>
-						
-<p>Lesson Planning Tool format presents your answers in
-the order the questions appeared in the tool.</p>
+
+<p>This format presents your answers in the order the questions appeared in the Lesson Planning Tool.</p>
 						</td>
 
 						<td>
-						
-<p>Coaching Tool format presents your answers in the order of the Core Actions and Indicators, as they appear
-in the Coaching Tool. This format was created to help
-to facilitate discussion with a peer, coach, or supervisor
-who is using the Coaching Tool for non-evaluative observation.</p>
+
+<p>This format presents your answers in the order of the Core Actions and Indicators of the Instructional Practice Guide (IPG). This layout was created to help facilitate discussion with a peer, coach, or supervisor using the IPG for non-evaluative observation.</p>
 
 						</td>
 					</tr>
 </table>
 
-					
+
 </div>
 <div class="section-4">
 			<h2>How will I know if the lesson I plan is aligned?</h2>
-			<p>Ask a coach or peer to use the Coaching Tool while observing your class. The Coaching Tool gives the observer specific “Core Actions” to look for to see if the content and instruction are Common Core-aligned. Throughout the Lesson Planning Tool you can see the related Core Action and Indicator for every question.</p>
+			<p>Ask a coach or peer to use the Instructional Practice Guide while observing your class. The Instructional Practice Guide gives the observer specific “Core Actions” to look for to see if the content and instruction incorporate the Shifts. Throughout the Lesson Planning Tool you can see the related Core Action and Indicator for every question.</p>
 			<img src="assets/imgs/splash_device_group.png" class="devices" style="margin-bottom: -320px;">
-			
+
 </div>
-<a href="/coaching-tool" target="_blank" class="btn final">Learn More about Coaching Tool</a>
+<a href="/coaching-tool" target="_blank" class="btn final">Learn More about Instructional Practice Guide</a>
 <a class="to-top active" href="#"></a>
         </div>
     </div>
@@ -259,7 +282,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
             <div class="top-content" spellcheck="true">
 
             </div>
-        </div>  
+        </div>
     </div>
 
     <div class="col-container">
@@ -321,7 +344,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                 </div>
                 <div class="wrapper">
                 	<div class="help-nav"></div>
-                	<div class="ca-explanation">Each question in the Lesson Planning Tool relates to a Core Action and Indicator from the Instructional Practice Guide: Coaching Tool. In order to make that connection explicit, the related Core Action and Indicator is shown below.</div>
+                	<div class="ca-explanation">Each question in the Lesson Planning Tool relates to a Core Action and Indicator from the Instructional Practice Guide: Instructional Practice Guide. In order to make that connection explicit, the related Core Action and Indicator is shown below.</div>
                 	<br/>
                     <div class="ca">
                         <div class="title"></div>
@@ -340,14 +363,14 @@ who is using the Coaching Tool for non-evaluative observation.</p>
             </div>
             <div class="help">
                 <div class="header">
-                    <span class="title">Help</span>
+                    <span class="title">Examples and Support</span>
                     <a href="#">X</a>
                 </div>
                 <div class="data"></div>
             </div>
         </div>
     </div>
-    
+
     <div class="dashboard">
     	<div class="fixednav">
 		<div class="header">
@@ -373,10 +396,10 @@ who is using the Coaching Tool for non-evaluative observation.</p>
     		<button class="btn iconbtn">%</button>
     		<button class="btn iconbtn">$</button>
 		</div>
-		
+
 		<div class="tiles">
 		</div>
-		
+
 		<div class="bottom-actions"><div class="action-tile">
 				<h3>Download the questions</h3>
 				<a href="#" class="download-questions" target="_blank">Download<span>]</span></a>
@@ -384,7 +407,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
 				<h3>Help us improve</h3>
 				<a href="mailto:info@studentsachieve.net?subject=[Lesson%20Planning%20Tool]%20Feedback">Send Feedback<span>]</span></a>
 			</div></div>
-		
+
 		<footer>
 		    <div class="container">
 		        <div class="row">
@@ -393,11 +416,17 @@ who is using the Coaching Tool for non-evaluative observation.</p>
 		                <nav>
 		                    <a href="http://www.achievethecore.org/" target="_blank">Visit achievethecore.org</a>
 		                    <a href="mailto:info@studentsachieve.net?subject=[Lesson Planning Tool] Feedback" class="feedback" style="
-		
+
 		    margin-right: 30px;
-		
+
 		"><i class="icon-comment-alt"></i> SEND US FEEDBACK</a>
+		                    <a href="https://github.com/achievethecore/atc-lesson-planner" class="fordev" target="_blank" style="
+
+		    margin-right: 30px;
+
+		">FOR DEVELOPERS</a>
 		                </nav>
+
 		            </div>
 		        </div>
 		    </div>
@@ -471,8 +500,11 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                         <div class="form-group">
                             <label for="role">Role *</label>
                             <select id="role" name="role" class="form-control">
-                                <option>Teacher/Coach</option>
-                                <option>Schl/Dist Leader</option>
+                            <option>Teacher</option>
+                            <option>Coach/Trainer</option>
+                            <option>Principal/School Leadership</option>
+                            <option>District Leadership</option>
+                            <option>Other</option>
                             </select>
                         </div>
                         <br class="clearBoth" />
@@ -572,7 +604,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group checkbox-group registermode">
                             <div class="col-xs-1">
                                 <input type="checkbox" id="terms_reg" value="1" name="terms_reg">
@@ -660,6 +692,14 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                 </div>
                 <div class="modal-body mainbox">
                     <form id="emailform">
+
+						<div class="form-group view-type radio-btns">
+                        	<div class="radio-btn-row">
+                            	<button class="btn">Planning View</button>
+                            	<button class="btn">Coaching View</button>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <input type="text" value="" placeholder="Email Address" name="title" class="form-control" id="saveTitle">
                         </div>
@@ -667,7 +707,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                         <div class="form-group">
                             <textarea id="textarea-notes" class="form-control" placeholder="Comments"></textarea>
                         </div>
-                        
+
                         <? if(isset($_SESSION['user'])): ?>
                         <div class="form-group copyme">
                             <input type="checkbox" value="1" name="copyme" id="email_copyme"> Send copy to myself at <?= ht($user['email']) ?>
@@ -683,7 +723,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    
+
     <!-- Email Modal -->
     <div class="modal fade newmodal" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -695,13 +735,20 @@ who is using the Coaching Tool for non-evaluative observation.</p>
                 </div>
                 <div class="modal-body mainbox">
                     <form id="exportform">
-                        <div class="form-group radio-btns">
+                        <div class="form-group file-format radio-btns">
+                        	<div class="radio-btn-row">
+                            	<button class="btn">PDF</button>
+                            	<button class="btn">DOC</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group view-type radio-btns">
                         	<div class="radio-btn-row">
                             	<button class="btn">Planning View</button>
                             	<button class="btn">Coaching View</button>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <div class="dropdown">
                             	<a href="#" data-toggle="dropdown" class="toggle"><data>Choose a section</data><span>’</span></a>
@@ -724,27 +771,25 @@ who is using the Coaching Tool for non-evaluative observation.</p>
 	     <div class="modal-content">
 	         <div class="modal-header">
 	             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	
+
 	         </div>
 	         <div class="modal-body">
 <div class="about-math"><h2>
   Welcome!
   </h2><p>
-  The Lesson Planning Tool provides guiding
-  questions and supports that help teachers create lessons that align to the Shifts
-  required by the Common Core.
+  The Lesson Planning Tool provides guiding questions and supports that help teachers create lessons that align to the Shifts required by college- and career-ready standards.
   </p><h2>
   How is the Lesson Planning Tool structured?
   </h2><p>
   The Lesson Planning Tool is made up of six
-  modules; each module takes approximately one planning period to complete. 
+  modules; each module takes approximately one planning period to complete.
   &nbsp;
   The starting module, "Planning a
   Standards Aligned Lesson", serves as an umbrella to the other five
   modules. In this first module you are asked the highest leverage questions to
   consider from each of the other five modules.&nbsp; In exploring these high
   leverage questions, you will be sure you are considering the elements that
-  are most critical to CCSSM alignment.&nbsp; Once you complete the starting module,
+  are most critical to college- and career-ready standards.&nbsp; Once you complete the starting module,
   you may choose to go into more depth in any or all of the other five
   modules.&nbsp; You can access these modules in any order.
   </p><h2>
@@ -758,9 +803,9 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   save automatically!
   </p><p>
   2.&nbsp; If you need support answering a
-  question, you can always click on the "Need Help" link below each
+  question, you can always click on the "Examples and Support" link below each
   prompt to find background information, sample answers, and the related Core
-  Actions and Indicators (from the complementary Coaching Tool).
+  Actions and Indicators (from the complementary Instructional Practice Guide).
   </p><p>
   3.&nbsp; The learning goal you define in
   the starting module will be accessible from every other module, so you can
@@ -773,31 +818,15 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   to choose from one of two formats:
   Lesson Planning Tool format presents your answers in the order the questions
   appeared in the tool.
-  &nbsp;Coaching Tool format presents your answers in the order of the Core Actions
-  and Indicators, as they appear in the Coaching Tool. This format was created
+  &nbsp;Instructional Practice Guide format presents your answers in the order of the Core Actions
+  and Indicators, as they appear in the Instructional Practice Guide. This format was created
   to help to facilitate discussion with a peer, coach, or supervisor who is
-  using the Coaching Tool for non-evaluative observation.
+  using the Instructional Practice Guide for non-evaluative observation.
   </p><h2>
-  What is the Coaching Tool, and how does it
+  What is the Instructional Practice Guide, and how does it
   relate to the Lesson Planning Tool?
   </h2><p>
-  In order for teachers, colleagues, and
-  instructional leaders to have meaningful and productive conversations that
-  lead to changes in practice that reflect the Shifts, there must be shared
-  expectations about how to identify evidence of the Common Core in both lesson
-  planning and classroom observation.
-  &nbsp;
-  The Coaching Tool is a non-evaluative
-  observation tool that helps coaches and peers identify the evidence that will
-  show that the content of a lesson aligns to the Common Core. Simply, if the
-  content is not aligned, Common Core instruction is not taking place. While
-  using the Coaching Tool, the observer looks for specific "Core
-  Actions" that show explicit connections between the content and the
-  teacher's practice.&nbsp;&nbsp; 
-  &nbsp;
-  Throughout the Lesson Planning Tool, you
-  can see the related Core Action and Indicator from the Coaching Tool for
-  every question.&nbsp; 
+  The Instructional Practice Guide is a non-evaluative observation tool that helps coaches and teachers identify the evidence that will show whether the content of a lesson aligns to the Common Core or other college- and career-ready standards. References to Core Actions and indicators found in the Instructional Practice Guide can be found throughout the Lesson Planning Tool. Teachers using the Lesson Planning Tool with a coach or colleague can use these references to more easily make connections between what content and practice has been planned and what is to be observed during classroom instruction.  These lessons can be easily shared with a coach in advance of a non-evaluative observation focused on classroom instruction aligned to college- and career-ready standards, including the Common Core. The <a href="//achievethecore.org/category/1193/instructional-practice-toolkit-and-classroom-videos">Instructional Practice Toolkit</a> is a professional development experience that is designed to facilitate an understanding of these Core Actions and Indicators in a lesson plan, observation, and student work which will support ongoing coaching conversations.
   </p><h2>
   About Achievethecore.org
   </h2><p>
@@ -810,14 +839,12 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   </p></div><div class="about-ela"><h2>
   Welcome!
   </h2><p>
-  The Lesson Planning Tool provides guiding
-  questions and supports that help teachers create lessons that align to the Shifts
-  required by the Common Core.
+  The Lesson Planning Tool provides guiding questions and supports that help teachers create lessons that align to the Shifts required by college- and career-ready standards.
   </p><h2>
   How is the Lesson Planning Tool structured?
   </h2><p>
   The Lesson Planning Tool is made up of six
-  modules; each module takes approximately one planning period to complete. 
+  modules; each module takes approximately one planning period to complete.
   In ELA/Literacy, the tool focuses on
   supporting you through the process of creating a close-reading lesson plan.&nbsp;
   A close-reading lesson often spans multiple class sessions
@@ -826,8 +853,8 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   your text and then to evaluate it for complexity.&nbsp; If you know that the text
   has already been evaluated, then you can move ahead to other modules.&nbsp; If
   not, we recommend you:
-  
-  
+
+
   <br>&bull;
   First evaluate the text quantitatively
   to determine the grade band
@@ -845,7 +872,7 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   idea of the text and the culminating activity that will assess if students'
   have mastered the concept(s).&nbsp; Then, you will create and sequence
   text-dependent questions and associated activities.&nbsp; You will add the
-  Standards addressed.&nbsp; 
+  Standards addressed.&nbsp;
   </p><h2></h2><p>
   You can move through these actions in any
   order, though we recommend the above flow.
@@ -858,9 +885,9 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   all of your work is saved automatically!
   </p><p>
   2.&nbsp; If you need support answering a
-  question, you can always click on the "Need Help" link below each
+  question, you can always click on the "Examples and Support" link below each
   prompt to find background information, sample answers, and the related Core
-  Actions and Indicators (from the complementary Coaching Tool).
+  Actions and Indicators (from the complementary Instructional Practice Guide).
   </p><p>
   3.&nbsp; The big idea you define in the “Big
   Idea and Culminating Task” module will be accessible throughout the process,
@@ -874,31 +901,15 @@ who is using the Coaching Tool for non-evaluative observation.</p>
   to choose from one of two formats:
   Lesson Planning Tool format presents your answers in the order the questions
   appeared in the tool.
-  &nbsp;Coaching Tool format presents your answers in the order of the Core Actions
-  and Indicators, as they appear in the Coaching Tool. This format was created
+  &nbsp;Instructional Practice Guide format presents your answers in the order of the Core Actions
+  and Indicators, as they appear in the Instructional Practice Guide. This format was created
   to help to facilitate discussion with a peer, coach, or supervisor who is
-  using the Coaching Tool for non-evaluative observation.
+  using the Instructional Practice Guide for non-evaluative observation.
   </p><h2>
-  What is the Coaching Tool, and how does it
+  What is the Instructional Practice Guide, and how does it
   relate to the Lesson Planning Tool?
   </h2><p>
-  In order for teachers, colleagues, and
-  instructional leaders to have meaningful and productive conversations that
-  lead to changes in practice that reflect the Shifts, there must be shared
-  expectations about how to identify evidence of the Common Core in both lesson
-  planning and classroom observation.
-  &nbsp;
-  The Coaching Tool is a non-evaluative
-  observation tool that helps coaches and peers identify the evidence that will
-  show that the content of a lesson aligns to the Common Core. Simply, if the
-  content is not aligned, Common Core instruction is not taking place. While
-  using the Coaching Tool, the observer looks for specific "Core
-  Actions" that show explicit connections between the content and the
-  teacher's practice.&nbsp;&nbsp; 
-  &nbsp;
-  Throughout the Lesson Planning Tool, you
-  can see the related Core Action and Indicator from the Coaching Tool for
-  every question.&nbsp; 
+  The Instructional Practice Guide is a non-evaluative observation tool that helps coaches and teachers identify the evidence that will show whether the content of a lesson aligns to the Common Core or other college- and career-ready standards. References to Core Actions and indicators found in the Instructional Practice Guide can be found throughout the Lesson Planning Tool. Teachers using the Lesson Planning Tool with a coach or colleague can use these references to more easily make connections between what content and practice has been planned and what is to be observed during classroom instruction.  These lessons can be easily shared with a coach in advance of a non-evaluative observation focused on classroom instruction aligned to college- and career-ready standards, including the Common Core. The <a href="//achievethecore.org/category/1193/instructional-practice-toolkit-and-classroom-videos">Instructional Practice Toolkit</a> is a professional development experience that is designed to facilitate an understanding of these Core Actions and Indicators in a lesson plan, observation, and student work which will support ongoing coaching conversations.
   </p><h2>
   About Achievethecore.org
   </h2><p>
@@ -937,8 +948,9 @@ who is using the Coaching Tool for non-evaluative observation.</p>
          _gaq.push(['_trackEvent', 'Account', trackprof[4]]);
          }
          _gaq.push(['_trackPageview']);
+         _gaq.push(['master._setAccount', '---'], ['master._trackPageview']);
          (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-         g.src='http://www.google-analytics.com/ga.js';
+         g.src='//www.google-analytics.com/ga.js';
          s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
 </body>
